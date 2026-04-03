@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1775228982346" clover="3.2.0">
+  <project timestamp="1775228982346" name="All files">
+    <metrics statements="119" coveredstatements="21" conditionals="80" coveredconditionals="1" methods="38" coveredmethods="4" elements="237" coveredelements="26" complexity="0" loc="119" ncloc="119" packages="9" files="15" classes="15"/>
+    <package name="components.atoms">
+      <metrics statements="20" coveredstatements="0" conditionals="20" coveredconditionals="0" methods="5" coveredmethods="0"/>
+      <file name="AppButton.tsx" path="/Users/joshnaramojipally/ReactNativeProjects/src/components/atoms/AppButton.tsx">
+        <metrics statements="15" coveredstatements="0" conditionals="14" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="31" count="0" type="stmt"/>
+        <line num="35" count="0" type="stmt"/>
+        <line num="36" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="40" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="48" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+      </file>
+      <file name="AppIcon.tsx" path="/Users/joshnaramojipally/ReactNativeProjects/src/components/atoms/AppIcon.tsx">
+        <metrics statements="2" coveredstatements="0" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+      </file>
+      <file name="AppText.tsx" path="/Users/joshnaramojipally/ReactNativeProjects/src/components/atoms/AppText.tsx">
+        <metrics statements="3" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.molecules">
+      <metrics statements="12" coveredstatements="0" conditionals="18" coveredconditionals="0" methods="2" coveredmethods="0"/>
+      <file name="MenuListItem.tsx" path="/Users/joshnaramojipally/ReactNativeProjects/src/components/molecules/MenuListItem.tsx">
+        <metrics statements="12" coveredstatements="0" conditionals="18" coveredconditionals="0" methods="2" coveredmethods="0"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="15" count="0" type="cond" truecount="0" falsecount="7"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="27" count="0" type="stmt"/>
+        <line num="29" count="0" type="stmt"/>
+        <line num="33" count="0" type="stmt"/>
+        <line num="38" count="0" type="stmt"/>
+        <line num="63" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.organisms">
+      <metrics statements="9" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <file name="ActionCard.tsx" path="/Users/joshnaramojipally/ReactNativeProjects/src/components/organisms/ActionCard.tsx">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="30" count="0" type="stmt"/>
+      </file>
+      <file name="AppointmentCard.tsx" path="/Users/joshnaramojipally/ReactNativeProjects/src/components/organisms/AppointmentCard.tsx">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="24" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+      </file>
+      <file name="DashboardHeader.tsx" path="/Users/joshnaramojipally/ReactNativeProjects/src/components/organisms/DashboardHeader.tsx">
+        <metrics statements="3" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="14" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="42" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="core.constants">
+      <metrics statements="2" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="AppConstants.ts" path="/Users/joshnaramojipally/ReactNativeProjects/src/core/constants/AppConstants.ts">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+      </file>
+      <file name="strings.ts" path="/Users/joshnaramojipally/ReactNativeProjects/src/core/constants/strings.ts">
+        <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="core.navigation">
+      <metrics statements="21" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="8" coveredmethods="0"/>
+      <file name="RootNavigator.tsx" path="/Users/joshnaramojipally/ReactNativeProjects/src/core/navigation/RootNavigator.tsx">
+        <metrics statements="21" coveredstatements="0" conditionals="8" coveredconditionals="0" methods="8" coveredmethods="0"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="15" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="25" count="0" type="stmt"/>
+        <line num="29" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="30" count="0" type="stmt"/>
+        <line num="31" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="33" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="35" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="36" count="0" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="53" count="0" type="stmt"/>
+        <line num="54" count="0" type="stmt"/>
+        <line num="55" count="0" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+        <line num="61" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="core.services">
+      <metrics statements="10" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <file name="apiService.ts" path="/Users/joshnaramojipally/ReactNativeProjects/src/core/services/apiService.ts">
+        <metrics statements="10" coveredstatements="0" conditionals="6" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="12" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="22" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="23" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="32" count="0" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
+        <line num="45" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="data.models">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <file name="DashboardModel.ts" path="/Users/joshnaramojipally/ReactNativeProjects/src/data/models/DashboardModel.ts">
+        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+    </package>
+    <package name="data.repositories">
+      <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <file name="DashboardRepository.ts" path="/Users/joshnaramojipally/ReactNativeProjects/src/data/repositories/DashboardRepository.ts">
+        <metrics statements="4" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="4" count="0" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+      </file>
+    </package>
+    <package name="presentation.screens.Dashboard">
+      <metrics statements="41" coveredstatements="21" conditionals="28" coveredconditionals="1" methods="14" coveredmethods="4"/>
+      <file name="DashboardView.tsx" path="/Users/joshnaramojipally/ReactNativeProjects/src/presentation/screens/Dashboard/DashboardView.tsx">
+        <metrics statements="17" coveredstatements="0" conditionals="26" coveredconditionals="0" methods="7" coveredmethods="0"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="23" count="0" type="stmt"/>
+        <line num="25" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="26" count="0" type="stmt"/>
+        <line num="33" count="0" type="cond" truecount="0" falsecount="4"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="60" count="0" type="stmt"/>
+        <line num="62" count="0" type="stmt"/>
+        <line num="65" count="0" type="stmt"/>
+        <line num="72" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="73" count="0" type="stmt"/>
+        <line num="80" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="84" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="85" count="0" type="stmt"/>
+        <line num="89" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="93" count="0" type="stmt"/>
+      </file>
+      <file name="DashboardViewModel.ts" path="/Users/joshnaramojipally/ReactNativeProjects/src/presentation/screens/Dashboard/DashboardViewModel.ts">
+        <metrics statements="24" coveredstatements="21" conditionals="2" coveredconditionals="1" methods="7" coveredmethods="4"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="7" count="7" type="stmt"/>
+        <line num="8" count="7" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+        <line num="18" count="1" type="cond" truecount="1" falsecount="1"/>
+        <line num="20" count="3" type="stmt"/>
+        <line num="24" count="7" type="stmt"/>
+        <line num="25" count="3" type="stmt"/>
+        <line num="28" count="7" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="33" count="7" type="stmt"/>
+        <line num="34" count="0" type="stmt"/>
+        <line num="38" count="7" type="stmt"/>
+        <line num="39" count="0" type="stmt"/>
+        <line num="43" count="7" type="stmt"/>
+        <line num="44" count="0" type="stmt"/>
+        <line num="48" count="7" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

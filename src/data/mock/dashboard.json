@@ -1,0 +1,36 @@
+{
+  "screen": "Dashboard",
+  "header": {
+    "title": "Hello, Jane",
+    "subtitle": "How can we help you today?"
+  },
+  "menu": [
+    "Home",
+    "Messages",
+    "Appointments",
+    "Prescriptions",
+    "Lab results",
+    "Documents"
+  ],
+  "cards": [
+    {
+      "type": "appointment",
+      "date": "14 April",
+      "doctor": "Dr. J Kim",
+      "time": "3:50 PM - 4:10 PM",
+      "cta": "Join Video"
+    },
+    {
+      "type": "action",
+      "title": "Request an appointment"
+    },
+    {
+      "type": "action",
+      "title": "Request a prescription refill"
+    },
+    {
+      "type": "action",
+      "title": "Send message to care team"
+    }
+  ]
+}
