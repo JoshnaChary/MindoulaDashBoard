@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, TouchableOpacity, Alert } from 'react-native';
-import { Text } from '../../components/Common/Text';
+import { View, StyleSheet, Alert } from 'react-native';
+import { AppText } from '../../../components/atoms/AppText';
 import MemberPortalLayout from '../../components/MemberPortalLayout';
 import BillingTabs from '../../components/Billing/BillingTabs';
 import SettingCard from '../../components/Account/SettingCard';
 import { Colors } from '../../../core/theme/colors';
-
-const BASE_X = 9;
-const BASE_Y = 254;
+import { getFigmaPos } from '../../../core/utils/layout';
 
 export const AccountScreen: React.FC = () => {
   const [activeTab, setActiveTab] = useState('Settings');
@@ -43,12 +41,12 @@ export const AccountScreen: React.FC = () => {
 
   return (
     <MemberPortalLayout>
-      <View
-        style={[styles.absoluteWrapper, { left: 358 - BASE_X, top: 395 - BASE_Y, width: 1040 }]}
-      >
+      <View style={[styles.absoluteWrapper, getFigmaPos(358, 395), { width: 1040 }]}>
         <View style={styles.container}>
           {/* Title */}
-          <Text style={styles.h2}>Account</Text>
+          <AppText variant="h2" weight="bold" style={{ marginBottom: 24 }}>
+            Account
+          </AppText>
 
           {/* Tabs */}
           <BillingTabs
@@ -75,7 +73,7 @@ export const AccountScreen: React.FC = () => {
 
           {activeTab !== 'Settings' && (
             <View style={styles.placeholderContainer}>
-              <Text style={styles.body1}>Content for {activeTab} coming soon...</Text>
+              <AppText variant="body1">Content for {activeTab} coming soon...</AppText>
             </View>
           )}
         </View>
@@ -93,9 +91,6 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
   },
   h2: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: Colors.text.primary,
     marginBottom: 24,
   },
   listContainer: {
@@ -109,10 +104,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderWidth: 1,
     borderColor: Colors.border,
-  },
-  body1: {
-    fontSize: 16,
-    color: Colors.text.primary,
   },
 });
 

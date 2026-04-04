@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  View,
-  ScrollView,
-  FlatList,
-  ActivityIndicator,
-  SafeAreaView,
-  Platform,
-} from 'react-native';
+import { View, ScrollView, FlatList, ActivityIndicator, SafeAreaView } from 'react-native';
 import { useDashboardViewModel } from './DashboardViewModel';
 import { DashboardHeader } from '../../../components/organisms/DashboardHeader';
 import { MenuListItem } from '../../../components/molecules/MenuListItem';

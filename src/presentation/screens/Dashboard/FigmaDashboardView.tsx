@@ -1,14 +1,11 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Image } from 'react-native';
-import { Text } from '../../components/Common/Text';
+import { AppText } from '../../../components/atoms/AppText';
 import { useNavigation } from '@react-navigation/native';
 import { AppConstants } from '../../../core/constants/AppConstants';
 import MemberPortalLayout from '../../components/MemberPortalLayout';
 import { Colors } from '../../../core/theme/colors';
-
-// Base coordinates for normalization (Node 1:10)
-const BASE_X = 9;
-const BASE_Y = 254;
+import { getFigmaPos } from '../../../core/utils/layout';
 
 const FigmaDashboardView: React.FC = () => {
   const navigation = useNavigation<any>();
@@ -17,48 +14,43 @@ const FigmaDashboardView: React.FC = () => {
     <MemberPortalLayout>
       <View style={{ marginTop: 74 }}>
         {/* Hello, Jane */}
-        <Text
+        <AppText
           style={[
             styles.absolute,
+            getFigmaPos(358, 290),
             {
-              left: 358 - BASE_X,
-              top: 290 - BASE_Y,
               width: 355,
               height: 36,
-              color: Colors.text.dark,
-              fontSize: 20,
-              fontWeight: '500',
             },
           ]}
+          variant="h3"
+          weight="medium"
         >
           Hello, Jane
-        </Text>
+        </AppText>
 
         {/* Upcoming Appointment Header */}
-        <Text
+        <AppText
           style={[
             styles.absolute,
+            getFigmaPos(358, 349),
             {
-              left: 358 - BASE_X,
-              top: 349 - BASE_Y,
               width: 355,
               height: 36,
-              color: Colors.text.dark,
-              fontSize: 16,
               fontWeight: '300',
             },
           ]}
+          variant="body1"
         >
           Upcoming appointment
-        </Text>
+        </AppText>
 
         {/* Appointment Card */}
         <View
           style={[
             styles.absolute,
+            getFigmaPos(358, 380),
             {
-              left: 358 - BASE_X,
-              top: 380 - BASE_Y,
               width: 653,
               height: 104,
               backgroundColor: Colors.white,
@@ -72,35 +64,25 @@ const FigmaDashboardView: React.FC = () => {
           style={[
             styles.absolute,
             styles.dateBadge,
+            getFigmaPos(373, 392),
             {
-              left: 373 - BASE_X,
-              top: 392 - BASE_Y,
               width: 70,
               height: 75,
               backgroundColor: Colors.dashboard.badgeBg,
             },
           ]}
         />
-        <Text style={[styles.absolute, styles.dateNum, { left: 381 - BASE_X, top: 407 - BASE_Y }]}>
-          14
-        </Text>
-        <Text
-          style={[styles.absolute, styles.dateMonth, { left: 381 - BASE_X, top: 434 - BASE_Y }]}
-        >
-          April
-        </Text>
-        <Text
-          style={[styles.absolute, styles.apptTitle, { left: 470 - BASE_X, top: 405 - BASE_Y }]}
-        >
+        <AppText style={[styles.absolute, styles.dateNum, getFigmaPos(381, 407)]}>14</AppText>
+        <AppText style={[styles.absolute, styles.dateMonth, getFigmaPos(381, 434)]}>April</AppText>
+        <AppText style={[styles.absolute, styles.apptTitle, getFigmaPos(470, 405)]}>
           Follow-up with Dr. J Kim{'\n'}at 3:50 PM ET - 4:10 PM ET
-        </Text>
+        </AppText>
         <TouchableOpacity
           style={[
             styles.absolute,
             styles.button,
+            getFigmaPos(863, 411),
             {
-              left: 863 - BASE_X,
-              top: 411 - BASE_Y,
               width: 124,
               height: 39,
               backgroundColor: Colors.primary,
@@ -108,30 +90,30 @@ const FigmaDashboardView: React.FC = () => {
           ]}
           onPress={() => {}}
         >
-          <Text style={styles.buttonText}>Join Video</Text>
+          <AppText style={styles.buttonText} weight="medium">
+            Join Video
+          </AppText>
         </TouchableOpacity>
 
         {/* Help Header */}
-        <Text
+        <AppText
           style={[
             styles.absolute,
+            getFigmaPos(358, 533),
             {
-              left: 358 - BASE_X,
-              top: 533 - BASE_Y,
               width: 355,
               height: 36,
-              color: Colors.text.dark,
-              fontSize: 16,
               fontWeight: '300',
             },
           ]}
+          variant="body1"
         >
           How can we help you today?
-        </Text>
+        </AppText>
 
         {/* Action Cards */}
         <TouchableOpacity
-          style={[styles.absolute, styles.actionCard, { left: 358 - BASE_X, top: 561 - BASE_Y }]}
+          style={[styles.absolute, styles.actionCard, getFigmaPos(358, 561)]}
           onPress={() => navigation.navigate(AppConstants.screens.messages)}
         >
           <Image
@@ -141,29 +123,27 @@ const FigmaDashboardView: React.FC = () => {
               { width: 62, height: 62, left: 18, top: 16, resizeMode: 'contain' },
             ]}
           />
-          <Text style={[styles.actionText, { left: 94, top: 41 }]}>View 3 new messages</Text>
+          <AppText style={[styles.actionText, { left: 94, top: 41 }]} weight="medium">
+            View 3 new messages
+          </AppText>
         </TouchableOpacity>
 
-        <TouchableOpacity
-          style={[styles.absolute, styles.actionCard, { left: 358 - BASE_X, top: 680 - BASE_Y }]}
-        >
-          <Text style={[styles.actionText, { left: 24, top: 39 }]}>Request an appointment</Text>
+        <TouchableOpacity style={[styles.absolute, styles.actionCard, getFigmaPos(358, 680)]}>
+          <AppText style={[styles.actionText, { left: 24, top: 39 }]} weight="medium">
+            Request an appointment
+          </AppText>
         </TouchableOpacity>
 
-        <TouchableOpacity
-          style={[styles.absolute, styles.actionCard, { left: 358 - BASE_X, top: 798 - BASE_Y }]}
-        >
-          <Text style={[styles.actionText, { left: 24, top: 41 }]}>
+        <TouchableOpacity style={[styles.absolute, styles.actionCard, getFigmaPos(358, 798)]}>
+          <AppText style={[styles.actionText, { left: 24, top: 41 }]} weight="medium">
             Request a prescription refill
-          </Text>
+          </AppText>
         </TouchableOpacity>
 
-        <TouchableOpacity
-          style={[styles.absolute, styles.actionCard, { left: 358 - BASE_X, top: 917 - BASE_Y }]}
-        >
-          <Text style={[styles.actionText, { left: 24, top: 41 }]}>
+        <TouchableOpacity style={[styles.absolute, styles.actionCard, getFigmaPos(358, 917)]}>
+          <AppText style={[styles.actionText, { left: 24, top: 41 }]} weight="medium">
             Send a message to my care team
-          </Text>
+          </AppText>
         </TouchableOpacity>
       </View>
     </MemberPortalLayout>
