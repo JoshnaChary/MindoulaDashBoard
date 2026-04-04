@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+import { View, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+import { Text } from '../../components/Common/Text';
 import { useNavigation } from '@react-navigation/native';
 import MemberPortalLayout from '../../components/MemberPortalLayout';
 
@@ -33,7 +34,6 @@ export const RefillScreen: React.FC = () => {
               color: figmaColor(0.224, 0.231, 0.247, 1),
               fontSize: 18,
               fontWeight: '500',
-              fontFamily: 'Inter',
             }}
           >
             &lt; Back
@@ -48,7 +48,6 @@ export const RefillScreen: React.FC = () => {
             color: '#111',
             marginTop: 12,
             marginBottom: 16,
-            fontFamily: 'Inter',
           }}
         >
           Request Refill
@@ -64,7 +63,7 @@ export const RefillScreen: React.FC = () => {
             paddingTop: 12,
           }}
         >
-          <Text style={{ color: '#393B3F', fontFamily: 'Inter' }}>Add Note.</Text>
+          <Text style={{ color: '#393B3F' }}>Add Note.</Text>
         </View>
 
         {/* Stack: Buttons */}
@@ -106,7 +105,6 @@ const styles = StyleSheet.create({
     color: figmaColor(0.231, 0.455, 0.82, 1),
     fontSize: 16,
     fontWeight: '500',
-    fontFamily: 'Inter',
   },
   smallBlueBtn: {
     backgroundColor: figmaColor(0.231, 0.455, 0.82, 1),
@@ -114,7 +112,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     paddingVertical: 8,
   },
-  buttonTextSmall: { color: 'white', fontSize: 16, fontWeight: '500', fontFamily: 'Inter' },
+  buttonTextSmall: { color: 'white', fontSize: 16, fontWeight: '500' },
 });
 
 export default RefillScreen;

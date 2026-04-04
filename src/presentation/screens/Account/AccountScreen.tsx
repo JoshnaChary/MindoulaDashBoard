@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Alert } from 'react-native';
+import { Text } from '../../components/Common/Text';
 import MemberPortalLayout from '../../components/MemberPortalLayout';
 import BillingTabs from '../../components/Billing/BillingTabs';
 import SettingCard from '../../components/Account/SettingCard';
@@ -96,7 +97,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: Colors.text.primary,
     marginBottom: 24,
-    fontFamily: 'Inter',
   },
   listContainer: {
     marginTop: 32,
@@ -113,7 +113,6 @@ const styles = StyleSheet.create({
   body1: {
     fontSize: 16,
     color: Colors.text.primary,
-    fontFamily: 'Inter',
   },
 });
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Alert } from 'react-native';
+import { Text } from '../Common/Text';
 import { Colors } from '../../../core/theme/colors';
 
 interface BillingItem {
@@ -86,11 +87,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     color: Colors.text.primary,
-    fontFamily: 'Inter',
     marginBottom: 4,
   },
-  amount: { fontSize: 16, color: Colors.text.secondary, fontFamily: 'Inter' },
-  caption: { fontSize: 12, color: Colors.text.secondary, fontFamily: 'Inter', marginBottom: 2 },
+  amount: { fontSize: 16, color: Colors.text.secondary },
+  caption: { fontSize: 12, color: Colors.text.secondary, marginBottom: 2 },
   btnOutline: {
     borderWidth: 1,
     borderColor: Colors.primary,
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     paddingVertical: 8,
     backgroundColor: 'transparent',
   },
-  btnOutlineText: { color: Colors.primary, fontSize: 14, fontWeight: '500', fontFamily: 'Inter' },
+  btnOutlineText: { color: Colors.primary, fontSize: 14, fontWeight: '500' },
   btnFilled: {
     backgroundColor: Colors.primary,
     borderRadius: 4,
@@ -111,7 +111,6 @@ const styles = StyleSheet.create({
     color: Colors.text.inverse,
     fontSize: 14,
     fontWeight: '500',
-    fontFamily: 'Inter',
   },
 });
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text } from '../Common/Text';
 import Badge from '../Common/Badge';
 import { Colors } from '../../../core/theme/colors';
 
@@ -89,18 +90,15 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     color: Colors.text.primary,
-    fontFamily: 'Inter',
   },
   cardNumber: {
     fontSize: 14,
     color: Colors.text.primary,
-    fontFamily: 'Inter',
     marginBottom: 4,
   },
   caption: {
     fontSize: 14,
     color: '#718096',
-    fontFamily: 'Inter',
   },
   btnOutlineBlue: {
     borderWidth: 1,
@@ -113,7 +111,6 @@ const styles = StyleSheet.create({
     color: Colors.primary,
     fontSize: 14,
     fontWeight: '500',
-    fontFamily: 'Inter',
   },
   btnOutlineRed: {
     borderWidth: 1,
@@ -126,7 +123,6 @@ const styles = StyleSheet.create({
     color: '#E53E3E',
     fontSize: 14,
     fontWeight: '500',
-    fontFamily: 'Inter',
   },
 });
 

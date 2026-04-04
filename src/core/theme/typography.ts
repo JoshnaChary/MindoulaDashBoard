@@ -1,8 +1,8 @@
 export const Typography = {
   fontFamily: {
-    regular: 'System',
-    medium: 'System',
-    bold: 'System',
+    regular: 'Inter_400Regular',
+    medium: 'Inter_500Medium',
+    bold: 'Inter_700Bold',
   },
   fontSize: {
     xs: 12,

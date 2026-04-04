@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, TouchableOpacity, StyleSheet } from 'react-native';
+import { Text } from '../Common/Text';
 import { Colors } from '../../../core/theme/colors';
 
 interface BillingTabsProps {
@@ -50,7 +51,6 @@ const styles = StyleSheet.create({
   },
   tabText: {
     fontSize: 16,
-    fontFamily: 'Inter',
     color: Colors.text.secondary,
     fontWeight: '500',
   },

@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, TouchableOpacity, StyleSheet } from 'react-native';
+import { Text } from '../../components/Common/Text';
 import { useNavigation } from '@react-navigation/native';
 import MemberPortalLayout from '../../components/MemberPortalLayout';
 import PrescriptionCard from '../../components/Prescriptions/PrescriptionCard';
@@ -47,11 +48,7 @@ export const PrescriptionScreen: React.FC = () => {
         style={[styles.absolute, { left: 358 - BASE_X, top: 350 - BASE_Y }]}
         onPress={() => navigation.navigate(AppConstants.screens.dashboard)}
       >
-        <Text
-          style={{ color: Colors.text.dark, fontSize: 18, fontWeight: '500', fontFamily: 'Inter' }}
-        >
-          &lt; Back
-        </Text>
+        <Text style={{ color: Colors.text.dark, fontSize: 18, fontWeight: '500' }}>&lt; Back</Text>
       </TouchableOpacity>
 
       <Text
@@ -63,7 +60,6 @@ export const PrescriptionScreen: React.FC = () => {
             fontSize: 18,
             fontWeight: '500',
             color: Colors.text.dark,
-            fontFamily: 'Inter',
           },
         ]}
       >

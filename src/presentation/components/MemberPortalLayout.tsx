@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { Text } from './Common/Text';
 import { useNavigation } from '@react-navigation/native';
 import { AppConstants } from '../../core/constants/AppConstants';
 import { Colors } from '../../core/theme/colors';
@@ -44,7 +45,6 @@ const MemberPortalLayout: React.FC<Props> = ({ children }) => {
                   left: 33 - BASE_X,
                   top: 276 - BASE_Y,
                   color: Colors.white,
-                  fontFamily: 'Inter',
                   fontSize: 20,
                   fontWeight: '500',
                 },
@@ -151,7 +151,6 @@ const styles = StyleSheet.create({
     fontWeight: '500',
     color: Colors.text.dark,
     marginVertical: 4,
-    fontFamily: 'Inter',
   },
   navSpace: { height: 12 },
   divider: { color: Colors.border, marginVertical: 12 },

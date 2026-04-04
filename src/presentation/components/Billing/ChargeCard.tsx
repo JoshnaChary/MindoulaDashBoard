@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+import { Text } from '../Common/Text';
 import { Colors } from '../../../core/theme/colors';
 
 interface ChargeCardProps {
@@ -50,26 +51,22 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
     color: Colors.text.primary,
-    fontFamily: 'Inter',
     marginBottom: 4,
   },
   amount: {
     fontSize: 16,
     fontWeight: 'bold',
     color: Colors.text.primary,
-    fontFamily: 'Inter',
     marginBottom: 4,
   },
   caption: {
     fontSize: 13,
     color: Colors.text.secondary,
-    fontFamily: 'Inter',
     marginBottom: 2,
   },
   note: {
     fontSize: 13,
     color: Colors.text.secondary,
-    fontFamily: 'Inter',
     fontStyle: 'italic',
     marginTop: 4,
   },

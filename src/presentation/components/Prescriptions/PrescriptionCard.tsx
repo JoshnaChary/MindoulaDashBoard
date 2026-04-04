@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, TouchableOpacity, StyleSheet } from 'react-native';
+import { Text } from '../Common/Text';
 import { Colors } from '../../../core/theme/colors';
 
 const BASE_X = 9;
@@ -72,8 +73,8 @@ const styles = StyleSheet.create({
   prescDivider: { width: 1, height: 60, backgroundColor: Colors.border, marginHorizontal: 16 },
   prescCenter: { flex: 1, justifyContent: 'center', marginRight: 24 },
   prescRight: { flexDirection: 'row', alignItems: 'center', flexShrink: 0 },
-  prescName: { fontSize: 18, fontWeight: '500', color: Colors.text.dark, fontFamily: 'Inter' },
-  prescSub: { fontSize: 13, fontWeight: '300', color: Colors.text.dark, fontFamily: 'Inter' },
+  prescName: { fontSize: 18, fontWeight: '500', color: Colors.text.dark },
+  prescSub: { fontSize: 13, fontWeight: '300', color: Colors.text.dark },
   badge: {
     backgroundColor: '#E9F6EF',
     borderRadius: 12,
@@ -82,7 +83,7 @@ const styles = StyleSheet.create({
     marginTop: 8,
     alignSelf: 'flex-start',
   },
-  badgeText: { fontSize: 13, fontWeight: '500', color: Colors.accent, fontFamily: 'Inter' },
+  badgeText: { fontSize: 13, fontWeight: '500', color: Colors.accent },
   smallOutlinedBtn: {
     borderWidth: 1,
     borderColor: Colors.primary,
@@ -96,7 +97,6 @@ const styles = StyleSheet.create({
     color: Colors.primary,
     fontSize: 16,
     fontWeight: '500',
-    fontFamily: 'Inter',
   },
   smallBlueBtn: {
     backgroundColor: Colors.primary,
@@ -104,7 +104,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 15,
     paddingVertical: 8,
   },
-  buttonTextSmall: { color: Colors.white, fontSize: 16, fontWeight: '500', fontFamily: 'Inter' },
+  buttonTextSmall: { color: Colors.white, fontSize: 16, fontWeight: '500' },
 });
 
 export default PrescriptionCard;
