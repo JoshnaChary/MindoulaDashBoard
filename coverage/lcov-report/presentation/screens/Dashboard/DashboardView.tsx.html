@@ -155,14 +155,14 @@
 <a name='L90'></a><a href='#L90'>90</a>
 <a name='L91'></a><a href='#L91'>91</a>
 <a name='L92'></a><a href='#L92'>92</a>
-<a name='L93'></a><a href='#L93'>93</a>
-<a name='L94'></a><a href='#L94'>94</a>
-<a name='L95'></a><a href='#L95'>95</a>
-<a name='L96'></a><a href='#L96'>96</a>
-<a name='L97'></a><a href='#L97'>97</a>
-<a name='L98'></a><a href='#L98'>98</a>
-<a name='L99'></a><a href='#L99'>99</a>
-<a name='L100'></a><a href='#L100'>100</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L93'></a><a href='#L93'>93</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -175,14 +175,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -206,12 +198,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -262,7 +248,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
-import { View, ScrollView, FlatList, ActivityIndicator, SafeAreaView, Platform } from 'react-native';
+import {
+  View,
+  ScrollView,
+  FlatList,
+  ActivityIndicator,
+  SafeAreaView,
+  Platform,
+} from 'react-native';
 import { useDashboardViewModel } from './DashboardViewModel';
 import { DashboardHeader } from '../../../components/organisms/DashboardHeader';
 import { MenuListItem } from '../../../components/molecules/MenuListItem';
@@ -274,16 +267,8 @@ import { Colors } from '../../../core/theme/colors';
 import { styles } from './Dashboard.styles';
 &nbsp;
 export const DashboardView = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-  const {
-    data,
-    isLoading,
-    error,
-    activeMenu,
-    onMenuPress,
-    onCtaPress,
-    onActionPress,
-    refresh,
-  } = <span class="cstat-no" title="statement not covered" >useDashboardViewModel();</span>
+  const { data, isLoading, error, activeMenu, onMenuPress, onCtaPress, onActionPress, refresh } =
+<span class="cstat-no" title="statement not covered" >    useDashboardViewModel();</span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  if (isLoading) {</span>
 <span class="cstat-no" title="statement not covered" >    return (</span>
@@ -307,15 +292,9 @@ export const DashboardView = <span class="cstat-no" title="statement not covered
 <span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;SafeAreaView style={styles.container}&gt;
       &lt;View style={styles.webContainer}&gt;
-        &lt;DashboardHeader
-          title={data.header.title}
-          subtitle={data.header.subtitle}
-        /&gt;
+        &lt;DashboardHeader title={data.header.title} subtitle={data.header.subtitle} /&gt;
 &nbsp;
-        &lt;ScrollView
-          showsVerticalScrollIndicator={false}
-          contentContainerStyle={styles.content}
-        &gt;
+        &lt;ScrollView showsVerticalScrollIndicator={false} contentContainerStyle={styles.content}&gt;
           &lt;FlatList
             data={data.menu}
             horizontal
@@ -367,7 +346,7 @@ export const DashboardView = <span class="cstat-no" title="statement not covered
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-03T15:09:42.338Z
+                at 2026-04-04T10:33:20.277Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
