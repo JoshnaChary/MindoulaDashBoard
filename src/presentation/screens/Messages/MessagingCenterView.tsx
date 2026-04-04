@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView, TextInput } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, ScrollView, TextInput } from 'react-native';
+import { Text } from '../../components/Common/Text';
 import { useNavigation } from '@react-navigation/native';
 import { AppConstants } from '../../../core/constants/AppConstants';
 import { Colors } from '../../../core/theme/colors';
@@ -469,7 +470,6 @@ const MessagingCenterView: React.FC = () => {
                   color: Colors.text.dark,
                   fontSize: 18,
                   fontWeight: '500',
-                  fontFamily: 'Inter',
                 }}
               >
                 &lt; Back
@@ -511,22 +511,20 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
   },
   absolute: { position: 'absolute' },
-  headerTitle: { color: Colors.white, fontFamily: 'Inter', fontSize: 20, fontWeight: '500' },
-  panelTitle: { color: Colors.text.dark, fontFamily: 'Inter', fontSize: 18, fontWeight: '500' },
+  headerTitle: { color: Colors.white, fontSize: 20, fontWeight: '500' },
+  panelTitle: { color: Colors.text.dark, fontSize: 18, fontWeight: '500' },
   panelTitleCenter: {
     color: Colors.text.dark,
-    fontFamily: 'Inter',
     fontSize: 18,
     fontWeight: '500',
     textAlign: 'center',
   },
-  listTitle: { fontSize: 18, fontWeight: '500', color: Colors.text.dark, fontFamily: 'Inter' },
-  listSub: { fontSize: 13, fontWeight: '300', color: Colors.text.dark, fontFamily: 'Inter' },
+  listTitle: { fontSize: 18, fontWeight: '500', color: Colors.text.dark },
+  listSub: { fontSize: 13, fontWeight: '300', color: Colors.text.dark },
   listTime: {
     fontSize: 13,
     fontWeight: '300',
     color: Colors.text.dark,
-    fontFamily: 'Inter',
     textAlign: 'right',
     width: 61,
   },
@@ -539,7 +537,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  buttonPrimaryText: { color: Colors.white, fontSize: 16, fontWeight: '500', fontFamily: 'Inter' },
+  buttonPrimaryText: { color: Colors.white, fontSize: 16, fontWeight: '500' },
   msgCard: { borderRadius: 12, borderWidth: 1, borderColor: Colors.border, padding: 20 },
   msgBubbleLeft: { borderRadius: 12, padding: 18 },
   msgBubbleRight: { borderRadius: 12, padding: 18 },
@@ -547,7 +545,6 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '500',
     color: Colors.text.dark,
-    fontFamily: 'Inter',
     lineHeight: 22,
   },
   msgTimeBelow: {
@@ -555,16 +552,14 @@ const styles = StyleSheet.create({
     fontSize: 13,
     fontWeight: '300',
     color: Colors.text.dark,
-    fontFamily: 'Inter',
   },
   dateHeader: {
     color: Colors.text.dark,
     fontSize: 13,
     fontWeight: '300',
-    fontFamily: 'Inter',
     textAlign: 'center',
   },
-  msgSenderLabel: { color: Colors.text.dark, fontSize: 13, fontWeight: '300', fontFamily: 'Inter' },
+  msgSenderLabel: { color: Colors.text.dark, fontSize: 13, fontWeight: '300' },
   cardBtn: {
     position: 'absolute',
     right: 16,
@@ -578,15 +573,14 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  cardBtnText: { color: Colors.primaryDark, fontSize: 16, fontWeight: '500', fontFamily: 'Inter' },
+  cardBtnText: { color: Colors.primaryDark, fontSize: 16, fontWeight: '500' },
   inputStyle: {
     padding: 25,
     fontSize: 18,
-    fontFamily: 'Inter',
     fontWeight: '500',
     color: Colors.text.dark,
   },
-  attachBtn: { color: Colors.primaryDark, fontSize: 18, fontWeight: '500', fontFamily: 'Inter' },
+  attachBtn: { color: Colors.primaryDark, fontSize: 18, fontWeight: '500' },
 });
 
 export default MessagingCenterView;

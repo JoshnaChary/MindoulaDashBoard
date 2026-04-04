@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, Alert } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Alert } from 'react-native';
+import { Text } from '../../components/Common/Text';
 import MemberPortalLayout from '../../components/MemberPortalLayout';
 import BillingTabs from '../../components/Billing/BillingTabs';
 import BillingCard from '../../components/Billing/BillingCard';
@@ -275,7 +276,6 @@ export const BillingScreen: React.FC = () => {
               color: Colors.text.dark,
               fontSize: 18,
               fontWeight: '500',
-              fontFamily: 'Inter',
             }}
           >
             &lt; Back
@@ -327,7 +327,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: Colors.text.primary,
     marginBottom: 24,
-    fontFamily: 'Inter',
   },
   grid: {
     flexDirection: 'row',
@@ -340,20 +339,17 @@ const styles = StyleSheet.create({
   caption: {
     fontSize: 12,
     color: Colors.text.secondary,
-    fontFamily: 'Inter',
     marginBottom: 4,
   },
   h1: {
     fontSize: 32,
     fontWeight: 'bold',
     color: Colors.text.primary,
-    fontFamily: 'Inter',
   },
   h3: {
     fontSize: 20,
     fontWeight: '600',
     color: Colors.text.primary,
-    fontFamily: 'Inter',
   },
   listContainer: {
     flexDirection: 'column',
@@ -364,7 +360,6 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 12,
     color: Colors.text.secondary,
-    fontFamily: 'Inter',
     marginBottom: 4,
   },
   select: {
@@ -381,7 +376,6 @@ const styles = StyleSheet.create({
   selectText: {
     fontSize: 14,
     color: Colors.text.primary,
-    fontFamily: 'Inter',
   },
   selectArrow: {
     fontSize: 10,
@@ -408,20 +402,17 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     color: '#2D3748',
-    fontFamily: 'Inter',
     marginBottom: 8,
   },
   h2Bold: {
     fontSize: 24,
     fontWeight: 'bold',
     color: '#2D3748',
-    fontFamily: 'Inter',
     marginBottom: 12,
   },
   captionRegular: {
     fontSize: 14,
     color: '#718096',
-    fontFamily: 'Inter',
     marginBottom: 4,
   },
   btnPayNowDetail: {
@@ -434,7 +425,6 @@ const styles = StyleSheet.create({
     color: Colors.white,
     fontSize: 16,
     fontWeight: '600',
-    fontFamily: 'Inter',
   },
   section: {
     marginBottom: 32,
@@ -443,20 +433,17 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     color: Colors.text.primary,
-    fontFamily: 'Inter',
     marginBottom: 12,
   },
   providerName: {
     fontSize: 16,
     fontWeight: 'bold',
     color: Colors.text.primary,
-    fontFamily: 'Inter',
     marginBottom: 4,
   },
   bodyText: {
     fontSize: 16,
     color: Colors.text.primary,
-    fontFamily: 'Inter',
   },
   // NEW STYLES FOR PAYMENT METHODS
   paymentMethodsContainer: {
@@ -465,7 +452,6 @@ const styles = StyleSheet.create({
   body2: {
     fontSize: 14,
     color: '#718096',
-    fontFamily: 'Inter',
     marginBottom: 24,
   },
   flexEndRow: {
@@ -483,7 +469,6 @@ const styles = StyleSheet.create({
     color: Colors.white,
     fontSize: 16,
     fontWeight: '600',
-    fontFamily: 'Inter',
   },
   paymentList: {
     flexDirection: 'column',

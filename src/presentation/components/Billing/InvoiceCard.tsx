@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text } from '../Common/Text';
 import { Colors } from '../../../core/theme/colors';
 
 interface InvoiceCardProps {
@@ -88,24 +89,20 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: Colors.primary,
     fontWeight: '500',
-    fontFamily: 'Inter',
   },
   title: {
     fontSize: 16,
     fontWeight: 'bold',
     color: Colors.text.primary,
-    fontFamily: 'Inter',
     marginBottom: 4,
   },
   amount: {
     fontSize: 16,
     color: Colors.text.secondary,
-    fontFamily: 'Inter',
   },
   caption: {
     fontSize: 12,
     color: Colors.text.secondary,
-    fontFamily: 'Inter',
     marginBottom: 2,
   },
 });

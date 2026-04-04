@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text } from '../Common/Text';
 import { Colors } from '../../../core/theme/colors';
 
 interface SettingCardProps {
@@ -61,14 +62,12 @@ const styles = StyleSheet.create({
   label: {
     fontSize: 12,
     color: Colors.text.secondary,
-    fontFamily: 'Inter',
     marginBottom: 4,
   },
   value: {
     fontSize: 16,
     fontWeight: 'bold',
     color: Colors.text.primary,
-    fontFamily: 'Inter',
   },
   noteContainer: {
     marginTop: 8,
@@ -76,7 +75,6 @@ const styles = StyleSheet.create({
   note: {
     fontSize: 13,
     color: Colors.text.secondary,
-    fontFamily: 'Inter',
   },
   actionBtn: {
     borderWidth: 1,
@@ -89,7 +87,6 @@ const styles = StyleSheet.create({
     color: Colors.primary,
     fontSize: 14,
     fontWeight: '600',
-    fontFamily: 'Inter',
   },
 });
 

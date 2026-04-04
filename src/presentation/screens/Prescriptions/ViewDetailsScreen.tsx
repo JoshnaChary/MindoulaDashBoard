@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, TouchableOpacity, StyleSheet } from 'react-native';
+import { Text } from '../../components/Common/Text';
 import { useRoute, useNavigation } from '@react-navigation/native';
 import MemberPortalLayout from '../../components/MemberPortalLayout';
 
@@ -37,7 +38,6 @@ export const ViewDetailsScreen: React.FC = () => {
               color: figmaColor(0.224, 0.231, 0.247, 1),
               fontSize: 18,
               fontWeight: '500',
-              fontFamily: 'Inter',
             }}
           >
             &lt; Back
