@@ -342,7 +342,7 @@ const MessagingCenterView: React.FC = () => {
             style={[
               styles.absolute,
               styles.msgSenderLabel,
-              getFigmaPos(623, 670, FIGMA_BASE_X, BASE_Y),
+              getFigmaPos(1105, 670, FIGMA_BASE_X, BASE_Y), // Start of the bubble
               { width: 66, textAlign: 'left' },
             ]}
             variant="body2"
@@ -352,8 +352,8 @@ const MessagingCenterView: React.FC = () => {
           <View
             style={[
               styles.absolute,
-              styles.msgBubbleLeft, // Changed to match left alignment
-              getFigmaPos(623, 695, FIGMA_BASE_X, BASE_Y),
+              styles.msgBubbleRight,
+              getFigmaPos(1105, 695, FIGMA_BASE_X, BASE_Y),
               {
                 width: 311,
                 height: 96,
@@ -367,7 +367,11 @@ const MessagingCenterView: React.FC = () => {
             </AppText>
           </View>
           <AppText
-            style={[styles.msgTimeBelow, getFigmaPos(623, 800, FIGMA_BASE_X, BASE_Y)]}
+            style={[
+              styles.msgTimeBelow,
+              { textAlign: 'left', width: 61 },
+              getFigmaPos(1105, 800, FIGMA_BASE_X, BASE_Y), // Start of the bubble
+            ]}
             variant="body2"
           >
             2:50PM
