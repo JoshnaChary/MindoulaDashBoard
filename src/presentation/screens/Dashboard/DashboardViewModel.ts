@@ -31,20 +31,14 @@ export const useDashboardViewModel = () => {
   };
 
   const onCtaPress = (cta: string) => {
-    // eslint-disable-next-line no-console
-    console.log(`CTA Pressed: ${cta}`);
     // Add specific CTA navigation/action logic here
   };
 
   const onActionPress = (title: string) => {
-    // eslint-disable-next-line no-console
-    console.log(`Action Pressed: ${title}`);
     // Add specific action navigation/action logic here
   };
 
   const onProfilePress = () => {
-    // eslint-disable-next-line no-console
-    console.log('Profile Pressed');
     // Add profile navigation logic here
   };
 

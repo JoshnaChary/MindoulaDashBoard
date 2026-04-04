@@ -5,6 +5,8 @@ import { useNavigation } from '@react-navigation/native';
 import { AppConstants } from '../../../core/constants/AppConstants';
 import { Colors } from '../../../core/theme/colors';
 import { getFigmaPos, FIGMA_BASE_X } from '../../../core/utils/layout';
+import { StackNavigationProp } from '../../../core/navigation/types';
+import { MessageThread } from '../../../data/models/DomainModels';
 
 // Layout Geometry Constants from Figma JSON
 const BASE_Y = 215;
@@ -17,10 +19,10 @@ const TIME_X_OFFSET = 267;
 const TIME_Y_OFFSET = 36;
 
 const MessagingCenterView: React.FC = () => {
-  const navigation = useNavigation<any>();
+  const navigation = useNavigation<StackNavigationProp>();
   const [selectedId, setSelectedId] = useState(3);
 
-  const messageThreads = [
+  const messageThreads: MessageThread[] = [
     {
       id: 1,
       title: 'Northside Clinic',
@@ -55,7 +57,7 @@ const MessagingCenterView: React.FC = () => {
     },
   ];
 
-  const renderThreadItem = (thread: any, index: number) => {
+  const renderThreadItem = (thread: MessageThread, index: number) => {
     const isSelected = selectedId === thread.id;
     const top = 403 + index * ROW_HEIGHT;
 

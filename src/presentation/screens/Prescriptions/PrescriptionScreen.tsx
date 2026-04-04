@@ -5,13 +5,14 @@ import { useNavigation } from '@react-navigation/native';
 import MemberPortalLayout from '../../components/MemberPortalLayout';
 import PrescriptionCard from '../../components/Prescriptions/PrescriptionCard';
 import { AppConstants } from '../../../core/constants/AppConstants';
-import { Colors } from '../../../core/theme/colors';
 import { getFigmaPos } from '../../../core/utils/layout';
+import { StackNavigationProp } from '../../../core/navigation/types';
+import { Prescription } from '../../../data/models/DomainModels';
 
 export const PrescriptionScreen: React.FC = () => {
-  const navigation = useNavigation<any>();
+  const navigation = useNavigation<StackNavigationProp>();
 
-  const prescriptions = [
+  const prescriptions: Prescription[] = [
     {
       id: 1,
       name: 'Sertraline',
@@ -60,8 +61,12 @@ export const PrescriptionScreen: React.FC = () => {
           key={p.id}
           item={p}
           index={i}
-          onViewDetails={() => navigation.navigate('ViewDetails', { prescription: p })}
-          onRequestRefill={() => navigation.navigate('RefillRequest', { prescription: p })}
+          onViewDetails={() =>
+            navigation.navigate(AppConstants.screens.viewDetails, { prescription: p })
+          }
+          onRequestRefill={() =>
+            navigation.navigate(AppConstants.screens.refillRequest, { prescription: p })
+          }
         />
       ))}
     </MemberPortalLayout>

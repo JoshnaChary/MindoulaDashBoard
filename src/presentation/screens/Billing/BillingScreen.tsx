@@ -126,7 +126,7 @@ export const BillingScreen: React.FC = () => {
           <AppText variant="caption" style={styles.caption}>
             Last payment
           </AppText>
-          <AppText variant="h3" weight="semibold">
+          <AppText variant="h3" weight="medium">
             March 4, 2026
           </AppText>
         </View>
@@ -181,7 +181,7 @@ export const BillingScreen: React.FC = () => {
 
       <View style={styles.flexEndRow}>
         <TouchableOpacity style={styles.btnAddCard} onPress={() => Alert.alert('Add New Card')}>
-          <AppText weight="semibold" style={styles.btnAddCardText}>
+          <AppText weight="medium" style={styles.btnAddCardText}>
             Add New Card
           </AppText>
         </TouchableOpacity>
@@ -227,7 +227,7 @@ export const BillingScreen: React.FC = () => {
             $180.50
           </AppText>
           <TouchableOpacity style={styles.btnPayNowDetail}>
-            <AppText weight="semibold" style={styles.btnPayNowText}>
+            <AppText weight="medium" style={styles.btnPayNowText}>
               Pay Now
             </AppText>
           </TouchableOpacity>

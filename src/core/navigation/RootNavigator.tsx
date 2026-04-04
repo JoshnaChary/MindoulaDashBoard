@@ -9,8 +9,9 @@ import { RefillScreen } from '../../presentation/screens/Prescriptions/RefillScr
 import { BillingScreen } from '../../presentation/screens/Billing/BillingScreen';
 import { AccountScreen } from '../../presentation/screens/Account/AccountScreen';
 import { AppConstants } from '../constants/AppConstants';
+import { RootStackParamList } from './types';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
 export const RootNavigator = () => {
   return (

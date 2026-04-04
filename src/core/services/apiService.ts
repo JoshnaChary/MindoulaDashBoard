@@ -41,7 +41,7 @@ export const ApiService = {
     return ApiService.fetch<T>(url, { ...options, method: 'GET' });
   },
 
-  post: <T>(url: string, body: any, options?: RequestInit) => {
+  post: <T, U = Record<string, unknown>>(url: string, body: U, options?: RequestInit) => {
     return ApiService.fetch<T>(url, {
       ...options,
       method: 'POST',
