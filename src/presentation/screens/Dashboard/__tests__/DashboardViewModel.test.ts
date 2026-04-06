@@ -1,4 +1,4 @@
-import { renderHook, act } from '@testing-library/react-native';
+import { renderHook, act, waitFor } from '@testing-library/react-native';
 import { useDashboardViewModel } from '../DashboardViewModel';
 import { DashboardRepository } from '../../../../data/repositories/DashboardRepository';
 
@@ -20,11 +20,6 @@ describe('useDashboardViewModel', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
-    jest.useFakeTimers();
-  });
-
-  afterEach(() => {
-    jest.useRealTimers();
   });
 
   it('initially has loading state and null data', () => {
@@ -41,12 +36,11 @@ describe('useDashboardViewModel', () => {
 
     const { result } = renderHook(() => useDashboardViewModel());
 
-    await act(async () => {
-      jest.advanceTimersByTime(1500);
+    await waitFor(() => {
+      expect(result.current.isLoading).toBe(false);
     });
 
     expect(result.current.data).toEqual(mockData);
-    expect(result.current.isLoading).toBe(false);
     expect(result.current.error).toBeNull();
   });
 
@@ -56,8 +50,8 @@ describe('useDashboardViewModel', () => {
 
     const { result } = renderHook(() => useDashboardViewModel());
 
-    await act(async () => {
-      jest.advanceTimersByTime(1500);
+    await waitFor(() => {
+      expect(result.current.isLoading).toBe(false);
     });
 
     expect(result.current.data).toBeNull();
@@ -70,8 +64,8 @@ describe('useDashboardViewModel', () => {
 
     const { result } = renderHook(() => useDashboardViewModel());
 
-    await act(async () => {
-      jest.advanceTimersByTime(1500);
+    await waitFor(() => {
+      expect(result.current.isLoading).toBe(false);
     });
 
     expect(result.current.error).toBe('Failed to load dashboard data');
@@ -105,15 +99,16 @@ describe('useDashboardViewModel', () => {
     (DashboardRepository.getDashboardData as jest.Mock).mockResolvedValue(mockData);
     const { result } = renderHook(() => useDashboardViewModel());
 
-    // Wait for initial mount fetch
-    await act(async () => {
-      jest.advanceTimersByTime(1500);
+    await waitFor(() => {
+      expect(result.current.isLoading).toBe(false);
     });
 
     await act(async () => {
       await result.current.refresh();
     });
 
-    expect(DashboardRepository.getDashboardData).toHaveBeenCalledTimes(2); // Mount + manual refresh
+    await waitFor(() => {
+      expect(DashboardRepository.getDashboardData).toHaveBeenCalledTimes(2); // Mount + manual refresh
+    });
   });
 });
