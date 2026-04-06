@@ -4,13 +4,13 @@ import {
   StyleSheet,
   TouchableOpacity,
   ScrollView,
-  SafeAreaView,
   Platform,
   RefreshControl,
 } from 'react-native';
 import { AppText } from '../../components/atoms/AppText';
 import { AppIcon } from '../../components/atoms/AppIcon';
 import { useNavigation, DrawerActions } from '@react-navigation/native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { AppConstants } from '../../core/constants/AppConstants';
 import { Colors } from '../../core/theme/colors';
 import { Spacing } from '../../core/theme/spacing';
@@ -32,6 +32,7 @@ const MemberPortalLayout: React.FC<Props> = ({
   refreshing = false,
 }) => {
   const navigation = useNavigation<any>();
+  const insets = useSafeAreaInsets();
   const { isMobile, isDesktop, isTablet } = useResponsive();
 
   // On Mobile, we don't show the sidebar inside the layout because we use a Drawer.
@@ -39,10 +40,10 @@ const MemberPortalLayout: React.FC<Props> = ({
   const isMobileHeader = isMobile || isTablet;
 
   return (
-    <SafeAreaView style={styles.rootStyle}>
+    <View style={styles.rootStyle}>
       <View style={styles.container}>
         {/* Header - Always Visible */}
-        <View style={styles.header}>
+        <View style={[styles.header, { paddingTop: insets.top }]}>
           <View style={styles.headerContent}>
             {isMobileHeader && (
               <TouchableOpacity
@@ -96,6 +97,15 @@ const MemberPortalLayout: React.FC<Props> = ({
                   label="Account"
                   onPress={() => navigation.navigate(AppConstants.screens.account)}
                 />
+                <View style={styles.divider} />
+                <NavItem
+                  label="Log Out"
+                  onPress={() => {
+                    // Navigate to initial screen or show alert
+                    console.log('Logging out...');
+                  }}
+                  isError
+                />
               </ScrollView>
             </View>
           )}
@@ -121,13 +131,17 @@ const MemberPortalLayout: React.FC<Props> = ({
           </View>
         </View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 
-const NavItem = ({ label, onPress, isActive, hasBadge }: any) => (
+const NavItem = ({ label, onPress, isActive, hasBadge, isError }: any) => (
   <TouchableOpacity onPress={onPress} style={styles.navItem}>
-    <AppText variant="md" weight={isActive ? 'medium' : 'regular'}>
+    <AppText
+      variant="md"
+      weight={isActive ? 'medium' : 'regular'}
+      color={isError ? Colors.error : isActive ? Colors.primary : Colors.text.primary}
+    >
       {label}
     </AppText>
     {hasBadge && <View style={styles.badge} />}
@@ -143,10 +157,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
-    height: 64,
     backgroundColor: Colors.background.header,
     justifyContent: 'center',
     paddingHorizontal: Spacing.lg,
+    paddingBottom: Spacing.sm,
     ...Platform.select({
       ios: {
         shadowColor: '#000',
