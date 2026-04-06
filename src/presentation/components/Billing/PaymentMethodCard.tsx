@@ -47,7 +47,13 @@ const PaymentMethodCard: React.FC<PaymentMethodCardProps> = ({
           </AppText>
         </View>
 
-        <View style={[styles.actions, isPhone && { marginTop: Spacing.md, width: '100%' }]}>
+        <View
+          style={[
+            styles.actions,
+            isPhone && { marginTop: Spacing.md, width: '100%' },
+            { justifyContent: Platform.OS === 'web' ? 'flex-end' : 'space-between' },
+          ]}
+        >
           {!isDefault && (
             <TouchableOpacity onPress={onSetDefault} style={styles.actionButton}>
               <AppText variant="sm" weight="medium" color={Colors.primary}>
@@ -103,7 +109,6 @@ const styles = StyleSheet.create({
   actions: {
     flexDirection: 'row',
     gap: Spacing.lg,
-    justifyContent: Platform.OS === 'web' ? 'flex-end' : 'space-between',
   },
   actionButton: {
     paddingVertical: Spacing.xs,

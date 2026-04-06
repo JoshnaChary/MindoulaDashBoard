@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/20</span>
+                <span class='fraction'>20/20</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/5</span>
+                <span class='fraction'>5/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/17</span>
+                <span class='fraction'>17/17</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -110,35 +110,35 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -153,35 +153,35 @@
 import { useState, useEffect } from 'react';
 import { DeviceType, getDeviceType } from '../theme/breakpoints';
 &nbsp;
-export const useResponsive = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-  const [windowDimensions, setWindowDimensions] = <span class="cstat-no" title="statement not covered" >useState&lt;ScaledSize&gt;(Dimensions.get('window'));</span>
+export const useResponsive = () =&gt; {
+  const [windowDimensions, setWindowDimensions] = useState&lt;ScaledSize&gt;(Dimensions.get('window'));
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  useEffect(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-    const subscription = <span class="cstat-no" title="statement not covered" >Dimensions.addEventListener('change', <span class="fstat-no" title="function not covered" >({</span> window }) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      setWindowDimensions(window);</span>
+  useEffect(() =&gt; {
+    const subscription = Dimensions.addEventListener('change', ({ window }) =&gt; {
+      setWindowDimensions(window);
     });
-<span class="cstat-no" title="statement not covered" >    return <span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >subscription?.remove();</span></span>
+    return () =&gt; subscription?.remove();
   }, []);
 &nbsp;
-  const { width, height } = <span class="cstat-no" title="statement not covered" >windowDimensions;</span>
-  const deviceType: DeviceType = <span class="cstat-no" title="statement not covered" >getDeviceType(width);</span>
+  const { width, height } = windowDimensions;
+  const deviceType: DeviceType = getDeviceType(width);
 &nbsp;
-  const isPhone = <span class="cstat-no" title="statement not covered" >deviceType === 'phone';</span>
-  const isTablet = <span class="cstat-no" title="statement not covered" >deviceType === 'tablet';</span>
-  const isDesktop = <span class="cstat-no" title="statement not covered" >deviceType === 'desktop';</span>
-  const isMobile = <span class="cstat-no" title="statement not covered" >isPhone || isTablet;</span>
+  const isPhone = deviceType === 'phone';
+  const isTablet = deviceType === 'tablet';
+  const isDesktop = deviceType === 'desktop';
+  const isMobile = isPhone || isTablet;
 &nbsp;
   /**
    * Helper to select a value based on the current device type.
    * Example: const padding = responsiveValue({ phone: 10, tablet: 20, desktop: 32 });
    */
-  const responsiveValue = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >&lt;T</span>&gt;(values: { phone?: T; tablet?: T; desktop: T }): T =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >    if (isPhone &amp;&amp; values.phone !== undefined) <span class="cstat-no" title="statement not covered" >return values.phone;</span></span>
-<span class="cstat-no" title="statement not covered" >    if (isTablet &amp;&amp; values.tablet !== undefined) <span class="cstat-no" title="statement not covered" >return values.tablet;</span></span>
-<span class="cstat-no" title="statement not covered" >    return values.desktop;</span>
+  const responsiveValue = &lt;T&gt;(values: { phone?: T; tablet?: T; desktop: T }): T =&gt; {
+    if (isPhone &amp;&amp; values.phone !== undefined) return values.phone;
+    if (isTablet &amp;&amp; values.tablet !== undefined) return values.tablet;
+    return values.desktop;
   };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return {</span>
+  return {
     width,
     height,
     deviceType,
@@ -199,7 +199,7 @@ export const useResponsive = <span class="cstat-no" title="statement not covered
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-06T11:26:24.290Z
+                at 2026-04-06T11:52:57.978Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

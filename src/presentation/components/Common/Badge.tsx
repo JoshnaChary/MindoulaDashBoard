@@ -9,7 +9,7 @@ interface BadgeProps {
 
 const Badge: React.FC<BadgeProps> = ({ label, color = '#3182CE' }) => {
   return (
-    <View style={[styles.badge, { backgroundColor: `${color}1A` }]}>
+    <View style={[styles.badge, { backgroundColor: `${color}1A` }]} testID="badge">
       <AppText variant="xs" weight="bold" style={[styles.badgeText, { color }]}>
         {label}
       </AppText>

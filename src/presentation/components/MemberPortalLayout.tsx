@@ -49,6 +49,7 @@ const MemberPortalLayout: React.FC<Props> = ({
               <TouchableOpacity
                 onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
                 style={styles.menuButton}
+                testID="menu-button"
               >
                 <AppIcon name="menu" size={24} color={Colors.white} />
               </TouchableOpacity>
@@ -138,11 +139,15 @@ const NavItem = ({ label, onPress, isActive, hasBadge, isError }: any) => {
   const textColor = isError ? Colors.error : isActive ? Colors.primary : Colors.text.primary;
 
   return (
-    <TouchableOpacity onPress={onPress} style={styles.navItem}>
+    <TouchableOpacity
+      onPress={onPress}
+      style={styles.navItem}
+      testID={`nav-item-${label.toLowerCase().replace(/\s+/g, '-')}`}
+    >
       <AppText variant="md" weight={isActive ? 'medium' : 'regular'} color={textColor}>
         {label}
       </AppText>
-      {hasBadge && <View style={styles.badge} />}
+      {hasBadge && <View style={styles.badge} testID="nav-badge" />}
     </TouchableOpacity>
   );
 };
