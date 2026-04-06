@@ -102,7 +102,6 @@ const MemberPortalLayout: React.FC<Props> = ({
                   label="Log Out"
                   onPress={() => {
                     // Navigate to initial screen or show alert
-                    console.log('Logging out...');
                   }}
                   isError
                 />
@@ -169,7 +168,11 @@ const styles = StyleSheet.create({
         shadowRadius: 4,
       },
       android: { elevation: 4 },
-      web: { boxShadow: '0 2px 4px rgba(0,0,0,0.1)' },
+      web: {
+        boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+        minHeight: 64,
+        paddingTop: 0, // Reset padding for web as insets are 0
+      },
     }),
   },
   headerContent: {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, ViewProps, StyleSheet, ViewStyle } from 'react-native';
+import { View, ViewProps, ViewStyle } from 'react-native';
 import { useResponsive } from '../../core/utils/useResponsive';
 import { Spacing } from '../../core/theme/spacing';
 
@@ -18,7 +18,7 @@ export const ResponsiveContainer: React.FC<ResponsiveContainerProps> = ({
   style,
   ...props
 }) => {
-  const { isPhone, isDesktop } = useResponsive();
+  const { isPhone } = useResponsive();
 
   const containerStyle: ViewStyle = {
     width: '100%',

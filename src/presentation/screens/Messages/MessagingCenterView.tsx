@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, TouchableOpacity, ScrollView, Platform } from 'react-native';
+import { View, StyleSheet, ScrollView } from 'react-native';
 import { AppText } from '../../../components/atoms/AppText';
-import { AppButton } from '../../../components/atoms/AppButton';
 import { ResponsiveContainer } from '../../../components/atoms/ResponsiveContainer';
-import { useNavigation } from '@react-navigation/native';
-import { AppConstants } from '../../../core/constants/AppConstants';
 import { Colors } from '../../../core/theme/colors';
 import { Spacing } from '../../../core/theme/spacing';
 import { useResponsive } from '../../../core/utils/useResponsive';
@@ -14,7 +11,6 @@ import ChatPanel from '../../components/Messages/ChatPanel';
 import { MessageThread } from '../../../data/models/DomainModels';
 
 const MessagingCenterView: React.FC = () => {
-  const navigation = useNavigation<any>();
   const [selectedId, setSelectedId] = useState<number | null>(1);
   const { isPhone, isDesktop, height } = useResponsive();
   const [showDetailOnMobile, setShowDetailOnMobile] = useState(false);

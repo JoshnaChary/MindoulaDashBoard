@@ -1,8 +1,18 @@
-import { useWindowDimensions } from 'react-native';
-import { Breakpoints, DeviceType, getDeviceType } from '../theme/breakpoints';
+import { Dimensions, ScaledSize } from 'react-native';
+import { useMemo, useState, useEffect } from 'react';
+import { DeviceType, getDeviceType } from '../theme/breakpoints';
 
 export const useResponsive = () => {
-  const { width, height } = useWindowDimensions();
+  const [windowDimensions, setWindowDimensions] = useState<ScaledSize>(Dimensions.get('window'));
+
+  useEffect(() => {
+    const subscription = Dimensions.addEventListener('change', ({ window }) => {
+      setWindowDimensions(window);
+    });
+    return () => subscription?.remove();
+  }, []);
+
+  const { width, height } = windowDimensions;
   const deviceType: DeviceType = getDeviceType(width);
 
   const isPhone = deviceType === 'phone';

@@ -30,9 +30,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/0</span>
+                <span class='fraction'>0/2</span>
             </div>
         
             
@@ -123,22 +123,8 @@
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
 <a name='L60'></a><a href='#L60'>60</a>
-<a name='L61'></a><a href='#L61'>61</a>
-<a name='L62'></a><a href='#L62'>62</a>
-<a name='L63'></a><a href='#L63'>63</a>
-<a name='L64'></a><a href='#L64'>64</a>
-<a name='L65'></a><a href='#L65'>65</a>
-<a name='L66'></a><a href='#L66'>66</a>
-<a name='L67'></a><a href='#L67'>67</a>
-<a name='L68'></a><a href='#L68'>68</a>
-<a name='L69'></a><a href='#L69'>69</a>
-<a name='L70'></a><a href='#L70'>70</a>
-<a name='L71'></a><a href='#L71'>71</a>
-<a name='L72'></a><a href='#L72'>72</a>
-<a name='L73'></a><a href='#L73'>73</a>
-<a name='L74'></a><a href='#L74'>74</a>
-<a name='L75'></a><a href='#L75'>75</a>
-<a name='L76'></a><a href='#L76'>76</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L61'></a><a href='#L61'>61</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -170,29 +156,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -215,75 +185,60 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Text } from '../Common/Text';
+import { AppText } from '../../../components/atoms/AppText';
 import { Colors } from '../../../core/theme/colors';
+import { Spacing } from '../../../core/theme/spacing';
 &nbsp;
 interface ChargeCardProps {
   title: string;
   amount: string;
   quantity: number;
   serviceDate: string;
-  note: string;
+  note?: string;
 }
 &nbsp;
 const ChargeCard: React.FC&lt;ChargeCardProps&gt; = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span> title, amount, quantity, serviceDate, note }) =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >  return (</span>
-    &lt;View style={styles.card}&gt;
-      {/* LEFT SECTION */}
-      &lt;View style={styles.leftSection}&gt;
-        &lt;Text style={styles.title}&gt;{title}&lt;/Text&gt;
-        &lt;Text style={styles.caption}&gt;Service date: {serviceDate}&lt;/Text&gt;
-        &lt;Text style={styles.note}&gt;{note}&lt;/Text&gt;
+    &lt;View style={styles.container}&gt;
+      &lt;View style={styles.header}&gt;
+        &lt;AppText variant="md" weight="medium" style={{ flex: 1 }}&gt;
+          {title}
+        &lt;/AppText&gt;
+        &lt;AppText variant="md" weight="bold"&gt;
+          {amount}
+        &lt;/AppText&gt;
       &lt;/View&gt;
-&nbsp;
-      {/* RIGHT SECTION */}
-      &lt;View style={styles.rightSection}&gt;
-        &lt;Text style={styles.amount}&gt;{amount}&lt;/Text&gt;
-        &lt;Text style={styles.caption}&gt;Qty: {quantity}&lt;/Text&gt;
+      &lt;View style={styles.details}&gt;
+        &lt;AppText variant="xs" color={Colors.text.secondary}&gt;
+          Date: {serviceDate} • Qty: {quantity}
+        &lt;/AppText&gt;
+        {note &amp;&amp; (
+          &lt;AppText variant="xs" color={Colors.text.muted} style={styles.note}&gt;
+            {note}
+          &lt;/AppText&gt;
+        )}
       &lt;/View&gt;
     &lt;/View&gt;
   );
 };
 &nbsp;
 const styles = <span class="cstat-no" title="statement not covered" >StyleSheet.create({</span>
-  card: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    paddingVertical: 16,
+  container: {
+    paddingVertical: Spacing.md,
     borderBottomWidth: 1,
     borderBottomColor: Colors.border,
-    backgroundColor: Colors.white,
   },
-  leftSection: {
-    flex: 1,
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: Spacing.xs,
   },
-  rightSection: {
-    alignItems: 'flex-end',
-    width: 100,
-  },
-  title: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: Colors.text.primary,
-    marginBottom: 4,
-  },
-  amount: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: Colors.text.primary,
-    marginBottom: 4,
-  },
-  caption: {
-    fontSize: 13,
-    color: Colors.text.secondary,
-    marginBottom: 2,
+  details: {
+    gap: Spacing.xs,
   },
   note: {
-    fontSize: 13,
-    color: Colors.text.secondary,
     fontStyle: 'italic',
-    marginTop: 4,
   },
 });
 &nbsp;
@@ -295,7 +250,7 @@ export default ChargeCard;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-04T11:29:45.110Z
+                at 2026-04-06T08:22:14.617Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>
