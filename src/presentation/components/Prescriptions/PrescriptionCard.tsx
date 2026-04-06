@@ -8,7 +8,6 @@ import { useResponsive } from '../../../core/utils/useResponsive';
 
 interface Props {
   item: any;
-  index: number;
   onViewDetails: () => void;
   onRequestRefill: () => void;
 }

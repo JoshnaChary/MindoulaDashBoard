@@ -64,6 +64,7 @@ export const BillingScreen: React.FC = () => {
 
   const chargeItems = [
     {
+      id: 'charge-1',
       title: 'Medication management',
       amount: '$50.00',
       quantity: 1,
@@ -71,6 +72,7 @@ export const BillingScreen: React.FC = () => {
       note: 'lorem ipsum',
     },
     {
+      id: 'charge-2',
       title: 'Medication management',
       amount: '$80.50',
       quantity: 1,
@@ -222,8 +224,8 @@ export const BillingScreen: React.FC = () => {
         <AppText variant="md" weight="bold" style={{ marginBottom: Spacing.md }}>
           Charges:
         </AppText>
-        {chargeItems.map((charge, index) => (
-          <ChargeCard key={index} {...charge} />
+        {chargeItems.map((charge) => (
+          <ChargeCard key={charge.id} {...charge} />
         ))}
       </View>
     </View>

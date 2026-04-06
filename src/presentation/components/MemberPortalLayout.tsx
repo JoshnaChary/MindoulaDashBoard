@@ -134,18 +134,18 @@ const MemberPortalLayout: React.FC<Props> = ({
   );
 };
 
-const NavItem = ({ label, onPress, isActive, hasBadge, isError }: any) => (
-  <TouchableOpacity onPress={onPress} style={styles.navItem}>
-    <AppText
-      variant="md"
-      weight={isActive ? 'medium' : 'regular'}
-      color={isError ? Colors.error : isActive ? Colors.primary : Colors.text.primary}
-    >
-      {label}
-    </AppText>
-    {hasBadge && <View style={styles.badge} />}
-  </TouchableOpacity>
-);
+const NavItem = ({ label, onPress, isActive, hasBadge, isError }: any) => {
+  const textColor = isError ? Colors.error : isActive ? Colors.primary : Colors.text.primary;
+
+  return (
+    <TouchableOpacity onPress={onPress} style={styles.navItem}>
+      <AppText variant="md" weight={isActive ? 'medium' : 'regular'} color={textColor}>
+        {label}
+      </AppText>
+      {hasBadge && <View style={styles.badge} />}
+    </TouchableOpacity>
+  );
+};
 
 const styles = StyleSheet.create({
   rootStyle: {

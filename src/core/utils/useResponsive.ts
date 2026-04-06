@@ -1,5 +1,5 @@
 import { Dimensions, ScaledSize } from 'react-native';
-import { useMemo, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { DeviceType, getDeviceType } from '../theme/breakpoints';
 
 export const useResponsive = () => {
