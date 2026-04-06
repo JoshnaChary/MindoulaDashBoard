@@ -90,6 +90,14 @@ export const BillingScreen: React.FC = () => {
       addedDate: 'Mar 2026',
       isDefault: true,
     },
+    {
+      id: 'pm-2',
+      cardType: 'Visa',
+      cardNumber: '•••• 1234',
+      expiryDate: '12/28',
+      addedDate: 'Apr 2026',
+      isDefault: false,
+    },
   ];
 
   const renderOutstandingView = () => (

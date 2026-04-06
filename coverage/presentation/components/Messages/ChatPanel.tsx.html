@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -298,17 +298,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">21x</span>
+<span class="cline-any cline-yes">15x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -321,7 +321,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -340,7 +340,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -413,7 +413,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -520,17 +520,17 @@ interface ChatPanelProps {
   onBack?: () =&gt; void;
 }
 &nbsp;
-const ChatPanel: React.FC&lt;ChatPanelProps&gt; = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span> threadId, onBack }) =&gt; {</span>
-  const { isPhone } = <span class="cstat-no" title="statement not covered" >useResponsive();</span>
+const ChatPanel: React.FC&lt;ChatPanelProps&gt; = ({ threadId, onBack }) =&gt; {
+  const { isPhone } = useResponsive();
 &nbsp;
-  const renderMessage = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >(</span></span>
+  const renderMessage = (
     text: string,
     sender: 'me' | 'other',
     time: string,
     isNotification?: boolean,
   ) =&gt; {
-<span class="cstat-no" title="statement not covered" >    if (isNotification) {</span>
-<span class="cstat-no" title="statement not covered" >      return (</span>
+    if (isNotification) {
+      return (
         &lt;View style={styles.notificationBubble}&gt;
           &lt;AppText variant="md" color={Colors.text.primary} style={{ lineHeight: 22 }}&gt;
             {text}
@@ -543,7 +543,7 @@ const ChatPanel: React.FC&lt;ChatPanelProps&gt; = <span class="cstat-no" title="
       );
     }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    return (</span>
+    return (
       &lt;View
         style={[
           styles.bubbleContainer,
@@ -562,7 +562,7 @@ const ChatPanel: React.FC&lt;ChatPanelProps&gt; = <span class="cstat-no" title="
     );
   };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;View style={styles.container}&gt;
       {/* Mini Header */}
       &lt;View style={styles.header}&gt;
@@ -635,7 +635,7 @@ const ChatPanel: React.FC&lt;ChatPanelProps&gt; = <span class="cstat-no" title="
   );
 };
 &nbsp;
-const styles = <span class="cstat-no" title="statement not covered" >StyleSheet.create({</span>
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: Colors.white,
@@ -736,7 +736,7 @@ export default ChatPanel;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-06T11:52:57.978Z
+                at 2026-04-06T12:55:39.736Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

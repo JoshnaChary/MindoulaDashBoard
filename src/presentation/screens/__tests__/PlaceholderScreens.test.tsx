@@ -9,7 +9,7 @@ import {
 } from '../PlaceholderScreens';
 
 // Mock layout
-jest.mock('../../presentation/components/MemberPortalLayout', () => ({ children, title }: any) => (
+jest.mock('../../components/MemberPortalLayout', () => ({ children, title }: any) => (
   <>{children}</>
 ));
 

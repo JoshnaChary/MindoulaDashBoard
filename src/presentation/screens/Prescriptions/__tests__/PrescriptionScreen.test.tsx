@@ -1,21 +1,31 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
 import PrescriptionScreen from '../PrescriptionScreen';
-import { AppConstants } from '../../../core/constants/AppConstants';
+import * as ResponsiveUtility from '../../../../core/utils/useResponsive';
+import { AppConstants } from '../../../../core/constants/AppConstants';
+import { useNavigation } from '@react-navigation/native';
 
 // Mocks
 const mockNavigate = jest.fn();
+const mockGoBack = jest.fn();
 jest.mock('@react-navigation/native', () => ({
-  useNavigation: () => ({
-    navigate: mockNavigate,
-  }),
+  useNavigation: jest.fn(),
 }));
 
-jest.mock('../../components/MemberPortalLayout', () => ({ children }: any) => <>{children}</>);
+jest.mock('../../../../core/utils/useResponsive', () => ({
+  useResponsive: jest.fn(),
+}));
+
+jest.mock('../../../components/MemberPortalLayout', () => ({ children }: any) => <>{children}</>);
 
 describe('PrescriptionScreen', () => {
   beforeEach(() => {
     jest.clearAllMocks();
+    (ResponsiveUtility.useResponsive as jest.Mock).mockReturnValue({ isPhone: false });
+    (useNavigation as jest.Mock).mockReturnValue({
+      navigate: mockNavigate,
+      goBack: mockGoBack,
+    });
   });
 
   it('renders prescriptions list', () => {

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>12/12</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/2</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/11</span>
+                <span class='fraction'>11/11</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -175,8 +175,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -186,28 +186,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -232,7 +222,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -277,8 +277,8 @@ import { Colors } from '../../../core/theme/colors';
 import { Spacing } from '../../../core/theme/spacing';
 import { useResponsive } from '../../../core/utils/useResponsive';
 &nbsp;
-const DetailItem = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span> label, value }: { label: string; value: string }) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >  &lt;View style={styles.gridItem}&gt;</span>
+const DetailItem = ({ label, value }: { label: string; value: string }) =&gt; (
+  &lt;View style={styles.gridItem}&gt;
     &lt;AppText variant="xs" color={Colors.text.secondary} style={{ marginBottom: 4 }}&gt;
       {label}
     &lt;/AppText&gt;
@@ -288,18 +288,18 @@ const DetailItem = <span class="cstat-no" title="statement not covered" ><span c
   &lt;/View&gt;
 );
 &nbsp;
-export const ViewDetailsScreen: React.FC = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-  const route = <span class="cstat-no" title="statement not covered" >useRoute&lt;any&gt;();</span>
-  const navigation = <span class="cstat-no" title="statement not covered" >useNavigation&lt;any&gt;();</span>
-  const prescription = <span class="cstat-no" title="statement not covered" >route.params?.prescription;</span>
-<span class="cstat-no" title="statement not covered" >  useResponsive();</span>
+export const ViewDetailsScreen: React.FC = () =&gt; {
+  const route = useRoute&lt;any&gt;();
+  const navigation = useNavigation&lt;any&gt;();
+  const prescription = route.params?.prescription;
+  useResponsive();
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  if (!prescription) <span class="cstat-no" title="statement not covered" >return null;</span></span>
+  if (!prescription) return null;
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;MemberPortalLayout title="Prescription Details"&gt;
       &lt;ResponsiveContainer&gt;
-        &lt;TouchableOpacity onPress={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >navigation.goBack()}</span> style={styles.backButton}&gt;
+        &lt;TouchableOpacity onPress={() =&gt; navigation.goBack()} style={styles.backButton}&gt;
           &lt;AppText variant="md" weight="medium" color={Colors.primary}&gt;
             &amp;lt; Back to Prescriptions
           &lt;/AppText&gt;
@@ -334,7 +334,7 @@ export const ViewDetailsScreen: React.FC = <span class="cstat-no" title="stateme
   );
 };
 &nbsp;
-const styles = <span class="cstat-no" title="statement not covered" >StyleSheet.create({</span>
+const styles = StyleSheet.create({
   backButton: {
     marginBottom: Spacing.xl,
   },
@@ -376,7 +376,7 @@ export default ViewDetailsScreen;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-06T11:52:57.958Z
+                at 2026-04-06T12:55:39.714Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

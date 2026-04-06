@@ -20,6 +20,11 @@ describe('useDashboardViewModel', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
+    jest.useFakeTimers();
+  });
+
+  afterEach(() => {
+    jest.useRealTimers();
   });
 
   it('initially has loading state and null data', () => {
@@ -36,9 +41,8 @@ describe('useDashboardViewModel', () => {
 
     const { result } = renderHook(() => useDashboardViewModel());
 
-    // Wait for the async effect to complete
     await act(async () => {
-      // Nothing needed here, just waiting for the internal promises
+      jest.advanceTimersByTime(1500);
     });
 
     expect(result.current.data).toEqual(mockData);
@@ -53,7 +57,7 @@ describe('useDashboardViewModel', () => {
     const { result } = renderHook(() => useDashboardViewModel());
 
     await act(async () => {
-      // Wait for catch block
+      jest.advanceTimersByTime(1500);
     });
 
     expect(result.current.data).toBeNull();
@@ -66,23 +70,25 @@ describe('useDashboardViewModel', () => {
 
     const { result } = renderHook(() => useDashboardViewModel());
 
-    await act(async () => {});
+    await act(async () => {
+      jest.advanceTimersByTime(1500);
+    });
 
     expect(result.current.error).toBe('Failed to load dashboard data');
   });
 
-  it('updates activeMenu on menu press', () => {
+  it('updates activeMenu on menu press', async () => {
     (DashboardRepository.getDashboardData as jest.Mock).mockResolvedValue(mockData);
     const { result } = renderHook(() => useDashboardViewModel());
 
-    act(() => {
+    await act(async () => {
       result.current.onMenuPress('Profile');
     });
 
     expect(result.current.activeMenu).toBe('Profile');
   });
 
-  it('exposes handler stubs for coverage', () => {
+  it('exposes handler stubs for coverage', async () => {
     (DashboardRepository.getDashboardData as jest.Mock).mockResolvedValue(mockData);
     const { result } = renderHook(() => useDashboardViewModel());
 
@@ -98,6 +104,11 @@ describe('useDashboardViewModel', () => {
   it('allows manual refresh', async () => {
     (DashboardRepository.getDashboardData as jest.Mock).mockResolvedValue(mockData);
     const { result } = renderHook(() => useDashboardViewModel());
+
+    // Wait for initial mount fetch
+    await act(async () => {
+      jest.advanceTimersByTime(1500);
+    });
 
     await act(async () => {
       await result.current.refresh();

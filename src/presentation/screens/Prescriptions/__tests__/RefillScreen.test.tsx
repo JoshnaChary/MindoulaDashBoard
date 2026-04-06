@@ -2,49 +2,52 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
 import RefillScreen from '../RefillScreen';
 import { Alert } from 'react-native';
-import * as ResponsiveUtility from '../../../core/utils/useResponsive';
+import * as ResponsiveUtility from '../../../../core/utils/useResponsive';
+import { useNavigation } from '@react-navigation/native';
 
 // Mocks
 const mockGoBack = jest.fn();
 jest.mock('@react-navigation/native', () => ({
-  useNavigation: () => ({
-    goBack: mockGoBack,
-  }),
+  useNavigation: jest.fn(),
 }));
 
-jest.mock('../../components/MemberPortalLayout', () => ({ children }: any) => <>{children}</>);
+// Mock layout
+jest.mock('../../../components/MemberPortalLayout', () => ({ children, title }: any) => (
+  <>{children}</>
+));
 
-jest.mock('../../../core/utils/useResponsive', () => ({
+jest.mock('../../../../core/utils/useResponsive', () => ({
   useResponsive: jest.fn(),
 }));
 
 describe('RefillScreen', () => {
   beforeEach(() => {
     jest.clearAllMocks();
+    (ResponsiveUtility.useResponsive as jest.Mock).mockReturnValue({ isPhone: false });
+    (useNavigation as jest.Mock).mockReturnValue({
+      goBack: mockGoBack,
+    });
   });
 
   it('renders correctly', () => {
-    (ResponsiveUtility.useResponsive as jest.Mock).mockReturnValue({ isPhone: false });
-    const { getByText, getByPlaceholderText } = render(<RefillScreen />);
+    const { getByText, getAllByText, getByPlaceholderText } = render(<RefillScreen />);
 
-    expect(getByText('Request Refill')).toBeTruthy();
+    expect(getAllByText('Request Refill').length).toBeGreaterThan(0);
     expect(
       getByPlaceholderText('Enter any additional information for your provider...'),
     ).toBeTruthy();
   });
 
   it('triggers success alert and navigates back on request', () => {
-    (ResponsiveUtility.useResponsive as jest.Mock).mockReturnValue({ isPhone: false });
     const alertSpy = jest.spyOn(Alert, 'alert').mockImplementation((title, message, buttons) => {
-      // Execute the OK button callback
       if (buttons && buttons[0]?.onPress) {
         buttons[0].onPress();
       }
     });
 
-    const { getByText } = render(<RefillScreen />);
+    const { getAllByText } = render(<RefillScreen />);
 
-    fireEvent.press(getByText('Request Refill'));
+    fireEvent.press(getAllByText('Request Refill')[1]); // The button
     expect(alertSpy).toHaveBeenCalledWith(
       'Success',
       'Refill requested successfully!',
@@ -54,7 +57,6 @@ describe('RefillScreen', () => {
   });
 
   it('navigates back on back button press', () => {
-    (ResponsiveUtility.useResponsive as jest.Mock).mockReturnValue({ isPhone: false });
     const { getByText } = render(<RefillScreen />);
 
     fireEvent.press(getByText('< Back'));
@@ -62,7 +64,6 @@ describe('RefillScreen', () => {
   });
 
   it('navigates back on cancel button press', () => {
-    (ResponsiveUtility.useResponsive as jest.Mock).mockReturnValue({ isPhone: false });
     const { getByText } = render(<RefillScreen />);
 
     fireEvent.press(getByText('Cancel'));
@@ -72,6 +73,5 @@ describe('RefillScreen', () => {
   it('handles phone layout styles', () => {
     (ResponsiveUtility.useResponsive as jest.Mock).mockReturnValue({ isPhone: true });
     render(<RefillScreen />);
-    // Just need to hit the responsive style branches
   });
 });

@@ -2,11 +2,12 @@ import React from 'react';
 import { render } from '@testing-library/react-native';
 import { AppIcon } from '../AppIcon';
 import { Colors } from '../../../core/theme/colors';
+import { MaterialIcons } from '@expo/vector-icons';
 
 describe('AppIcon', () => {
   it('renders correctly with default props', () => {
-    const { getByTestId } = render(<AppIcon name="add" testID="app-icon" />);
-    const icon = getByTestId('app-icon');
+    const { UNSAFE_getByType } = render(<AppIcon name="add" />);
+    const icon = UNSAFE_getByType(MaterialIcons);
 
     expect(icon.props.name).toBe('add');
     expect(icon.props.size).toBe(24);
@@ -14,10 +15,8 @@ describe('AppIcon', () => {
   });
 
   it('renders correctly with custom props', () => {
-    const { getByTestId } = render(
-      <AppIcon name="close" size={32} color="red" testID="app-icon" />,
-    );
-    const icon = getByTestId('app-icon');
+    const { UNSAFE_getByType } = render(<AppIcon name="close" size={32} color="red" />);
+    const icon = UNSAFE_getByType(MaterialIcons);
 
     expect(icon.props.name).toBe('close');
     expect(icon.props.size).toBe(32);

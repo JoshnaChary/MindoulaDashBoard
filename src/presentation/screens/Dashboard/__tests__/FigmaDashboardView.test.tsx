@@ -1,8 +1,8 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
 import FigmaDashboardView from '../FigmaDashboardView';
-import * as ResponsiveUtility from '../../../core/utils/useResponsive';
-import { AppConstants } from '../../../core/constants/AppConstants';
+import * as ResponsiveUtility from '../../../../core/utils/useResponsive';
+import { AppConstants } from '../../../../core/constants/AppConstants';
 
 // Mocks
 const mockNavigate = jest.fn();
@@ -12,12 +12,12 @@ jest.mock('@react-navigation/native', () => ({
   }),
 }));
 
-jest.mock('../../../core/utils/useResponsive', () => ({
+jest.mock('../../../../core/utils/useResponsive', () => ({
   useResponsive: jest.fn(),
 }));
 
 // Mock member portal layout since it's already tested
-jest.mock('../../components/MemberPortalLayout', () => ({ children, title }: any) => (
+jest.mock('../../../components/MemberPortalLayout', () => ({ children, title }: any) => (
   <>{children}</>
 ));
 

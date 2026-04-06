@@ -1,19 +1,19 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
 import ViewDetailsScreen from '../ViewDetailsScreen';
+import { useNavigation, useRoute } from '@react-navigation/native';
+import * as ResponsiveUtility from '../../../../core/utils/useResponsive';
 
 // Mocks
 const mockGoBack = jest.fn();
 jest.mock('@react-navigation/native', () => ({
-  useNavigation: () => ({
-    goBack: mockGoBack,
-  }),
+  useNavigation: jest.fn(),
   useRoute: jest.fn(),
 }));
 
-jest.mock('../../components/MemberPortalLayout', () => ({ children }: any) => <>{children}</>);
+jest.mock('../../../components/MemberPortalLayout', () => ({ children }: any) => <>{children}</>);
 
-jest.mock('../../../core/utils/useResponsive', () => ({
+jest.mock('../../../../core/utils/useResponsive', () => ({
   useResponsive: jest.fn(),
 }));
 
@@ -34,19 +34,21 @@ describe('ViewDetailsScreen', () => {
 
   beforeEach(() => {
     jest.clearAllMocks();
+    (ResponsiveUtility.useResponsive as jest.Mock).mockReturnValue({ isPhone: false });
+    (useNavigation as jest.Mock).mockReturnValue({
+      goBack: mockGoBack,
+    });
   });
 
   it('renders null if no prescription in route params', () => {
-    const { useRoute } = require('@react-navigation/native');
-    useRoute.mockReturnValue({ params: {} });
+    (useRoute as jest.Mock).mockReturnValue({ params: {} });
 
     const { toJSON } = render(<ViewDetailsScreen />);
     expect(toJSON()).toBeNull();
   });
 
   it('renders prescription details correctly', () => {
-    const { useRoute } = require('@react-navigation/native');
-    useRoute.mockReturnValue({ params: { prescription: mockPrescription } });
+    (useRoute as jest.Mock).mockReturnValue({ params: { prescription: mockPrescription } });
 
     const { getByText } = render(<ViewDetailsScreen />);
 
@@ -58,8 +60,7 @@ describe('ViewDetailsScreen', () => {
   });
 
   it('navigates back when back button is pressed', () => {
-    const { useRoute } = require('@react-navigation/native');
-    useRoute.mockReturnValue({ params: { prescription: mockPrescription } });
+    (useRoute as jest.Mock).mockReturnValue({ params: { prescription: mockPrescription } });
 
     const { getByText } = render(<ViewDetailsScreen />);
 

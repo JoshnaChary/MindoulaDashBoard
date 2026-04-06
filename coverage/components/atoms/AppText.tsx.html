@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/17</span>
+                <span class='fraction'>17/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/9</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -120,7 +120,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">25x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -129,25 +129,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">843x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">843x</span>
+<span class="cline-any cline-yes">843x</span>
+<span class="cline-any cline-yes">131x</span>
+<span class="cline-any cline-yes">712x</span>
+<span class="cline-any cline-yes">373x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">843x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">843x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -165,26 +165,26 @@ interface AppTextProps extends TextProps {
   align?: 'auto' | 'left' | 'right' | 'center' | 'justify';
 }
 &nbsp;
-export const AppText: React.FC&lt;AppTextProps&gt; = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span></span>
-  variant = <span class="branch-0 cbranch-no" title="branch not covered" >'body1',</span>
-  color = <span class="branch-0 cbranch-no" title="branch not covered" >Colors.text.primary,</span>
-  weight = <span class="branch-0 cbranch-no" title="branch not covered" >'regular',</span>
-  align = <span class="branch-0 cbranch-no" title="branch not covered" >'left',</span>
+export const AppText: React.FC&lt;AppTextProps&gt; = ({
+  variant = 'body1',
+  color = Colors.text.primary,
+  weight = 'regular',
+  align = 'left',
   style,
   children,
   ...rest
 }) =&gt; {
-  const flatStyle = <span class="cstat-no" title="statement not covered" >StyleSheet.flatten(style || {}) as TextStyle;</span>
+  const flatStyle = StyleSheet.flatten(style || {}) as TextStyle;
 &nbsp;
   // Determine FontFamily based on weight
-  let fontFamily = <span class="cstat-no" title="statement not covered" >Typography.fontFamily.regular;</span>
-<span class="cstat-no" title="statement not covered" >  if (weight === 'bold' || flatStyle.fontWeight === 'bold' || flatStyle.fontWeight === '700') {</span>
-<span class="cstat-no" title="statement not covered" >    fontFamily = Typography.fontFamily.bold;</span>
-  } else <span class="cstat-no" title="statement not covered" >if (weight === 'medium' || flatStyle.fontWeight === '500') {</span>
-<span class="cstat-no" title="statement not covered" >    fontFamily = Typography.fontFamily.medium;</span>
+  let fontFamily = Typography.fontFamily.regular;
+  if (weight === 'bold' || flatStyle.fontWeight === 'bold' || flatStyle.fontWeight === '700') {
+    fontFamily = Typography.fontFamily.bold;
+  } else if (weight === 'medium' || flatStyle.fontWeight === '500') {
+    fontFamily = Typography.fontFamily.medium;
   }
 &nbsp;
-  const textStyle: TextStyle = <span class="cstat-no" title="statement not covered" >{</span>
+  const textStyle: TextStyle = {
     fontSize: Typography.fontSize[variant],
     color,
     fontFamily,
@@ -192,7 +192,7 @@ export const AppText: React.FC&lt;AppTextProps&gt; = <span class="cstat-no" titl
     lineHeight: Typography.lineHeight[variant as keyof typeof Typography.lineHeight] || undefined,
   };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;RNText style={[textStyle, style]} {...rest}&gt;
       {children}
     &lt;/RNText&gt;
@@ -205,7 +205,7 @@ export const AppText: React.FC&lt;AppTextProps&gt; = <span class="cstat-no" titl
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-06T11:52:57.978Z
+                at 2026-04-06T12:55:39.736Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

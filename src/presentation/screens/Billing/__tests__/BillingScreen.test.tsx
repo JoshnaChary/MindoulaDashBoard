@@ -1,19 +1,20 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
 import BillingScreen from '../BillingScreen';
-import * as ResponsiveUtility from '../../../core/utils/useResponsive';
+import * as ResponsiveUtility from '../../../../core/utils/useResponsive';
 import { Alert } from 'react-native';
 
 // Mocks
-jest.mock('../../../core/utils/useResponsive', () => ({
+jest.mock('../../../../core/utils/useResponsive', () => ({
   useResponsive: jest.fn(),
 }));
 
-jest.mock('../../components/MemberPortalLayout', () => ({ children }: any) => <>{children}</>);
+jest.mock('../../../components/MemberPortalLayout', () => ({ children }: any) => <>{children}</>);
 
 describe('BillingScreen', () => {
   beforeEach(() => {
     jest.clearAllMocks();
+    (ResponsiveUtility.useResponsive as jest.Mock).mockReturnValue({ isPhone: false });
   });
 
   it('renders Outstanding tab by default', () => {
@@ -36,9 +37,9 @@ describe('BillingScreen', () => {
   });
 
   it('switches to Payment tab and handles actions', () => {
-    (ResponsiveUtility.useResponsive as jest.Mock).mockReturnValue({ isPhone: false });
+    const { getByText, getAllByText } = render(<BillingScreen />);
     const alertSpy = jest.spyOn(Alert, 'alert').mockImplementation(() => {});
-    const { getByText } = render(<BillingScreen />);
+    (ResponsiveUtility.useResponsive as jest.Mock).mockReturnValue({ isPhone: false });
 
     fireEvent.press(getByText('Payment'));
     expect(getByText(/Card details are stored securely/)).toBeTruthy();
@@ -47,8 +48,8 @@ describe('BillingScreen', () => {
     fireEvent.press(addBtn);
     expect(alertSpy).toHaveBeenCalledWith('Add New Card');
 
-    const removeBtn = getByText('Remove');
-    fireEvent.press(removeBtn);
+    const removeBtns = getAllByText('Remove');
+    fireEvent.press(removeBtns[0]);
     expect(alertSpy).toHaveBeenCalledWith('Remove Card');
 
     const setDefaultBtn = getByText('Set Default');

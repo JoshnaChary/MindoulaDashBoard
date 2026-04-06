@@ -4,7 +4,7 @@ import AccountScreen from '../AccountScreen';
 import { Alert } from 'react-native';
 
 // Mocks
-jest.mock('../../components/MemberPortalLayout', () => ({ children }: any) => <>{children}</>);
+jest.mock('../../../components/MemberPortalLayout', () => ({ children }: any) => <>{children}</>);
 
 describe('AccountScreen', () => {
   beforeEach(() => {
@@ -21,13 +21,14 @@ describe('AccountScreen', () => {
 
   it('triggers alerts on setting actions', () => {
     const alertSpy = jest.spyOn(Alert, 'alert').mockImplementation(() => {});
-    const { getByText } = render(<AccountScreen />);
+    const { getByText, getAllByText } = render(<AccountScreen />);
 
     fireEvent.press(getByText('Edit'));
     expect(alertSpy).toHaveBeenCalledWith('Edit Name');
 
-    const changeBtns = getByText('Change'); // This might find multiple, use getByText if unique or just find the one for email
-    // Since there are two "Change" buttons, we'll use getAllByText if needed, but fireEvent.press works on the first one if found
+    const changeBtns = getAllByText('Change');
+    fireEvent.press(changeBtns[0]);
+    expect(alertSpy).toHaveBeenCalledWith('Change Email');
   });
 
   it('triggers specific alerts for different settings', () => {
