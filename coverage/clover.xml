@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1775467751852" clover="3.2.0">
-  <project timestamp="1775467751852" name="All files">
+<coverage generated="1775474784267" clover="3.2.0">
+  <project timestamp="1775474784267" name="All files">
     <metrics statements="321" coveredstatements="21" conditionals="241" coveredconditionals="1" methods="134" coveredmethods="4" elements="696" coveredelements="26" complexity="0" loc="321" ncloc="321" packages="22" files="42" classes="42"/>
     <package name="components.atoms">
       <metrics statements="41" coveredstatements="0" conditionals="51" coveredconditionals="0" methods="8" coveredmethods="0"/>
@@ -248,7 +248,7 @@
         <line num="137" count="0" type="stmt"/>
         <line num="138" count="0" type="cond" truecount="0" falsecount="4"/>
         <line num="140" count="0" type="stmt"/>
-        <line num="154" count="0" type="stmt"/>
+        <line num="150" count="0" type="stmt"/>
       </file>
     </package>
     <package name="presentation.components.Account">
