@@ -1,116 +1,81 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity, Alert } from 'react-native';
-import { Text } from '../Common/Text';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { AppText } from '../../../components/atoms/AppText';
 import { Colors } from '../../../core/theme/colors';
+import { Spacing } from '../../../core/theme/spacing';
 
-interface BillingItem {
-  id: string;
-  title: string;
-  amount: string;
-  invoiceId: string;
-  dueDate: string;
-  status: string;
-  statusColor: string;
-  indicatorColor: string;
+interface BillingCardProps {
+  item: {
+    title: string;
+    amount: string;
+    invoiceId: string;
+    dueDate: string;
+    status: string;
+    statusColor: string;
+    indicatorColor: string;
+  };
+  onViewDetails: () => void;
 }
 
-interface Props {
-  item: BillingItem;
-  onViewDetails?: () => void;
-}
-
-const BillingCard: React.FC<Props> = ({ item, onViewDetails }) => {
+const BillingCard: React.FC<BillingCardProps> = ({ item, onViewDetails }) => {
   return (
-    <View style={[styles.card, { borderLeftColor: item.indicatorColor }]}>
-      <View style={styles.leftSection}>
-        <Text style={styles.title}>{item.title}</Text>
-        <Text style={styles.amount}>{item.amount}</Text>
-      </View>
-
-      <View style={styles.middleSection}>
-        <Text style={styles.caption}>Invoice ID: {item.invoiceId}</Text>
-        <Text style={styles.caption}>Due date: {item.dueDate}</Text>
-        <Text style={[styles.caption, { color: item.statusColor, marginTop: 4 }]}>
-          Status: {item.status}
-        </Text>
-      </View>
-
-      <View style={styles.rightSection}>
-        <TouchableOpacity
-          style={styles.btnOutline}
-          onPress={() =>
-            onViewDetails
-              ? onViewDetails()
-              : Alert.alert('View Details', `Viewing Invoice: ${item.invoiceId}`)
-          }
-        >
-          <Text style={styles.btnOutlineText}>View Details</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.btnFilled}
-          onPress={() =>
-            onViewDetails ? onViewDetails() : Alert.alert('Payment', `Paying ${item.amount}`)
-          }
-        >
-          <Text style={styles.btnFilledText}>Pay Now</Text>
-        </TouchableOpacity>
+    <View style={styles.container}>
+      <View style={[styles.indicator, { backgroundColor: item.indicatorColor }]} />
+      <View style={styles.content}>
+        <View style={styles.header}>
+          <AppText variant="md" weight="medium" style={{ flex: 1 }}>
+            {item.title}
+          </AppText>
+          <AppText variant="md" weight="bold">
+            {item.amount}
+          </AppText>
+        </View>
+        <AppText variant="xs" color={Colors.text.secondary}>
+          Invoice ID: {item.invoiceId} • Due: {item.dueDate}
+        </AppText>
+        <View style={styles.footer}>
+          <AppText variant="xs" weight="medium" color={item.statusColor}>
+            {item.status}
+          </AppText>
+          <TouchableOpacity onPress={onViewDetails} activeOpacity={0.7}>
+            <AppText variant="sm" weight="medium" color={Colors.primary}>
+              View Details
+            </AppText>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  card: {
+  container: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: 20,
     backgroundColor: Colors.white,
     borderWidth: 1,
     borderColor: Colors.border,
-    borderLeftWidth: 4,
-    borderRadius: 8,
+    borderRadius: Spacing.radius.md,
+    overflow: 'hidden',
+    height: 100,
   },
-  leftSection: {
+  indicator: {
+    width: 6,
+    height: '100%',
+  },
+  content: {
     flex: 1,
+    padding: Spacing.md,
+    justifyContent: 'space-between',
   },
-  middleSection: {
-    flex: 1,
-    marginHorizontal: 16,
-  },
-  rightSection: {
-    flexShrink: 0,
+  header: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
   },
-  title: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: Colors.text.primary,
-    marginBottom: 4,
-  },
-  amount: { fontSize: 16, color: Colors.text.secondary },
-  caption: { fontSize: 12, color: Colors.text.secondary, marginBottom: 2 },
-  btnOutline: {
-    borderWidth: 1,
-    borderColor: Colors.primary,
-    borderRadius: 4,
-    paddingHorizontal: 15,
-    paddingVertical: 8,
-    backgroundColor: 'transparent',
-  },
-  btnOutlineText: { color: Colors.primary, fontSize: 14, fontWeight: '500' },
-  btnFilled: {
-    backgroundColor: Colors.primary,
-    borderRadius: 4,
-    paddingHorizontal: 15,
-    paddingVertical: 8,
-    marginLeft: 8,
-  },
-  btnFilledText: {
-    color: Colors.text.inverse,
-    fontSize: 14,
-    fontWeight: '500',
+  footer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
   },
 });
 

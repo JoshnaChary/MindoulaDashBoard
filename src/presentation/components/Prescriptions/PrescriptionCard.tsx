@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, TouchableOpacity, StyleSheet } from 'react-native';
-import { Text } from '../Common/Text';
+import { View, TouchableOpacity, StyleSheet, Platform } from 'react-native';
+import { AppText } from '../../../components/atoms/AppText';
+import { AppButton } from '../../../components/atoms/AppButton';
 import { Colors } from '../../../core/theme/colors';
-
-const BASE_X = 9;
-const BASE_Y = 254;
+import { Spacing } from '../../../core/theme/spacing';
+import { useResponsive } from '../../../core/utils/useResponsive';
 
 interface Props {
   item: any;
@@ -13,39 +13,52 @@ interface Props {
   onRequestRefill: () => void;
 }
 
-const PrescriptionCard: React.FC<Props> = ({ item, index, onViewDetails, onRequestRefill }) => {
-  const topOffset = 440 + index * 124; // Based on gap + 60px overlap correction
+const PrescriptionCard: React.FC<Props> = ({ item, onViewDetails, onRequestRefill }) => {
+  const { isPhone } = useResponsive();
+
   return (
-    <View
-      key={item.id}
-      style={[styles.absolute, styles.prescCard, { left: 358 - BASE_X, top: topOffset - BASE_Y }]}
-    >
-      <View style={styles.prescRow}>
+    <View style={styles.container}>
+      <View style={[styles.mainRow, isPhone && styles.column]}>
         {/* Left Side: Name & Badge */}
-        <View style={styles.prescLeft}>
-          <Text style={styles.prescName}>{item.name}</Text>
+        <View style={styles.leftContent}>
+          <AppText variant="md" weight="medium">
+            {item.name}
+          </AppText>
           <View style={styles.badge}>
-            <Text style={styles.badgeText}>{item.refills} refills remaining</Text>
+            <AppText variant="xs" weight="medium" color={Colors.accent}>
+              {item.refills} refills remaining
+            </AppText>
           </View>
         </View>
 
-        {/* Vertical Divider */}
-        <View style={styles.prescDivider} />
+        {!isPhone && <View style={styles.divider} />}
 
         {/* Center: Dosage/Freq */}
-        <View style={styles.prescCenter}>
-          <Text style={styles.prescSub}>Dosage: {item.dosage}</Text>
-          <Text style={styles.prescSub}>Frequency: {item.frequency}</Text>
+        <View style={styles.centerContent}>
+          <AppText variant="xs" color={Colors.text.secondary}>
+            Dosage: {item.dosage}
+          </AppText>
+          <AppText variant="xs" color={Colors.text.secondary}>
+            Frequency: {item.frequency}
+          </AppText>
         </View>
 
         {/* Right: Buttons */}
-        <View style={styles.prescRight}>
-          <TouchableOpacity style={styles.smallOutlinedBtn} onPress={onViewDetails}>
-            <Text style={styles.buttonTextSmallBlue}>View Details</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.smallBlueBtn} onPress={onRequestRefill}>
-            <Text style={styles.buttonTextSmall}>Request Refill</Text>
-          </TouchableOpacity>
+        <View style={[styles.rightContent, isPhone && styles.fullWidthActions]}>
+          <AppButton
+            label="View Details"
+            variant="outline"
+            size="small"
+            onPress={onViewDetails}
+            style={isPhone ? styles.flex1 : undefined}
+          />
+          <AppButton
+            label="Request Refill"
+            variant="primary"
+            size="small"
+            onPress={onRequestRefill}
+            style={isPhone ? styles.flex1 : undefined}
+          />
         </View>
       </View>
     </View>
@@ -53,58 +66,56 @@ const PrescriptionCard: React.FC<Props> = ({ item, index, onViewDetails, onReque
 };
 
 const styles = StyleSheet.create({
-  absolute: { position: 'absolute' },
-  prescCard: {
-    width: 653,
-    height: 104,
+  container: {
     backgroundColor: Colors.white,
     borderWidth: 1,
     borderColor: Colors.border,
-    paddingHorizontal: 24,
-    paddingVertical: 20,
+    borderRadius: Spacing.radius.md,
+    padding: Spacing.lg,
   },
-  prescRow: {
+  mainRow: {
     flexDirection: 'row',
     alignItems: 'center',
+    gap: Spacing.md,
+  },
+  column: {
+    flexDirection: 'column',
+    alignItems: 'stretch',
+    gap: Spacing.lg,
+  },
+  leftContent: {
+    flex: 1.5,
+  },
+  centerContent: {
+    flex: 1,
+    gap: 4,
+  },
+  rightContent: {
+    flexDirection: 'row',
+    gap: Spacing.sm,
+    alignItems: 'center',
+  },
+  fullWidthActions: {
+    width: '100%',
     justifyContent: 'space-between',
+  },
+  flex1: {
     flex: 1,
   },
-  prescLeft: { flex: 1 },
-  prescDivider: { width: 1, height: 60, backgroundColor: Colors.border, marginHorizontal: 16 },
-  prescCenter: { flex: 1, justifyContent: 'center', marginRight: 24 },
-  prescRight: { flexDirection: 'row', alignItems: 'center', flexShrink: 0 },
-  prescName: { fontSize: 18, fontWeight: '500', color: Colors.text.dark },
-  prescSub: { fontSize: 13, fontWeight: '300', color: Colors.text.dark },
+  divider: {
+    width: 1,
+    height: 48,
+    backgroundColor: Colors.border,
+    marginHorizontal: Spacing.sm,
+  },
   badge: {
     backgroundColor: '#E9F6EF',
-    borderRadius: 12,
-    paddingHorizontal: 12,
-    paddingVertical: 4,
-    marginTop: 8,
+    borderRadius: Spacing.radius.full,
+    paddingHorizontal: Spacing.sm,
+    paddingVertical: 2,
+    marginTop: Spacing.xs,
     alignSelf: 'flex-start',
   },
-  badgeText: { fontSize: 13, fontWeight: '500', color: Colors.accent },
-  smallOutlinedBtn: {
-    borderWidth: 1,
-    borderColor: Colors.primary,
-    borderRadius: 4,
-    paddingHorizontal: 15,
-    paddingVertical: 8,
-    marginRight: 15,
-    backgroundColor: Colors.white,
-  },
-  buttonTextSmallBlue: {
-    color: Colors.primary,
-    fontSize: 16,
-    fontWeight: '500',
-  },
-  smallBlueBtn: {
-    backgroundColor: Colors.primary,
-    borderRadius: 4,
-    paddingHorizontal: 15,
-    paddingVertical: 8,
-  },
-  buttonTextSmall: { color: Colors.white, fontSize: 16, fontWeight: '500' },
 });
 
 export default PrescriptionCard;

@@ -1,118 +1,120 @@
 import React from 'react';
-import { View, TouchableOpacity, StyleSheet, Alert } from 'react-native';
-import { Text } from '../../components/Common/Text';
+import { View, TouchableOpacity, StyleSheet, Alert, TextInput } from 'react-native';
+import { AppText } from '../../../components/atoms/AppText';
+import { AppButton } from '../../../components/atoms/AppButton';
+import { ResponsiveContainer } from '../../../components/atoms/ResponsiveContainer';
 import { useNavigation } from '@react-navigation/native';
 import MemberPortalLayout from '../../components/MemberPortalLayout';
-
-const figmaColor = (r: number, g: number, b: number, a: number = 1) =>
-  `rgba(${Math.round(r * 255)}, ${Math.round(g * 255)}, ${Math.round(b * 255)}, ${a})`;
-const BASE_X = 9;
-const BASE_Y = 254;
+import { Colors } from '../../../core/theme/colors';
+import { Spacing } from '../../../core/theme/spacing';
+import { useResponsive } from '../../../core/utils/useResponsive';
 
 export const RefillScreen: React.FC = () => {
   const navigation = useNavigation<any>();
+  const { isPhone } = useResponsive();
+
+  const handleRequest = () => {
+    Alert.alert('Success', 'Refill requested successfully!', [
+      { text: 'OK', onPress: () => navigation.goBack() },
+    ]);
+  };
 
   return (
-    <MemberPortalLayout>
-      <View
-        style={[
-          styles.absolute,
-          {
-            left: 358 - BASE_X,
-            top: 290 - BASE_Y,
-            width: 653,
-            paddingHorizontal: 20,
-            paddingTop: 60,
-            paddingBottom: 20,
-          },
-        ]}
-      >
-        {/* Button: < Back */}
-        <TouchableOpacity onPress={() => navigation.goBack()} style={{ marginBottom: 12 }}>
-          <Text
-            style={{
-              color: figmaColor(0.224, 0.231, 0.247, 1),
-              fontSize: 18,
-              fontWeight: '500',
-            }}
-          >
+    <MemberPortalLayout title="Request Refill">
+      <ResponsiveContainer>
+        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
+          <AppText variant="md" weight="medium" color={Colors.primary}>
             &lt; Back
-          </Text>
+          </AppText>
         </TouchableOpacity>
 
-        {/* Typography: Request Refill */}
-        <Text
-          style={{
-            fontSize: 24,
-            fontWeight: '600',
-            color: '#111',
-            marginTop: 12,
-            marginBottom: 16,
-          }}
-        >
-          Request Refill
-        </Text>
-
-        {/* TextArea: Add Note. */}
-        <View
-          style={{
-            backgroundColor: '#F0F1F5',
-            minHeight: 120,
-            borderRadius: 4,
-            paddingHorizontal: 16,
-            paddingTop: 12,
-          }}
-        >
-          <Text style={{ color: '#393B3F' }}>Add Note.</Text>
-        </View>
-
-        {/* Stack: Buttons */}
-        <View style={{ flexDirection: 'row', justifyContent: 'flex-end', marginTop: 24 }}>
-          <TouchableOpacity
-            style={[styles.smallOutlinedBtn, { marginRight: 12 }]}
-            onPress={() => navigation.goBack()}
+        <View style={styles.card}>
+          <AppText
+            variant="h2"
+            weight="bold"
+            color={Colors.text.primary}
+            style={{ marginBottom: Spacing.lg }}
           >
-            <Text style={styles.buttonTextSmallBlue}>Cancel</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.smallBlueBtn}
-            onPress={() =>
-              Alert.alert('Success', 'Refill requested successfully!', [
-                { text: 'OK', onPress: () => navigation.goBack() },
-              ])
-            }
-          >
-            <Text style={styles.buttonTextSmall}>Request Refill</Text>
-          </TouchableOpacity>
+            Request Refill
+          </AppText>
+
+          <View style={styles.inputContainer}>
+            <AppText
+              variant="sm"
+              weight="medium"
+              color={Colors.text.secondary}
+              style={{ marginBottom: Spacing.xs }}
+            >
+              Add Note
+            </AppText>
+            <TextInput
+              style={styles.textArea}
+              placeholder="Enter any additional information for your provider..."
+              multiline
+              numberOfLines={4}
+              placeholderTextColor={Colors.text.muted}
+            />
+          </View>
+
+          <View style={[styles.buttonRow, isPhone && styles.column]}>
+            <AppButton
+              label="Cancel"
+              variant="outline"
+              onPress={() => navigation.goBack()}
+              style={isPhone ? styles.fullWidth : styles.minWidth}
+            />
+            <AppButton
+              label="Request Refill"
+              variant="primary"
+              onPress={handleRequest}
+              style={isPhone ? styles.fullWidth : styles.minWidth}
+            />
+          </View>
         </View>
-      </View>
+      </ResponsiveContainer>
     </MemberPortalLayout>
   );
 };
 
 const styles = StyleSheet.create({
-  absolute: { position: 'absolute' },
-  smallOutlinedBtn: {
+  backButton: {
+    marginBottom: Spacing.xl,
+  },
+  card: {
+    backgroundColor: Colors.white,
+    padding: Spacing.xl,
+    borderRadius: Spacing.radius.md,
     borderWidth: 1,
-    borderColor: figmaColor(0.231, 0.455, 0.82, 1),
-    borderRadius: 4,
-    paddingHorizontal: 15,
-    paddingVertical: 8,
-    marginRight: 15,
-    backgroundColor: '#FFFFFF',
+    borderColor: Colors.border,
   },
-  buttonTextSmallBlue: {
-    color: figmaColor(0.231, 0.455, 0.82, 1),
+  inputContainer: {
+    marginBottom: Spacing.xl,
+  },
+  textArea: {
+    backgroundColor: Colors.background.default,
+    borderRadius: Spacing.radius.sm,
+    padding: Spacing.md,
+    minHeight: 120,
     fontSize: 16,
-    fontWeight: '500',
+    color: Colors.text.primary,
+    textAlignVertical: 'top',
+    borderWidth: 1,
+    borderColor: Colors.border,
   },
-  smallBlueBtn: {
-    backgroundColor: figmaColor(0.231, 0.455, 0.82, 1),
-    borderRadius: 4,
-    paddingHorizontal: 15,
-    paddingVertical: 8,
+  buttonRow: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    gap: Spacing.md,
   },
-  buttonTextSmall: { color: 'white', fontSize: 16, fontWeight: '500' },
+  column: {
+    flexDirection: 'column-reverse',
+  },
+  fullWidth: {
+    width: '100%',
+  },
+  minWidth: {
+    minWidth: 160,
+  },
 });
 
 export default RefillScreen;

@@ -18,5 +18,9 @@ export const AppConstants = {
     refillRequest: 'RefillRequest',
     billing: 'Billing',
     account: 'Account',
+    labResults: 'LabResults',
+    questionnaires: 'Questionnaires',
+    documents: 'Documents',
+    insurance: 'Insurance',
   },
 };

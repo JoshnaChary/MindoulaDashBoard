@@ -1,12 +1,13 @@
 import React from 'react';
-import { TouchableOpacity, TouchableOpacityProps, StyleSheet, ViewStyle } from 'react-native';
+import { TouchableOpacity, TouchableOpacityProps, StyleSheet, ViewStyle, View } from 'react-native';
 import { Colors } from '../../core/theme/colors';
 import { Spacing } from '../../core/theme/spacing';
 import { AppText } from './AppText';
+import * as HapticsUtility from '../../core/utils/haptics';
 
 interface AppButtonProps extends TouchableOpacityProps {
   label: string;
-  variant?: 'primary' | 'secondary' | 'ghost';
+  variant?: 'primary' | 'secondary' | 'ghost' | 'outline';
   size?: 'small' | 'medium' | 'large';
   style?: ViewStyle;
 }
@@ -17,16 +18,30 @@ export const AppButton: React.FC<AppButtonProps> = ({
   size = 'medium',
   style,
   disabled,
+  onPress,
   ...rest
 }) => {
+  const handlePress = (event: any) => {
+    if (onPress) {
+      if (variant === 'primary' || variant === 'outline') {
+        HapticsUtility.impactMedium();
+      } else {
+        HapticsUtility.impactLight();
+      }
+      onPress(event);
+    }
+  };
+
   const getVariantStyles = (): ViewStyle => {
     switch (variant) {
       case 'primary':
         return { backgroundColor: Colors.primary };
       case 'secondary':
         return { backgroundColor: Colors.secondary };
-      case 'ghost':
+      case 'outline':
         return { backgroundColor: 'transparent', borderWidth: 1, borderColor: Colors.primary };
+      case 'ghost':
+        return { backgroundColor: 'transparent' };
       default:
         return { backgroundColor: Colors.primary };
     }
@@ -37,7 +52,7 @@ export const AppButton: React.FC<AppButtonProps> = ({
       case 'primary':
         return Colors.white;
       case 'secondary':
-        return Colors.primary;
+      case 'outline':
       case 'ghost':
         return Colors.primary;
       default:
@@ -45,10 +60,29 @@ export const AppButton: React.FC<AppButtonProps> = ({
     }
   };
 
+  const getSizeStyles = (): ViewStyle => {
+    switch (size) {
+      case 'small':
+        return { paddingVertical: Spacing.xs, paddingHorizontal: Spacing.md, minHeight: 32 };
+      case 'large':
+        return { paddingVertical: Spacing.lg, paddingHorizontal: Spacing.xxl, minHeight: 56 };
+      default:
+        return { paddingVertical: Spacing.md, paddingHorizontal: Spacing.xl, minHeight: 44 }; // 44px min for mobile touch target
+    }
+  };
+
   return (
     <TouchableOpacity
-      style={[styles.button, getVariantStyles(), disabled && styles.disabled, style]}
+      style={[
+        styles.button,
+        getVariantStyles(),
+        getSizeStyles(),
+        disabled && styles.disabled,
+        style,
+      ]}
       disabled={disabled}
+      onPress={handlePress}
+      activeOpacity={0.7}
       {...rest}
     >
       <AppText variant={size === 'small' ? 'sm' : 'md'} weight="medium" color={getLabelColor()}>
@@ -60,9 +94,7 @@ export const AppButton: React.FC<AppButtonProps> = ({
 
 const styles = StyleSheet.create({
   button: {
-    paddingVertical: Spacing.md,
-    paddingHorizontal: Spacing.xl,
-    borderRadius: Spacing.borderRadius.md,
+    borderRadius: Spacing.radius.md,
     alignItems: 'center',
     justifyContent: 'center',
   },

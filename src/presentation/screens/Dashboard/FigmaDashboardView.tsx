@@ -1,193 +1,173 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Image, Platform } from 'react-native';
 import { AppText } from '../../../components/atoms/AppText';
+import { AppButton } from '../../../components/atoms/AppButton';
+import { ResponsiveContainer } from '../../../components/atoms/ResponsiveContainer';
 import { useNavigation } from '@react-navigation/native';
 import { AppConstants } from '../../../core/constants/AppConstants';
 import MemberPortalLayout from '../../components/MemberPortalLayout';
 import { Colors } from '../../../core/theme/colors';
-import { getFigmaPos } from '../../../core/utils/layout';
+import { Spacing } from '../../../core/theme/spacing';
+import { useResponsive } from '../../../core/utils/useResponsive';
 
 const FigmaDashboardView: React.FC = () => {
   const navigation = useNavigation<any>();
+  const { isPhone } = useResponsive();
 
   return (
-    <MemberPortalLayout>
-      <View style={{ marginTop: 74 }}>
+    <MemberPortalLayout title="Home">
+      <ResponsiveContainer>
         {/* Hello, Jane */}
-        <AppText
-          style={[
-            styles.absolute,
-            getFigmaPos(358, 290),
-            {
-              width: 355,
-              height: 36,
-            },
-          ]}
-          variant="h3"
-          weight="medium"
-        >
-          Hello, Jane
-        </AppText>
-
-        {/* Upcoming Appointment Header */}
-        <AppText
-          style={[
-            styles.absolute,
-            getFigmaPos(358, 349),
-            {
-              width: 355,
-              height: 36,
-              fontWeight: '300',
-            },
-          ]}
-          variant="body1"
-        >
-          Upcoming appointment
-        </AppText>
-
-        {/* Appointment Card */}
-        <View
-          style={[
-            styles.absolute,
-            getFigmaPos(358, 380),
-            {
-              width: 653,
-              height: 104,
-              backgroundColor: Colors.white,
-              borderWidth: 1,
-              borderColor: Colors.border,
-              borderRadius: 8,
-            },
-          ]}
-        />
-        <View
-          style={[
-            styles.absolute,
-            styles.dateBadge,
-            getFigmaPos(373, 392),
-            {
-              width: 70,
-              height: 75,
-              backgroundColor: Colors.dashboard.badgeBg,
-            },
-          ]}
-        />
-        <AppText style={[styles.absolute, styles.dateNum, getFigmaPos(381, 407)]}>14</AppText>
-        <AppText style={[styles.absolute, styles.dateMonth, getFigmaPos(381, 434)]}>April</AppText>
-        <AppText style={[styles.absolute, styles.apptTitle, getFigmaPos(470, 405)]}>
-          Follow-up with Dr. J Kim{'\n'}at 3:50 PM ET - 4:10 PM ET
-        </AppText>
-        <TouchableOpacity
-          style={[
-            styles.absolute,
-            styles.button,
-            getFigmaPos(863, 411),
-            {
-              width: 124,
-              height: 39,
-              backgroundColor: Colors.primary,
-            },
-          ]}
-          onPress={() => {}}
-        >
-          <AppText style={styles.buttonText} weight="medium">
-            Join Video
+        <View style={styles.section}>
+          <AppText variant="h2" weight="medium">
+            Hello, Jane
           </AppText>
-        </TouchableOpacity>
+        </View>
 
-        {/* Help Header */}
-        <AppText
-          style={[
-            styles.absolute,
-            getFigmaPos(358, 533),
-            {
-              width: 355,
-              height: 36,
-              fontWeight: '300',
-            },
-          ]}
-          variant="body1"
-        >
-          How can we help you today?
-        </AppText>
-
-        {/* Action Cards */}
-        <TouchableOpacity
-          style={[styles.absolute, styles.actionCard, getFigmaPos(358, 561)]}
-          onPress={() => navigation.navigate(AppConstants.screens.messages)}
-        >
-          <Image
-            source={require('../../../assets/message-icon.png')}
-            style={[
-              styles.absolute,
-              { width: 62, height: 62, left: 18, top: 16, resizeMode: 'contain' },
-            ]}
-          />
-          <AppText style={[styles.actionText, { left: 94, top: 41 }]} weight="medium">
-            View 3 new messages
+        {/* Upcoming Appointment */}
+        <View style={styles.section}>
+          <AppText
+            variant="body1"
+            weight="regular"
+            color={Colors.text.secondary}
+            style={styles.sectionTitle}
+          >
+            Upcoming appointment
           </AppText>
-        </TouchableOpacity>
 
-        <TouchableOpacity style={[styles.absolute, styles.actionCard, getFigmaPos(358, 680)]}>
-          <AppText style={[styles.actionText, { left: 24, top: 39 }]} weight="medium">
-            Request an appointment
-          </AppText>
-        </TouchableOpacity>
+          <View style={styles.appointmentCard}>
+            <View style={styles.appointmentHeader}>
+              <View style={styles.dateBadge}>
+                <AppText variant="lg" weight="bold" color={Colors.text.primary} align="center">
+                  14
+                </AppText>
+                <AppText variant="xs" weight="medium" color={Colors.text.primary} align="center">
+                  April
+                </AppText>
+              </View>
+              <View style={styles.appointmentInfo}>
+                <AppText variant="md" weight="medium">
+                  Follow-up with Dr. J Kim
+                </AppText>
+                <AppText variant="sm" color={Colors.text.secondary}>
+                  3:50 PM ET - 4:10 PM ET
+                </AppText>
+              </View>
+            </View>
+            <AppButton
+              label="Join Video"
+              onPress={() => {}}
+              style={isPhone ? styles.fullWidthButton : styles.autoWidthButton}
+            />
+          </View>
+        </View>
 
-        <TouchableOpacity style={[styles.absolute, styles.actionCard, getFigmaPos(358, 798)]}>
-          <AppText style={[styles.actionText, { left: 24, top: 41 }]} weight="medium">
-            Request a prescription refill
+        {/* Help Actions */}
+        <View style={styles.section}>
+          <AppText
+            variant="body1"
+            weight="regular"
+            color={Colors.text.secondary}
+            style={styles.sectionTitle}
+          >
+            How can we help you today?
           </AppText>
-        </TouchableOpacity>
 
-        <TouchableOpacity style={[styles.absolute, styles.actionCard, getFigmaPos(358, 917)]}>
-          <AppText style={[styles.actionText, { left: 24, top: 41 }]} weight="medium">
-            Send a message to my care team
-          </AppText>
-        </TouchableOpacity>
-      </View>
+          <View style={styles.actionGrid}>
+            <ActionCard
+              label="View 3 new messages"
+              icon={require('../../../assets/message-icon.png')}
+              onPress={() => navigation.navigate(AppConstants.screens.messages)}
+            />
+            <ActionCard label="Request an appointment" onPress={() => {}} />
+            <ActionCard
+              label="Request a prescription refill"
+              onPress={() => navigation.navigate(AppConstants.screens.prescriptions)}
+            />
+            <ActionCard
+              label="Send a message to my care team"
+              onPress={() => navigation.navigate(AppConstants.screens.messages)}
+            />
+          </View>
+        </View>
+      </ResponsiveContainer>
     </MemberPortalLayout>
   );
 };
 
+const ActionCard = ({ label, icon, onPress }: any) => (
+  <TouchableOpacity style={styles.actionCard} onPress={onPress} activeOpacity={0.7}>
+    <View style={styles.actionCardContent}>
+      {icon && <Image source={icon} style={styles.actionIcon} />}
+      <AppText variant="md" weight="medium" color={Colors.dashboard.actionLink}>
+        {label}
+      </AppText>
+    </View>
+  </TouchableOpacity>
+);
+
 const styles = StyleSheet.create({
-  absolute: { position: 'absolute' },
-  dateBadge: { alignItems: 'center', justifyContent: 'center' },
-  dateNum: {
-    width: 54,
-    textAlign: 'center',
-    fontSize: 18,
-    fontWeight: '500',
-    color: Colors.text.primary,
+  section: {
+    marginBottom: Spacing.xl,
   },
-  dateMonth: {
-    width: 54,
-    textAlign: 'center',
-    fontSize: 13,
-    fontWeight: '500',
-    color: Colors.text.primary,
+  sectionTitle: {
+    marginBottom: Spacing.md,
   },
-  apptTitle: {
-    width: 441,
-    fontSize: 18,
-    fontWeight: '500',
-    color: Colors.text.primary,
-  },
-  button: { justifyContent: 'center', alignItems: 'center', borderRadius: 4 },
-  buttonText: { color: Colors.white, fontSize: 16, fontWeight: '500' },
-  actionCard: {
-    width: 653,
-    height: 104,
+  appointmentCard: {
     backgroundColor: Colors.white,
     borderWidth: 1,
     borderColor: Colors.border,
-    position: 'absolute',
+    borderRadius: Spacing.radius.md,
+    padding: Spacing.lg,
+    flexDirection: Platform.OS === 'web' ? 'row' : 'column',
+    alignItems: Platform.OS === 'web' ? 'center' : 'stretch',
+    justifyContent: 'space-between',
+    gap: Spacing.md,
   },
-  actionText: {
-    position: 'absolute',
-    color: Colors.dashboard.actionLink,
-    fontSize: 18,
-    fontWeight: '500',
+  appointmentHeader: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: Spacing.lg,
+    flex: 1,
+  },
+  dateBadge: {
+    width: 64,
+    height: 64,
+    backgroundColor: Colors.dashboard.badgeBg,
+    borderRadius: Spacing.radius.sm,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  appointmentInfo: {
+    flex: 1,
+  },
+  fullWidthButton: {
+    width: '100%',
+  },
+  autoWidthButton: {
+    minWidth: 140,
+  },
+  actionGrid: {
+    gap: Spacing.md,
+  },
+  actionCard: {
+    backgroundColor: Colors.white,
+    borderWidth: 1,
+    borderColor: Colors.border,
+    borderRadius: Spacing.radius.md,
+    padding: Spacing.lg,
+    minHeight: 80,
+    justifyContent: 'center',
+  },
+  actionCardContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: Spacing.md,
+  },
+  actionIcon: {
+    width: 40,
+    height: 40,
+    resizeMode: 'contain',
   },
 });
 

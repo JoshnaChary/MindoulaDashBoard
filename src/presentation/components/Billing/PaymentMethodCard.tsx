@@ -1,17 +1,18 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity } from 'react-native';
-import { Text } from '../Common/Text';
-import Badge from '../Common/Badge';
+import { View, StyleSheet, TouchableOpacity, Platform } from 'react-native';
+import { AppText } from '../../../components/atoms/AppText';
 import { Colors } from '../../../core/theme/colors';
+import { Spacing } from '../../../core/theme/spacing';
+import { useResponsive } from '../../../core/utils/useResponsive';
 
 interface PaymentMethodCardProps {
   cardType: string;
   cardNumber: string;
   expiryDate: string;
   addedDate: string;
-  isDefault?: boolean;
-  onRemove?: () => void;
-  onSetDefault?: () => void;
+  isDefault: boolean;
+  onRemove: () => void;
+  onSetDefault: () => void;
 }
 
 const PaymentMethodCard: React.FC<PaymentMethodCardProps> = ({
@@ -23,106 +24,89 @@ const PaymentMethodCard: React.FC<PaymentMethodCardProps> = ({
   onRemove,
   onSetDefault,
 }) => {
+  const { isPhone } = useResponsive();
+
   return (
-    <View style={styles.card}>
-      {/* LEFT SECTION (flex: 1) */}
-      <View style={styles.leftSection}>
-        <Text style={styles.cardType}>{cardType}</Text>
-        <Text style={styles.cardNumber}>{cardNumber}</Text>
-        {isDefault && <Badge label="Default" color={Colors.primary} />}
-      </View>
-
-      {/* MIDDLE SECTION (flexWidth) */}
-      <View style={styles.middleSection}>
-        <View style={styles.divider} />
-        <View>
-          <Text style={styles.caption}>Expires: {expiryDate}</Text>
-          <Text style={styles.caption}>Added: {addedDate}</Text>
+    <View style={styles.container}>
+      <View style={[styles.mainRow, isPhone && styles.column]}>
+        <View style={styles.cardInfo}>
+          <View style={styles.cardHeader}>
+            <AppText variant="md" weight="bold">
+              {cardType} ending in {cardNumber.slice(-4)}
+            </AppText>
+            {isDefault && (
+              <View style={styles.defaultBadge}>
+                <AppText variant="xs" weight="medium" color={Colors.white}>
+                  DEFAULT
+                </AppText>
+              </View>
+            )}
+          </View>
+          <AppText variant="sm" color={Colors.text.secondary}>
+            Expires {expiryDate} • Added {addedDate}
+          </AppText>
         </View>
-      </View>
 
-      {/* RIGHT SECTION (auto width) */}
-      <View style={styles.rightSection}>
-        {!isDefault && (
-          <TouchableOpacity style={styles.btnOutlineBlue} onPress={onSetDefault}>
-            <Text style={styles.btnTextBlue}>Set as Default</Text>
+        <View style={[styles.actions, isPhone && { marginTop: Spacing.md, width: '100%' }]}>
+          {!isDefault && (
+            <TouchableOpacity onPress={onSetDefault} style={styles.actionButton}>
+              <AppText variant="sm" weight="medium" color={Colors.primary}>
+                Set Default
+              </AppText>
+            </TouchableOpacity>
+          )}
+          <TouchableOpacity onPress={onRemove} style={styles.actionButton}>
+            <AppText variant="sm" weight="medium" color={Colors.error}>
+              Remove
+            </AppText>
           </TouchableOpacity>
-        )}
-        <TouchableOpacity style={styles.btnOutlineRed} onPress={onRemove}>
-          <Text style={styles.btnTextRed}>Remove</Text>
-        </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  card: {
+  container: {
+    backgroundColor: Colors.white,
+    borderWidth: 1,
+    borderColor: Colors.border,
+    borderRadius: Spacing.radius.md,
+    padding: Spacing.lg,
+  },
+  mainRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 20,
-    borderWidth: 1,
-    borderColor: Colors.border,
-    borderRadius: 8,
-    backgroundColor: Colors.white,
+    gap: Spacing.md,
   },
-  leftSection: {
-    width: 200,
-    gap: 4,
+  column: {
+    flexDirection: 'column',
+    alignItems: 'flex-start',
   },
-  middleSection: {
+  cardInfo: {
     flex: 1,
+    gap: Spacing.xs,
+  },
+  cardHeader: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 16,
+    gap: Spacing.sm,
+    flexWrap: 'wrap',
   },
-  divider: {
-    width: 1,
-    height: 44,
-    backgroundColor: Colors.border,
+  defaultBadge: {
+    backgroundColor: Colors.accent,
+    paddingHorizontal: Spacing.sm,
+    paddingVertical: 2,
+    borderRadius: 4,
   },
-  rightSection: {
+  actions: {
     flexDirection: 'row',
-    gap: 12,
+    gap: Spacing.lg,
+    justifyContent: Platform.OS === 'web' ? 'flex-end' : 'space-between',
   },
-  cardType: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: Colors.text.primary,
-  },
-  cardNumber: {
-    fontSize: 14,
-    color: Colors.text.primary,
-    marginBottom: 4,
-  },
-  caption: {
-    fontSize: 14,
-    color: '#718096',
-  },
-  btnOutlineBlue: {
-    borderWidth: 1,
-    borderColor: Colors.primary,
-    borderRadius: 4,
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-  },
-  btnTextBlue: {
-    color: Colors.primary,
-    fontSize: 14,
-    fontWeight: '500',
-  },
-  btnOutlineRed: {
-    borderWidth: 1,
-    borderColor: '#E53E3E',
-    borderRadius: 4,
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-  },
-  btnTextRed: {
-    color: '#E53E3E',
-    fontSize: 14,
-    fontWeight: '500',
+  actionButton: {
+    paddingVertical: Spacing.xs,
   },
 });
 

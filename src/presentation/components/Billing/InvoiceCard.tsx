@@ -1,7 +1,8 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
-import { Text } from '../Common/Text';
+import { AppText } from '../../../components/atoms/AppText';
 import { Colors } from '../../../core/theme/colors';
+import { Spacing } from '../../../core/theme/spacing';
 
 interface InvoiceCardProps {
   title: string;
@@ -10,7 +11,7 @@ interface InvoiceCardProps {
   dueDate: string;
   status: string;
   statusColor: string;
-  onViewDetails?: () => void;
+  onViewDetails: () => void;
 }
 
 const InvoiceCard: React.FC<InvoiceCardProps> = ({
@@ -23,87 +24,58 @@ const InvoiceCard: React.FC<InvoiceCardProps> = ({
   onViewDetails,
 }) => {
   return (
-    <View style={styles.card}>
-      {/* LEFT SECTION */}
-      <View style={styles.leftSection}>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.amount}>{amount}</Text>
-      </View>
-
-      {/* MIDDLE SECTION */}
-      <View style={styles.middleSection}>
-        <Text style={styles.caption}>Invoice ID: {invoiceId}</Text>
-        <Text style={styles.caption}>Due date: {dueDate}</Text>
-        <Text style={[styles.caption, { color: statusColor, marginTop: 4 }]}>Status: {status}</Text>
-      </View>
-
-      {/* RIGHT SECTION */}
-      <View style={styles.rightSection}>
-        <TouchableOpacity style={styles.actionBtn}>
-          <Text style={styles.actionText}>Download PDF</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.actionBtn} onPress={() => onViewDetails && onViewDetails()}>
-          <Text style={styles.actionText}>View Details</Text>
-        </TouchableOpacity>
+    <View style={styles.container}>
+      <View style={styles.content}>
+        <View style={styles.header}>
+          <AppText variant="md" weight="medium" style={{ flex: 1 }}>
+            {title}
+          </AppText>
+          <AppText variant="md" weight="bold">
+            {amount}
+          </AppText>
+        </View>
+        <AppText variant="xs" color={Colors.text.secondary}>
+          Invoice ID: {invoiceId} • Paid: {dueDate}
+        </AppText>
+        <View style={styles.footer}>
+          <AppText variant="xs" weight="medium" color={statusColor}>
+            {status}
+          </AppText>
+          <TouchableOpacity onPress={onViewDetails} activeOpacity={0.7}>
+            <AppText variant="sm" weight="medium" color={Colors.primary}>
+              View Details
+            </AppText>
+          </TouchableOpacity>
+        </View>
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  card: {
+  container: {
+    backgroundColor: Colors.white,
+    borderWidth: 1,
+    borderColor: Colors.border,
+    borderRadius: Spacing.radius.md,
+    padding: Spacing.md,
+    height: 100,
+    justifyContent: 'center',
+  },
+  content: {
+    flex: 1,
+    justifyContent: 'space-between',
+  },
+  header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 20,
-    backgroundColor: Colors.white,
-    borderWidth: 1,
-    borderColor: Colors.border,
-    borderRadius: 8,
+    gap: Spacing.md,
   },
-  leftSection: {
-    flex: 1,
-  },
-  middleSection: {
-    flex: 1,
-    marginHorizontal: 16,
-  },
-  rightSection: {
+  footer: {
     flexDirection: 'row',
+    justifyContent: 'space-between',
     alignItems: 'center',
-    justifyContent: 'flex-end',
-    flex: 1.5,
-    gap: 12,
-  },
-  actionBtn: {
-    minWidth: 120,
-    alignItems: 'center',
-    borderWidth: 1,
-    borderColor: Colors.border,
-    borderRadius: 4,
-    paddingHorizontal: 12,
-    paddingVertical: 8,
-    backgroundColor: Colors.white,
-  },
-  actionText: {
-    fontSize: 14,
-    color: Colors.primary,
-    fontWeight: '500',
-  },
-  title: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: Colors.text.primary,
-    marginBottom: 4,
-  },
-  amount: {
-    fontSize: 16,
-    color: Colors.text.secondary,
-  },
-  caption: {
-    fontSize: 12,
-    color: Colors.text.secondary,
-    marginBottom: 2,
   },
 });
 

@@ -1,74 +1,59 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Text } from '../Common/Text';
+import { AppText } from '../../../components/atoms/AppText';
 import { Colors } from '../../../core/theme/colors';
+import { Spacing } from '../../../core/theme/spacing';
 
 interface ChargeCardProps {
   title: string;
   amount: string;
   quantity: number;
   serviceDate: string;
-  note: string;
+  note?: string;
 }
 
 const ChargeCard: React.FC<ChargeCardProps> = ({ title, amount, quantity, serviceDate, note }) => {
   return (
-    <View style={styles.card}>
-      {/* LEFT SECTION */}
-      <View style={styles.leftSection}>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.caption}>Service date: {serviceDate}</Text>
-        <Text style={styles.note}>{note}</Text>
+    <View style={styles.container}>
+      <View style={styles.header}>
+        <AppText variant="md" weight="medium" style={{ flex: 1 }}>
+          {title}
+        </AppText>
+        <AppText variant="md" weight="bold">
+          {amount}
+        </AppText>
       </View>
-
-      {/* RIGHT SECTION */}
-      <View style={styles.rightSection}>
-        <Text style={styles.amount}>{amount}</Text>
-        <Text style={styles.caption}>Qty: {quantity}</Text>
+      <View style={styles.details}>
+        <AppText variant="xs" color={Colors.text.secondary}>
+          Date: {serviceDate} • Qty: {quantity}
+        </AppText>
+        {note && (
+          <AppText variant="xs" color={Colors.text.muted} style={styles.note}>
+            {note}
+          </AppText>
+        )}
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  card: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    paddingVertical: 16,
+  container: {
+    paddingVertical: Spacing.md,
     borderBottomWidth: 1,
     borderBottomColor: Colors.border,
-    backgroundColor: Colors.white,
   },
-  leftSection: {
-    flex: 1,
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    marginBottom: Spacing.xs,
   },
-  rightSection: {
-    alignItems: 'flex-end',
-    width: 100,
-  },
-  title: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: Colors.text.primary,
-    marginBottom: 4,
-  },
-  amount: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: Colors.text.primary,
-    marginBottom: 4,
-  },
-  caption: {
-    fontSize: 13,
-    color: Colors.text.secondary,
-    marginBottom: 2,
+  details: {
+    gap: Spacing.xs,
   },
   note: {
-    fontSize: 13,
-    color: Colors.text.secondary,
     fontStyle: 'italic',
-    marginTop: 4,
   },
 });
 

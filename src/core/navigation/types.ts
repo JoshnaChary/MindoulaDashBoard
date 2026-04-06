@@ -12,6 +12,10 @@ export type RootStackParamList = {
   [AppConstants.screens.account]: undefined;
   [AppConstants.screens.appointments]: undefined;
   [AppConstants.screens.profile]: undefined;
+  [AppConstants.screens.labResults]: undefined;
+  [AppConstants.screens.questionnaires]: undefined;
+  [AppConstants.screens.documents]: undefined;
+  [AppConstants.screens.insurance]: undefined;
 };
 
 export type StackNavigationProp = NativeStackNavigationProp<RootStackParamList>;

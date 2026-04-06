@@ -53,7 +53,7 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
 const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.background.paper,
-    borderRadius: Spacing.borderRadius.xl,
+    borderRadius: Spacing.radius.xl,
     padding: Spacing.xl,
     marginBottom: Spacing.lg,
     borderWidth: 1,
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.secondary,
     paddingHorizontal: Spacing.md,
     paddingVertical: Spacing.sm,
-    borderRadius: Spacing.borderRadius.sm,
+    borderRadius: Spacing.radius.sm,
     alignSelf: 'flex-start',
     marginBottom: Spacing.md,
   },

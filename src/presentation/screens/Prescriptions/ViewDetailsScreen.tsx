@@ -1,109 +1,102 @@
 import React from 'react';
 import { View, TouchableOpacity, StyleSheet } from 'react-native';
-import { Text } from '../../components/Common/Text';
+import { AppText } from '../../../components/atoms/AppText';
+import { ResponsiveContainer } from '../../../components/atoms/ResponsiveContainer';
 import { useRoute, useNavigation } from '@react-navigation/native';
 import MemberPortalLayout from '../../components/MemberPortalLayout';
-
-const figmaColor = (r: number, g: number, b: number, a: number = 1) =>
-  `rgba(${Math.round(r * 255)}, ${Math.round(g * 255)}, ${Math.round(b * 255)}, ${a})`;
-const BASE_X = 9;
-const BASE_Y = 254;
+import { Colors } from '../../../core/theme/colors';
+import { Spacing } from '../../../core/theme/spacing';
+import { useResponsive } from '../../../core/utils/useResponsive';
 
 export const ViewDetailsScreen: React.FC = () => {
   const route = useRoute<any>();
   const navigation = useNavigation<any>();
   const prescription = route.params?.prescription;
+  const { isPhone } = useResponsive();
 
   if (!prescription) return null;
 
+  const DetailItem = ({ label, value }: { label: string; value: string }) => (
+    <View style={styles.gridItem}>
+      <AppText variant="xs" color={Colors.text.secondary} style={{ marginBottom: 4 }}>
+        {label}
+      </AppText>
+      <AppText variant="md" weight="bold" color={Colors.text.primary}>
+        {value}
+      </AppText>
+    </View>
+  );
+
   return (
-    <MemberPortalLayout>
-      <View
-        style={[
-          styles.absolute,
-          {
-            left: 358 - BASE_X,
-            top: 290 - BASE_Y,
-            width: 653,
-            paddingHorizontal: 24,
-            paddingTop: 60,
-            paddingBottom: 24,
-          },
-        ]}
-      >
-        {/* Button: < Back */}
-        <TouchableOpacity onPress={() => navigation.goBack()} style={{ marginBottom: 12 }}>
-          <Text
-            style={{
-              color: figmaColor(0.224, 0.231, 0.247, 1),
-              fontSize: 18,
-              fontWeight: '500',
-            }}
-          >
-            &lt; Back
-          </Text>
+    <MemberPortalLayout title="Prescription Details">
+      <ResponsiveContainer>
+        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
+          <AppText variant="md" weight="medium" color={Colors.primary}>
+            &lt; Back to Prescriptions
+          </AppText>
         </TouchableOpacity>
 
-        {/* Typography: Medicine Name (h2) */}
-        <Text
-          style={{
-            fontSize: 24,
-            fontWeight: 'bold',
-            color: '#2D3748',
-            marginTop: 24,
-            marginBottom: 8,
-          }}
-        >
-          {prescription.name}
-        </Text>
+        <View style={styles.card}>
+          <AppText variant="h2" weight="bold" color={Colors.text.primary}>
+            {prescription.name}
+          </AppText>
 
-        {/* Typography: Instructions */}
-        <Text style={{ fontSize: 14, color: '#718096', marginBottom: 32 }}>
-          Instructions:{'\n'}
-          {prescription.instructions}
-        </Text>
+          <View style={styles.instructionBox}>
+            <AppText variant="sm" weight="medium" color={Colors.text.secondary}>
+              Instructions:
+            </AppText>
+            <AppText variant="md" style={styles.instructionText}>
+              {prescription.instructions}
+            </AppText>
+          </View>
 
-        {/* Grid 2 Columns */}
-        <View style={{ flexDirection: 'row', flexWrap: 'wrap', marginHorizontal: -12 }}>
-          <View style={styles.gridItem}>
-            <Text style={styles.caption}>Dosage:</Text>
-            <Text style={styles.bodyBold}>{prescription.dosage}</Text>
-          </View>
-          <View style={styles.gridItem}>
-            <Text style={styles.caption}>Prescribed By:</Text>
-            <Text style={styles.bodyBold}>{prescription.prescribedBy}</Text>
-          </View>
-          <View style={styles.gridItem}>
-            <Text style={styles.caption}>Frequency:</Text>
-            <Text style={styles.bodyBold}>{prescription.frequency}</Text>
-          </View>
-          <View style={styles.gridItem}>
-            <Text style={styles.caption}>Prescribed On:</Text>
-            <Text style={styles.bodyBold}>{prescription.prescribedOn}</Text>
-          </View>
-          <View style={styles.gridItem}>
-            <Text style={styles.caption}>Route:</Text>
-            <Text style={styles.bodyBold}>{prescription.route}</Text>
-          </View>
-          <View style={styles.gridItem}>
-            <Text style={styles.caption}>Valid Until:</Text>
-            <Text style={styles.bodyBold}>{prescription.validUntil}</Text>
-          </View>
-          <View style={styles.gridItem}>
-            <Text style={styles.caption}>Therapy Type:</Text>
-            <Text style={styles.bodyBold}>{prescription.therapyType}</Text>
+          <View style={styles.grid}>
+            <DetailItem label="Dosage:" value={prescription.dosage} />
+            <DetailItem label="Prescribed By:" value={prescription.prescribedBy} />
+            <DetailItem label="Frequency:" value={prescription.frequency} />
+            <DetailItem label="Prescribed On:" value={prescription.prescribedOn} />
+            <DetailItem label="Route:" value={prescription.route} />
+            <DetailItem label="Valid Until:" value={prescription.validUntil} />
+            <DetailItem label="Therapy Type:" value={prescription.therapyType} />
           </View>
         </View>
-      </View>
+      </ResponsiveContainer>
     </MemberPortalLayout>
   );
 };
 
 const styles = StyleSheet.create({
-  absolute: { position: 'absolute' },
-  gridItem: { width: '50%', paddingHorizontal: 12, marginBottom: 24 },
-  caption: { fontSize: 12, color: '#718096', marginBottom: 4 },
-  bodyBold: { fontSize: 16, fontWeight: 'bold', color: '#111' },
+  backButton: {
+    marginBottom: Spacing.xl,
+  },
+  card: {
+    backgroundColor: Colors.white,
+    padding: Spacing.xl,
+    borderRadius: Spacing.radius.md,
+    borderWidth: 1,
+    borderColor: Colors.border,
+  },
+  instructionBox: {
+    marginTop: Spacing.xl,
+    marginBottom: Spacing.xxl,
+    padding: Spacing.md,
+    backgroundColor: Colors.background.default,
+    borderRadius: Spacing.radius.sm,
+  },
+  instructionText: {
+    marginTop: 4,
+    lineHeight: 22,
+  },
+  grid: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    marginHorizontal: -Spacing.md,
+  },
+  gridItem: {
+    width: '50%',
+    paddingHorizontal: Spacing.md,
+    marginBottom: Spacing.lg,
+  },
 });
 
 export default ViewDetailsScreen;

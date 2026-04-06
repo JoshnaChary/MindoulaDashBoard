@@ -1,6 +1,5 @@
 import React from 'react';
-import { TextProps, TextStyle } from 'react-native';
-import { Text as RNText } from '../../presentation/components/Common/Text';
+import { Text as RNText, TextProps, TextStyle, StyleSheet } from 'react-native';
 import { Colors } from '../../core/theme/colors';
 import { Typography } from '../../core/theme/typography';
 
@@ -20,11 +19,22 @@ export const AppText: React.FC<AppTextProps> = ({
   children,
   ...rest
 }) => {
+  const flatStyle = StyleSheet.flatten(style || {}) as TextStyle;
+
+  // Determine FontFamily based on weight
+  let fontFamily = Typography.fontFamily.regular;
+  if (weight === 'bold' || flatStyle.fontWeight === 'bold' || flatStyle.fontWeight === '700') {
+    fontFamily = Typography.fontFamily.bold;
+  } else if (weight === 'medium' || flatStyle.fontWeight === '500') {
+    fontFamily = Typography.fontFamily.medium;
+  }
+
   const textStyle: TextStyle = {
     fontSize: Typography.fontSize[variant],
     color,
-    fontWeight: Typography.fontWeight[weight] as any,
+    fontFamily,
     textAlign: align,
+    lineHeight: Typography.lineHeight[variant as keyof typeof Typography.lineHeight] || undefined,
   };
 
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { Text } from './Text';
+import { AppText } from '../../../components/atoms/AppText';
 
 interface BadgeProps {
   label: string;
@@ -10,7 +10,9 @@ interface BadgeProps {
 const Badge: React.FC<BadgeProps> = ({ label, color = '#3182CE' }) => {
   return (
     <View style={[styles.badge, { backgroundColor: `${color}1A` }]}>
-      <Text style={[styles.badgeText, { color }]}>{label}</Text>
+      <AppText variant="xs" weight="bold" style={[styles.badgeText, { color }]}>
+        {label}
+      </AppText>
     </View>
   );
 };
