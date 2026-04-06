@@ -8,6 +8,17 @@ import { Colors } from '../../../core/theme/colors';
 import { Spacing } from '../../../core/theme/spacing';
 import { useResponsive } from '../../../core/utils/useResponsive';
 
+const DetailItem = ({ label, value }: { label: string; value: string }) => (
+  <View style={styles.gridItem}>
+    <AppText variant="xs" color={Colors.text.secondary} style={{ marginBottom: 4 }}>
+      {label}
+    </AppText>
+    <AppText variant="md" weight="bold" color={Colors.text.primary}>
+      {value}
+    </AppText>
+  </View>
+);
+
 export const ViewDetailsScreen: React.FC = () => {
   const route = useRoute<any>();
   const navigation = useNavigation<any>();
@@ -15,17 +26,6 @@ export const ViewDetailsScreen: React.FC = () => {
   useResponsive();
 
   if (!prescription) return null;
-
-  const DetailItem = ({ label, value }: { label: string; value: string }) => (
-    <View style={styles.gridItem}>
-      <AppText variant="xs" color={Colors.text.secondary} style={{ marginBottom: 4 }}>
-        {label}
-      </AppText>
-      <AppText variant="md" weight="bold" color={Colors.text.primary}>
-        {value}
-      </AppText>
-    </View>
-  );
 
   return (
     <MemberPortalLayout title="Prescription Details">
