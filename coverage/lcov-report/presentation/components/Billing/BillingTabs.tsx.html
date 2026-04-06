@@ -32,7 +32,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>0/7</span>
             </div>
         
             
@@ -122,32 +122,15 @@
 <a name='L57'></a><a href='#L57'>57</a>
 <a name='L58'></a><a href='#L58'>58</a>
 <a name='L59'></a><a href='#L59'>59</a>
-<a name='L60'></a><a href='#L60'>60</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L60'></a><a href='#L60'>60</a>
+<a name='L61'></a><a href='#L61'>61</a>
+<a name='L62'></a><a href='#L62'>62</a>
+<a name='L63'></a><a href='#L63'>63</a>
+<a name='L64'></a><a href='#L64'>64</a>
+<a name='L65'></a><a href='#L65'>65</a>
+<a name='L66'></a><a href='#L66'>66</a>
+<a name='L67'></a><a href='#L67'>67</a>
+<a name='L68'></a><a href='#L68'>68</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -164,6 +147,39 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -182,60 +198,68 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
-import { View, TouchableOpacity, StyleSheet } from 'react-native';
-import { Text } from '../Common/Text';
+import { View, StyleSheet, TouchableOpacity, ScrollView } from 'react-native';
+import { AppText } from '../../../components/atoms/AppText';
 import { Colors } from '../../../core/theme/colors';
+import { Spacing } from '../../../core/theme/spacing';
 &nbsp;
 interface BillingTabsProps {
   options: string[];
   activeTab: string;
   onTabChange: (tab: string) =&gt; void;
-  activeColor: string;
+  activeColor?: string;
 }
 &nbsp;
 const BillingTabs: React.FC&lt;BillingTabsProps&gt; = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span></span>
   options,
   activeTab,
   onTabChange,
-  activeColor,
+  activeColor = <span class="branch-0 cbranch-no" title="branch not covered" >Colors.primary,</span>
 }) =&gt; {
 <span class="cstat-no" title="statement not covered" >  return (</span>
     &lt;View style={styles.container}&gt;
-      {options.map(<span class="fstat-no" title="function not covered" >(t</span>ab) =&gt; {
-        const isActive = <span class="cstat-no" title="statement not covered" >activeTab === tab;</span>
-<span class="cstat-no" title="statement not covered" >        return (</span>
-          &lt;TouchableOpacity
-            key={tab}
-            onPress={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >onTabChange(tab)}</span>
-            style={[styles.tab, isActive &amp;&amp; { borderBottomColor: activeColor }]}
-          &gt;
-            &lt;Text style={[styles.tabText, isActive &amp;&amp; { color: activeColor, fontWeight: 'bold' }]}&gt;
-              {tab}
-            &lt;/Text&gt;
-          &lt;/TouchableOpacity&gt;
-        );
-      })}
+      &lt;ScrollView
+        horizontal
+        showsHorizontalScrollIndicator={false}
+        contentContainerStyle={styles.scrollContent}
+      &gt;
+        {options.map(<span class="fstat-no" title="function not covered" >(o</span>ption) =&gt; {
+          const isActive = <span class="cstat-no" title="statement not covered" >activeTab === option;</span>
+<span class="cstat-no" title="statement not covered" >          return (</span>
+            &lt;TouchableOpacity
+              key={option}
+              style={[styles.tab, isActive &amp;&amp; { borderBottomColor: activeColor }]}
+              onPress={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >onTabChange(option)}</span>
+            &gt;
+              &lt;AppText
+                variant="md"
+                weight={isActive ? 'medium' : 'regular'}
+                color={isActive ? activeColor : Colors.text.secondary}
+              &gt;
+                {option}
+              &lt;/AppText&gt;
+            &lt;/TouchableOpacity&gt;
+          );
+        })}
+      &lt;/ScrollView&gt;
     &lt;/View&gt;
   );
 };
 &nbsp;
 const styles = <span class="cstat-no" title="statement not covered" >StyleSheet.create({</span>
   container: {
-    flexDirection: 'row',
-    marginBottom: 32,
     borderBottomWidth: 1,
     borderBottomColor: Colors.border,
+    marginBottom: Spacing.lg,
+  },
+  scrollContent: {
+    flexDirection: 'row',
   },
   tab: {
-    paddingVertical: 12,
-    marginRight: 32,
-    borderBottomWidth: 3,
+    paddingVertical: Spacing.md,
+    paddingHorizontal: Spacing.lg,
+    borderBottomWidth: 2,
     borderBottomColor: 'transparent',
-  },
-  tabText: {
-    fontSize: 16,
-    color: Colors.text.secondary,
-    fontWeight: '500',
   },
 });
 &nbsp;
@@ -247,7 +271,7 @@ export default BillingTabs;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-04T11:29:45.110Z
+                at 2026-04-06T08:22:14.617Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

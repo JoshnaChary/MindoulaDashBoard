@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>0/10</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/12</span>
+                <span class='fraction'>0/10</span>
             </div>
         
             
@@ -164,25 +164,7 @@
 <a name='L99'></a><a href='#L99'>99</a>
 <a name='L100'></a><a href='#L100'>100</a>
 <a name='L101'></a><a href='#L101'>101</a>
-<a name='L102'></a><a href='#L102'>102</a>
-<a name='L103'></a><a href='#L103'>103</a>
-<a name='L104'></a><a href='#L104'>104</a>
-<a name='L105'></a><a href='#L105'>105</a>
-<a name='L106'></a><a href='#L106'>106</a>
-<a name='L107'></a><a href='#L107'>107</a>
-<a name='L108'></a><a href='#L108'>108</a>
-<a name='L109'></a><a href='#L109'>109</a>
-<a name='L110'></a><a href='#L110'>110</a>
-<a name='L111'></a><a href='#L111'>111</a>
-<a name='L112'></a><a href='#L112'>112</a>
-<a name='L113'></a><a href='#L113'>113</a>
-<a name='L114'></a><a href='#L114'>114</a>
-<a name='L115'></a><a href='#L115'>115</a>
-<a name='L116'></a><a href='#L116'>116</a>
-<a name='L117'></a><a href='#L117'>117</a>
-<a name='L118'></a><a href='#L118'>118</a>
-<a name='L119'></a><a href='#L119'>119</a>
-<a name='L120'></a><a href='#L120'>120</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L102'></a><a href='#L102'>102</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -190,8 +172,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -235,11 +216,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -269,19 +246,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -302,15 +266,14 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React, { useState } from 'react';
-import { View, StyleSheet, TouchableOpacity, Alert } from 'react-native';
-import { Text } from '../../components/Common/Text';
+import { View, StyleSheet, Alert } from 'react-native';
+import { AppText } from '../../../components/atoms/AppText';
+import { ResponsiveContainer } from '../../../components/atoms/ResponsiveContainer';
 import MemberPortalLayout from '../../components/MemberPortalLayout';
 import BillingTabs from '../../components/Billing/BillingTabs';
 import SettingCard from '../../components/Account/SettingCard';
 import { Colors } from '../../../core/theme/colors';
-&nbsp;
-const BASE_X = <span class="cstat-no" title="statement not covered" >9;</span>
-const BASE_Y = <span class="cstat-no" title="statement not covered" >254;</span>
+import { Spacing } from '../../../core/theme/spacing';
 &nbsp;
 export const AccountScreen: React.FC = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
   const [activeTab, setActiveTab] = <span class="cstat-no" title="statement not covered" >useState('Settings');</span>
@@ -345,77 +308,60 @@ export const AccountScreen: React.FC = <span class="cstat-no" title="statement n
   ];
 &nbsp;
 <span class="cstat-no" title="statement not covered" >  return (</span>
-    &lt;MemberPortalLayout&gt;
-      &lt;View
-        style={[styles.absoluteWrapper, { left: 358 - BASE_X, top: 395 - BASE_Y, width: 1040 }]}
-      &gt;
-        &lt;View style={styles.container}&gt;
-          {/* Title */}
-          &lt;Text style={styles.h2}&gt;Account&lt;/Text&gt;
+    &lt;MemberPortalLayout title="Account"&gt;
+      &lt;ResponsiveContainer&gt;
+        &lt;AppText variant="h2" weight="bold" style={{ marginBottom: Spacing.lg }}&gt;
+          Account
+        &lt;/AppText&gt;
 &nbsp;
-          {/* Tabs */}
-          &lt;BillingTabs
-            options={['Settings', 'Notifications', 'Delegate/Care Givers']}
-            activeTab={activeTab}
-            onTabChange={<span class="fstat-no" title="function not covered" >(t</span>ab) =&gt; <span class="cstat-no" title="statement not covered" >setActiveTab(tab)}</span>
-            activeColor={Colors.primary}
-          /&gt;
+        &lt;BillingTabs
+          options={['Settings', 'Notifications', 'Delegate/Care Givers']}
+          activeTab={activeTab}
+          onTabChange={<span class="fstat-no" title="function not covered" >(t</span>ab) =&gt; <span class="cstat-no" title="statement not covered" >setActiveTab(tab)}</span>
+        /&gt;
 &nbsp;
-          {activeTab === 'Settings' &amp;&amp; (
-            &lt;View style={styles.listContainer}&gt;
-              {settings.map(<span class="fstat-no" title="function not covered" >(i</span>tem) =&gt; (
-<span class="cstat-no" title="statement not covered" >                &lt;View key={item.id} style={{ marginBottom: 16 }}&gt;</span>
-                  &lt;SettingCard
-                    label={item.label}
-                    value={item.value}
-                    actionLabel={item.actionLabel}
-                    onAction={item.onAction}
-                  /&gt;
-                &lt;/View&gt;
-              ))}
-            &lt;/View&gt;
-          )}
+        {activeTab === 'Settings' &amp;&amp; (
+          &lt;View style={styles.listContainer}&gt;
+            {settings.map(<span class="fstat-no" title="function not covered" >(i</span>tem) =&gt; (
+<span class="cstat-no" title="statement not covered" >              &lt;SettingCard</span>
+                key={item.id}
+                label={item.label}
+                value={item.value}
+                actionLabel={item.actionLabel}
+                onAction={item.onAction}
+              /&gt;
+            ))}
+          &lt;/View&gt;
+        )}
 &nbsp;
-          {activeTab !== 'Settings' &amp;&amp; (
-            &lt;View style={styles.placeholderContainer}&gt;
-              &lt;Text style={styles.body1}&gt;Content for {activeTab} coming soon...&lt;/Text&gt;
-            &lt;/View&gt;
-          )}
-        &lt;/View&gt;
-      &lt;/View&gt;
+        {activeTab !== 'Settings' &amp;&amp; (
+          &lt;View style={styles.placeholderContainer}&gt;
+            &lt;AppText variant="md" color={Colors.text.primary} align="center"&gt;
+              Content for {activeTab} coming soon...
+            &lt;/AppText&gt;
+          &lt;/View&gt;
+        )}
+      &lt;/ResponsiveContainer&gt;
     &lt;/MemberPortalLayout&gt;
   );
 };
 &nbsp;
 const styles = <span class="cstat-no" title="statement not covered" >StyleSheet.create({</span>
-  absoluteWrapper: {
-    position: 'absolute',
-  },
-  container: {
-    padding: 24,
-    flexDirection: 'column',
-  },
-  h2: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: Colors.text.primary,
-    marginBottom: 24,
-  },
   listContainer: {
-    marginTop: 32,
-    flexDirection: 'column',
+    backgroundColor: Colors.white,
+    padding: Spacing.md,
+    borderRadius: Spacing.radius.md,
   },
   placeholderContainer: {
-    marginTop: 32,
-    padding: 20,
+    marginTop: Spacing.xl,
+    padding: Spacing.xl,
     backgroundColor: Colors.white,
-    borderRadius: 8,
+    borderRadius: Spacing.radius.md,
     borderWidth: 1,
     borderColor: Colors.border,
-  },
-  body1: {
-    fontSize: 16,
-    color: Colors.text.primary,
+    minHeight: 200,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });
 &nbsp;
@@ -427,7 +373,7 @@ export default AccountScreen;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-04T11:29:45.128Z
+                at 2026-04-06T08:22:14.635Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

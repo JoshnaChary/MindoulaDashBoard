@@ -12,7 +12,7 @@ export const ViewDetailsScreen: React.FC = () => {
   const route = useRoute<any>();
   const navigation = useNavigation<any>();
   const prescription = route.params?.prescription;
-  const { isPhone } = useResponsive();
+  useResponsive();
 
   if (!prescription) return null;
 

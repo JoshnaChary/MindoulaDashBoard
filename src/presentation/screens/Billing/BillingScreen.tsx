@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, TouchableOpacity, Alert, Platform } from 'react-native';
+import { View, StyleSheet, TouchableOpacity, Alert } from 'react-native';
 import { AppText } from '../../../components/atoms/AppText';
 import { AppButton } from '../../../components/atoms/AppButton';
 import { ResponsiveContainer } from '../../../components/atoms/ResponsiveContainer';
