@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>7/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/1</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/4</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -111,7 +111,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">8x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -119,17 +119,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">47x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">47x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">47x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -147,17 +147,17 @@ interface ResponsiveContainerProps extends ViewProps {
   fluid?: boolean;
 }
 &nbsp;
-export const ResponsiveContainer: React.FC&lt;ResponsiveContainerProps&gt; = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span></span>
-  maxWidth = <span class="branch-0 cbranch-no" title="branch not covered" >1200,</span>
+export const ResponsiveContainer: React.FC&lt;ResponsiveContainerProps&gt; = ({
+  maxWidth = 1200,
   children,
-  padding = <span class="branch-0 cbranch-no" title="branch not covered" >'lg',</span>
-  fluid = <span class="branch-0 cbranch-no" title="branch not covered" >false,</span>
+  padding = 'lg',
+  fluid = false,
   style,
   ...props
 }) =&gt; {
-  const { isPhone } = <span class="cstat-no" title="statement not covered" >useResponsive();</span>
+  const { isPhone } = useResponsive();
 &nbsp;
-  const containerStyle: ViewStyle = <span class="cstat-no" title="statement not covered" >{</span>
+  const containerStyle: ViewStyle = {
     width: '100%',
     alignSelf: 'center',
     paddingHorizontal: fluid ? 0 : Spacing[padding],
@@ -165,7 +165,7 @@ export const ResponsiveContainer: React.FC&lt;ResponsiveContainerProps&gt; = <sp
     maxWidth: isPhone ? undefined : maxWidth,
   };
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;View style={[containerStyle, style]} {...props}&gt;
       {children}
     &lt;/View&gt;
@@ -178,7 +178,7 @@ export const ResponsiveContainer: React.FC&lt;ResponsiveContainerProps&gt; = <sp
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-06T11:26:24.272Z
+                at 2026-04-06T13:01:00.993Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

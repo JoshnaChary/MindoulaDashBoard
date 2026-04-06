@@ -26,7 +26,12 @@ export const DashboardHeader: React.FC<DashboardHeaderProps> = ({
           {subtitle}
         </AppText>
       </View>
-      <TouchableOpacity style={styles.profileButton} onPress={onProfilePress} activeOpacity={0.7}>
+      <TouchableOpacity
+        style={styles.profileButton}
+        onPress={onProfilePress}
+        activeOpacity={0.7}
+        testID="profile-button"
+      >
         <View style={styles.profileCircle}>
           <AppIcon name="person" size={28} color={Colors.primary} />
         </View>

@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>6/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">71.42% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/7</span>
+                <span class='fraction'>5/7</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -249,11 +249,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -316,16 +316,16 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -334,8 +334,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">20x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -345,7 +345,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -423,11 +423,11 @@ import { Colors } from '../../../core/theme/colors';
 import { Spacing } from '../../../core/theme/spacing';
 import { useResponsive } from '../../../core/utils/useResponsive';
 &nbsp;
-const FigmaDashboardView: React.FC = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
-  const navigation = <span class="cstat-no" title="statement not covered" >useNavigation&lt;any&gt;();</span>
-  const { isPhone } = <span class="cstat-no" title="statement not covered" >useResponsive();</span>
+const FigmaDashboardView: React.FC = () =&gt; {
+  const navigation = useNavigation&lt;any&gt;();
+  const { isPhone } = useResponsive();
 &nbsp;
-<span class="cstat-no" title="statement not covered" >  return (</span>
+  return (
     &lt;MemberPortalLayout title="Home"&gt;
       &lt;ResponsiveContainer&gt;
         {/* Hello, Jane */}
@@ -490,16 +490,16 @@ const FigmaDashboardView: React.FC = <span class="cstat-no" title="statement not
             &lt;ActionCard
               label="View 3 new messages"
               icon={require('../../../assets/message-icon.png')}
-              onPress={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >navigation.navigate(AppConstants.screens.messages)}</span>
+              onPress={() =&gt; navigation.navigate(AppConstants.screens.messages)}
             /&gt;
             &lt;ActionCard label="Request an appointment" onPress={<span class="fstat-no" title="function not covered" >()</span> =&gt; {}} /&gt;
             &lt;ActionCard
               label="Request a prescription refill"
-              onPress={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >navigation.navigate(AppConstants.screens.prescriptions)}</span>
+              onPress={() =&gt; navigation.navigate(AppConstants.screens.prescriptions)}
             /&gt;
             &lt;ActionCard
               label="Send a message to my care team"
-              onPress={<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >navigation.navigate(AppConstants.screens.messages)}</span>
+              onPress={() =&gt; navigation.navigate(AppConstants.screens.messages)}
             /&gt;
           &lt;/View&gt;
         &lt;/View&gt;
@@ -508,8 +508,8 @@ const FigmaDashboardView: React.FC = <span class="cstat-no" title="statement not
   );
 };
 &nbsp;
-const ActionCard = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span> label, icon, onPress }: any) =&gt; (</span>
-<span class="cstat-no" title="statement not covered" >  &lt;TouchableOpacity style={styles.actionCard} onPress={onPress} activeOpacity={0.7}&gt;</span>
+const ActionCard = ({ label, icon, onPress }: any) =&gt; (
+  &lt;TouchableOpacity style={styles.actionCard} onPress={onPress} activeOpacity={0.7}&gt;
     &lt;View style={styles.actionCardContent}&gt;
       {icon &amp;&amp; &lt;Image source={icon} style={styles.actionIcon} /&gt;}
       &lt;AppText variant="md" weight="medium" color={Colors.dashboard.actionLink}&gt;
@@ -519,7 +519,7 @@ const ActionCard = <span class="cstat-no" title="statement not covered" ><span c
   &lt;/TouchableOpacity&gt;
 );
 &nbsp;
-const styles = <span class="cstat-no" title="statement not covered" >StyleSheet.create({</span>
+const styles = StyleSheet.create({
   section: {
     marginBottom: Spacing.xl,
   },
@@ -532,8 +532,8 @@ const styles = <span class="cstat-no" title="statement not covered" >StyleSheet.
     borderColor: Colors.border,
     borderRadius: Spacing.radius.md,
     padding: Spacing.lg,
-    flexDirection: Platform.OS === 'web' ? 'row' : 'column',
-    alignItems: Platform.OS === 'web' ? 'center' : 'stretch',
+    flexDirection: Platform.OS === 'web' ? <span class="branch-0 cbranch-no" title="branch not covered" >'row' </span>: 'column',
+    alignItems: Platform.OS === 'web' ? <span class="branch-0 cbranch-no" title="branch not covered" >'center' </span>: 'stretch',
     justifyContent: 'space-between',
     gap: Spacing.md,
   },
@@ -592,7 +592,7 @@ export default FigmaDashboardView;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-06T11:26:24.272Z
+                at 2026-04-06T13:01:00.993Z
             </div>
         <script src="../../../prettify.js"></script>
         <script>

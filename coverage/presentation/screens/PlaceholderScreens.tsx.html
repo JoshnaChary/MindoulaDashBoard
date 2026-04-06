@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/13</span>
+                <span class='fraction'>13/13</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/8</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -116,8 +116,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -131,7 +131,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -144,11 +144,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { AppText } from '../../components/atoms/AppText';
@@ -159,8 +159,8 @@ interface Props {
   title: string;
 }
 &nbsp;
-const PlaceholderScreen: React.FC&lt;Props&gt; = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({</span> title }) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  return (</span>
+const PlaceholderScreen: React.FC&lt;Props&gt; = ({ title }) =&gt; {
+  return (
     &lt;MemberPortalLayout title={title}&gt;
       &lt;View style={styles.container}&gt;
         &lt;AppText variant="lg" weight="medium" color={Colors.text.primary}&gt;
@@ -174,7 +174,7 @@ const PlaceholderScreen: React.FC&lt;Props&gt; = <span class="cstat-no" title="s
   );
 };
 &nbsp;
-const styles = <span class="cstat-no" title="statement not covered" >StyleSheet.create({</span>
+const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
@@ -187,11 +187,11 @@ const styles = <span class="cstat-no" title="statement not covered" >StyleSheet.
   },
 });
 &nbsp;
-export const LabResultsScreen = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >&lt;PlaceholderScreen title="Lab Results" /&gt;;</span></span>
-export const QuestionnairesScreen = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >&lt;PlaceholderScreen title="Questionnaires" /&gt;;</span></span>
-export const DocumentsScreen = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >&lt;PlaceholderScreen title="Documents" /&gt;;</span></span>
-export const InsuranceScreen = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >&lt;PlaceholderScreen title="Insurance" /&gt;;</span></span>
-export const AppointmentsScreen = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >&lt;PlaceholderScreen title="Appointments" /&gt;;</span></span>
+export const LabResultsScreen = () =&gt; &lt;PlaceholderScreen title="Lab Results" /&gt;;
+export const QuestionnairesScreen = () =&gt; &lt;PlaceholderScreen title="Questionnaires" /&gt;;
+export const DocumentsScreen = () =&gt; &lt;PlaceholderScreen title="Documents" /&gt;;
+export const InsuranceScreen = () =&gt; &lt;PlaceholderScreen title="Insurance" /&gt;;
+export const AppointmentsScreen = () =&gt; &lt;PlaceholderScreen title="Appointments" /&gt;;
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -199,7 +199,7 @@ export const AppointmentsScreen = <span class="cstat-no" title="statement not co
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-06T11:26:24.290Z
+                at 2026-04-06T13:01:01.019Z
             </div>
         <script src="../../prettify.js"></script>
         <script>

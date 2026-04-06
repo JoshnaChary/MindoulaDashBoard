@@ -83,6 +83,8 @@ export const AppButton: React.FC<AppButtonProps> = ({
       disabled={disabled}
       onPress={handlePress}
       activeOpacity={0.7}
+      accessibilityRole="button"
+      testID={rest.testID || 'app-button'}
       {...rest}
     >
       <AppText variant={size === 'small' ? 'sm' : 'md'} weight="medium" color={getLabelColor()}>

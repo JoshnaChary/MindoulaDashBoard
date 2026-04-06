@@ -17,6 +17,7 @@ const ThreadItem: React.FC<ThreadItemProps> = ({ thread, isSelected, onPress }) 
       style={[styles.container, isSelected && styles.selected]}
       onPress={onPress}
       activeOpacity={0.7}
+      testID="thread-item"
     >
       <View style={styles.header}>
         <AppText variant="md" weight={thread.unread ? 'bold' : 'medium'} style={{ flex: 1 }}>
@@ -31,7 +32,7 @@ const ThreadItem: React.FC<ThreadItemProps> = ({ thread, isSelected, onPress }) 
         <AppText variant="sm" color={Colors.text.secondary} numberOfLines={1} style={{ flex: 1 }}>
           {thread.subtitle}
         </AppText>
-        {thread.unread && <View style={styles.unreadDot} />}
+        {thread.unread && <View style={styles.unreadDot} testID="badge" />}
       </View>
 
       {isSelected && <View style={styles.selectionIndicator} />}

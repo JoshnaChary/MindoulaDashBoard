@@ -1,0 +1,152 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MessageIcon renders correctly 1`] = `
+<View
+  style={
+    [
+      {
+        "alignItems": "center",
+        "backgroundColor": "#3B74D1",
+        "justifyContent": "center",
+        "overflow": "hidden",
+      },
+      {
+        "borderRadius": 28,
+        "height": 56,
+        "width": 56,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "rgba(255,255,255,0.10)",
+          "position": "absolute",
+        },
+        {
+          "borderRadius": 22,
+          "height": 44,
+          "width": 44,
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "transparent",
+          "borderColor": "#FFFFFF",
+          "borderWidth": 2,
+          "overflow": "hidden",
+          "position": "absolute",
+        },
+        {
+          "borderRadius": 2,
+          "height": 18,
+          "top": 24,
+          "width": 26,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        [
+          {
+            "borderRightColor": "transparent",
+            "borderStyle": "solid",
+            "borderTopColor": "#FFFFFF",
+            "height": 0,
+            "left": 0,
+            "position": "absolute",
+            "top": 0,
+            "width": 0,
+          },
+          {
+            "borderRightWidth": 13,
+            "borderTopWidth": 9,
+          },
+        ]
+      }
+    />
+    <View
+      style={
+        [
+          {
+            "borderLeftColor": "transparent",
+            "borderStyle": "solid",
+            "borderTopColor": "#FFFFFF",
+            "height": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "width": 0,
+          },
+          {
+            "borderLeftWidth": 13,
+            "borderTopWidth": 9,
+          },
+        ]
+      }
+    />
+  </View>
+  <View
+    style={
+      [
+        {
+          "backgroundColor": "#FFFFFF",
+          "position": "absolute",
+        },
+        {
+          "height": 9,
+          "top": 12,
+          "width": 2.5,
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      [
+        {
+          "borderBottomColor": "#FFFFFF",
+          "borderRightColor": "transparent",
+          "borderStyle": "solid",
+          "height": 0,
+          "position": "absolute",
+          "width": 0,
+        },
+        {
+          "borderBottomWidth": 5,
+          "borderRightWidth": 4,
+          "left": 24.5,
+          "top": 9,
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      [
+        {
+          "borderBottomColor": "#FFFFFF",
+          "borderLeftColor": "transparent",
+          "borderStyle": "solid",
+          "height": 0,
+          "position": "absolute",
+          "width": 0,
+        },
+        {
+          "borderBottomWidth": 5,
+          "borderLeftWidth": 4,
+          "left": 28.5,
+          "top": 9,
+        },
+      ]
+    }
+  />
+</View>
+`;
