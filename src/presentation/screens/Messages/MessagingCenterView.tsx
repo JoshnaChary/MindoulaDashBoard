@@ -10,10 +10,19 @@ import ThreadItem from '../../components/Messages/ThreadItem';
 import ChatPanel from '../../components/Messages/ChatPanel';
 import { MessageThread } from '../../../data/models/DomainModels';
 
-const MessagingCenterView: React.FC = () => {
-  const [selectedId, setSelectedId] = useState<number | null>(1);
+type MessagingCenterViewProps = {
+  // Test-only knobs to cover branches without mocking React internals.
+  initialSelectedId?: number | null;
+  initialShowDetailOnMobile?: boolean;
+};
+
+const MessagingCenterView: React.FC<MessagingCenterViewProps> = ({
+  initialSelectedId = 1,
+  initialShowDetailOnMobile = false,
+}) => {
+  const [selectedId, setSelectedId] = useState<number | null>(initialSelectedId);
   const { isPhone, isDesktop, height } = useResponsive();
-  const [showDetailOnMobile, setShowDetailOnMobile] = useState(false);
+  const [showDetailOnMobile, setShowDetailOnMobile] = useState(initialShowDetailOnMobile);
 
   const messageThreads: MessageThread[] = [
     {

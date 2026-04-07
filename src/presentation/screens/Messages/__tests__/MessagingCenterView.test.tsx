@@ -86,4 +86,36 @@ describe('MessagingCenterView', () => {
     expect(getByText('Messages')).toBeTruthy();
     expect(queryByText('+ Attach file')).toBeNull();
   });
+
+  it('selecting a thread on desktop does not toggle mobile detail state', () => {
+    (ResponsiveUtility.useResponsive as jest.Mock).mockReturnValue({
+      isPhone: false,
+      isDesktop: true,
+      height: defaultHeight,
+    });
+
+    const { getByText } = render(<MessagingCenterView />);
+
+    fireEvent.press(getByText('Care Team'));
+
+    // On desktop the detail pane is always visible, so ChatPanel content should remain visible.
+    expect(getByText('+ Attach file')).toBeTruthy();
+    // And the list pane should still be present.
+    expect(getByText('Messages')).toBeTruthy();
+  });
+
+  it('renders empty state when selectedId is null', () => {
+    (ResponsiveUtility.useResponsive as jest.Mock).mockReturnValue({
+      isPhone: false,
+      isDesktop: true,
+      height: defaultHeight,
+    });
+
+    const { getByText, queryByText } = render(
+      <MessagingCenterView initialSelectedId={null} initialShowDetailOnMobile={false} />,
+    );
+
+    expect(getByText('Select a thread to start messaging')).toBeTruthy();
+    expect(queryByText('+ Attach file')).toBeNull();
+  });
 });

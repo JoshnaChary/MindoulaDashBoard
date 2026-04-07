@@ -75,6 +75,28 @@ describe('BillingScreen', () => {
     expect(getByText('Billing')).toBeTruthy();
   });
 
+  it('transitions to Invoice Details view from History and back', () => {
+    (ResponsiveUtility.useResponsive as jest.Mock).mockReturnValue({ isPhone: false });
+
+    const { getByText, queryByText, getAllByText } = render(<BillingScreen />);
+
+    // Switch to History tab first
+    fireEvent.press(getByText('History'));
+    expect(getByText('Filter by date')).toBeTruthy();
+
+    // Press "View Details" on the first history InvoiceCard
+    const historyViewDetailsBtns = getAllByText('View Details');
+    fireEvent.press(historyViewDetailsBtns[0]);
+
+    expect(getByText('< Back to Billing')).toBeTruthy();
+    expect(getByText('Charges:')).toBeTruthy();
+
+    // Go back
+    fireEvent.press(getByText('< Back to Billing'));
+    expect(queryByText('Charges:')).toBeNull();
+    expect(getByText('Billing')).toBeTruthy();
+  });
+
   it('handles phone layout in Outstanding tab', () => {
     (ResponsiveUtility.useResponsive as jest.Mock).mockReturnValue({ isPhone: true });
     const { getByText } = render(<BillingScreen />);

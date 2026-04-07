@@ -35,7 +35,15 @@ const FigmaDashboardView: React.FC = () => {
             Upcoming appointment
           </AppText>
 
-          <View style={styles.appointmentCard}>
+          <View
+            style={[
+              styles.appointmentCard,
+              {
+                flexDirection: Platform.OS === 'web' ? 'row' : 'column',
+                alignItems: Platform.OS === 'web' ? 'center' : 'stretch',
+              },
+            ]}
+          >
             <View style={styles.appointmentHeader}>
               <View style={styles.dateBadge}>
                 <AppText variant="lg" weight="bold" color={Colors.text.primary} align="center">
@@ -119,8 +127,6 @@ const styles = StyleSheet.create({
     borderColor: Colors.border,
     borderRadius: Spacing.radius.md,
     padding: Spacing.lg,
-    flexDirection: Platform.OS === 'web' ? 'row' : 'column',
-    alignItems: Platform.OS === 'web' ? 'center' : 'stretch',
     justifyContent: 'space-between',
     gap: Spacing.md,
   },

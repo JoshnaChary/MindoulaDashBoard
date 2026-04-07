@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/10</span>
+                <span class='fraction'>10/10</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -122,30 +122,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">7x</span>
+<span class="cline-any cline-yes">7x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -153,12 +133,32 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -173,10 +173,10 @@ export interface ApiResponse&lt;T&gt; {
   status: number;
 }
 &nbsp;
-export const ApiService = <span class="cstat-no" title="statement not covered" >{</span>
-  fetch: <span class="fstat-no" title="function not covered" >as</span>ync &lt;T&gt;(url: string, options?: RequestInit): Promise&lt;ApiResponse&lt;T&gt;&gt; =&gt; {
-<span class="cstat-no" title="statement not covered" >    try {</span>
-      const response = <span class="cstat-no" title="statement not covered" >await fetch(`${AppConstants.api.baseUrl}${url}`, {</span>
+export const ApiService = {
+  fetch: async &lt;T&gt;(url: string, options?: RequestInit): Promise&lt;ApiResponse&lt;T&gt;&gt; =&gt; {
+    try {
+      const response = await fetch(`${AppConstants.api.baseUrl}${url}`, {
         ...options,
         headers: {
           'Content-Type': 'application/json',
@@ -184,19 +184,19 @@ export const ApiService = <span class="cstat-no" title="statement not covered" >
         },
       });
 &nbsp;
-      const data = <span class="cstat-no" title="statement not covered" >await response.json();</span>
+      const data = await response.json();
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      if (!response.ok) {</span>
-<span class="cstat-no" title="statement not covered" >        throw new Error(data.message || 'Network response was not ok');</span>
+      if (!response.ok) {
+        throw new Error(data.message || 'Network response was not ok');
       }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >      return {</span>
+      return {
         data,
         error: null,
         status: response.status,
       };
     } catch (error: any) {
-<span class="cstat-no" title="statement not covered" >      return {</span>
+      return {
         data: null,
         error: error.message || 'Something went wrong',
         status: 500,
@@ -204,12 +204,12 @@ export const ApiService = <span class="cstat-no" title="statement not covered" >
     }
   },
 &nbsp;
-  get: <span class="fstat-no" title="function not covered" >&lt;T</span>&gt;(url: string, options?: RequestInit) =&gt; {
-<span class="cstat-no" title="statement not covered" >    return ApiService.fetch&lt;T&gt;(url, { ...options, method: 'GET' });</span>
+  get: &lt;T&gt;(url: string, options?: RequestInit) =&gt; {
+    return ApiService.fetch&lt;T&gt;(url, { ...options, method: 'GET' });
   },
 &nbsp;
-  post: <span class="fstat-no" title="function not covered" >&lt;T</span>, U = Record&lt;string, unknown&gt;&gt;(url: string, body: U, options?: RequestInit) =&gt; {
-<span class="cstat-no" title="statement not covered" >    return ApiService.fetch&lt;T&gt;(url, {</span>
+  post: &lt;T, U = Record&lt;string, unknown&gt;&gt;(url: string, body: U, options?: RequestInit) =&gt; {
+    return ApiService.fetch&lt;T&gt;(url, {
       ...options,
       method: 'POST',
       body: JSON.stringify(body),
@@ -223,7 +223,7 @@ export const ApiService = <span class="cstat-no" title="statement not covered" >
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-06T13:01:00.993Z
+                at 2026-04-07T07:21:33.825Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
