@@ -1,5 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
+import { Platform } from 'react-native';
 import FigmaDashboardView from '../FigmaDashboardView';
 import * as ResponsiveUtility from '../../../../core/utils/useResponsive';
 import { AppConstants } from '../../../../core/constants/AppConstants';
@@ -64,5 +65,19 @@ describe('FigmaDashboardView', () => {
 
     fireEvent.press(getByText('Send a message to my care team'));
     expect(mockNavigate).toHaveBeenCalledWith(AppConstants.screens.messages);
+  });
+
+  it('applies web layout styles when Platform.OS is web', () => {
+    const prevOS = Platform.OS;
+    // jest.setup defaults Platform.OS to 'ios' but it is writable.
+    // The Platform-based ternaries are evaluated during render, so we can
+    // simply flip Platform.OS and render.
+    (Platform as any).OS = 'web';
+    (ResponsiveUtility.useResponsive as jest.Mock).mockReturnValue({ isPhone: false });
+
+    const { getByText } = render(<FigmaDashboardView />);
+    expect(getByText('Upcoming appointment')).toBeTruthy();
+
+    (Platform as any).OS = prevOS;
   });
 });
