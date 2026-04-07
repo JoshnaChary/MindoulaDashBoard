@@ -67,6 +67,18 @@ describe('FigmaDashboardView', () => {
     expect(mockNavigate).toHaveBeenCalledWith(AppConstants.screens.messages);
   });
 
+  it('handles "Join Video" press', () => {
+    const { getByText } = render(<FigmaDashboardView />);
+    fireEvent.press(getByText('Join Video'));
+    // Currently onPress is empty, so we just verify it doesn't crash
+  });
+
+  it('handles "Request an appointment" press', () => {
+    const { getByText } = render(<FigmaDashboardView />);
+    fireEvent.press(getByText('Request an appointment'));
+    // Currently onPress is empty, so we just verify it doesn't crash
+  });
+
   it('applies web layout styles when Platform.OS is web', () => {
     const prevOS = Platform.OS;
     // jest.setup defaults Platform.OS to 'ios' but it is writable.

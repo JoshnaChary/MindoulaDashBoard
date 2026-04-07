@@ -1,64 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1775546493813" clover="3.2.0">
-  <project timestamp="1775546493813" name="All files">
-    <metrics statements="321" coveredstatements="321" conditionals="245" coveredconditionals="245" methods="134" coveredmethods="131" elements="700" coveredelements="697" complexity="0" loc="321" ncloc="321" packages="22" files="42" classes="42"/>
-    <package name="components.atoms">
+<coverage generated="1775574816338" clover="3.2.0">
+  <project timestamp="1775574816338" name="All files">
+    <metrics statements="336" coveredstatements="336" conditionals="251" coveredconditionals="251" methods="136" coveredmethods="136" elements="723" coveredelements="723" complexity="0" loc="336" ncloc="336" packages="23" files="45" classes="45"/>
+    <package name="MindoulaDashBoard">
+      <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="App.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/App.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="23" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
+      </file>
+      <file name="index.ts" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/index.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="8" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="MindoulaDashBoard.src.components.atoms">
       <metrics statements="41" coveredstatements="41" conditionals="53" coveredconditionals="53" methods="8" coveredmethods="8"/>
       <file name="AppButton.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/components/atoms/AppButton.tsx">
         <metrics statements="26" coveredstatements="26" conditionals="27" coveredconditionals="27" methods="5" coveredmethods="5"/>
-        <line num="15" count="10" type="stmt"/>
-        <line num="24" count="92" type="stmt"/>
-        <line num="25" count="11" type="cond" truecount="2" falsecount="0"/>
-        <line num="26" count="10" type="cond" truecount="4" falsecount="0"/>
-        <line num="27" count="9" type="stmt"/>
+        <line num="15" count="11" type="stmt"/>
+        <line num="24" count="94" type="stmt"/>
+        <line num="25" count="13" type="cond" truecount="2" falsecount="0"/>
+        <line num="26" count="12" type="cond" truecount="4" falsecount="0"/>
+        <line num="27" count="11" type="stmt"/>
         <line num="29" count="1" type="stmt"/>
-        <line num="31" count="10" type="stmt"/>
-        <line num="35" count="92" type="stmt"/>
-        <line num="36" count="92" type="cond" truecount="5" falsecount="0"/>
-        <line num="38" count="52" type="stmt"/>
+        <line num="31" count="12" type="stmt"/>
+        <line num="35" count="94" type="stmt"/>
+        <line num="36" count="94" type="cond" truecount="5" falsecount="0"/>
+        <line num="38" count="54" type="stmt"/>
         <line num="40" count="2" type="stmt"/>
         <line num="42" count="36" type="stmt"/>
         <line num="44" count="1" type="stmt"/>
         <line num="46" count="1" type="stmt"/>
-        <line num="50" count="92" type="stmt"/>
-        <line num="51" count="92" type="cond" truecount="5" falsecount="0"/>
-        <line num="53" count="52" type="stmt"/>
+        <line num="50" count="94" type="stmt"/>
+        <line num="51" count="94" type="cond" truecount="5" falsecount="0"/>
+        <line num="53" count="54" type="stmt"/>
         <line num="57" count="39" type="stmt"/>
         <line num="59" count="1" type="stmt"/>
-        <line num="63" count="92" type="stmt"/>
-        <line num="64" count="92" type="cond" truecount="3" falsecount="0"/>
+        <line num="63" count="94" type="stmt"/>
+        <line num="64" count="94" type="cond" truecount="3" falsecount="0"/>
         <line num="66" count="64" type="stmt"/>
         <line num="68" count="1" type="stmt"/>
-        <line num="70" count="27" type="stmt"/>
-        <line num="74" count="92" type="stmt"/>
-        <line num="97" count="10" type="stmt"/>
+        <line num="70" count="29" type="stmt"/>
+        <line num="74" count="94" type="stmt"/>
+        <line num="97" count="11" type="stmt"/>
       </file>
       <file name="AppIcon.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/components/atoms/AppIcon.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="12" count="7" type="stmt"/>
+        <line num="12" count="8" type="stmt"/>
         <line num="18" count="32" type="stmt"/>
       </file>
       <file name="AppText.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/components/atoms/AppText.tsx">
         <metrics statements="9" coveredstatements="9" conditionals="17" coveredconditionals="17" methods="1" coveredmethods="1"/>
-        <line num="13" count="26" type="stmt"/>
-        <line num="22" count="997" type="cond" truecount="2" falsecount="0"/>
-        <line num="25" count="997" type="stmt"/>
-        <line num="26" count="997" type="cond" truecount="5" falsecount="0"/>
-        <line num="27" count="157" type="stmt"/>
-        <line num="28" count="840" type="cond" truecount="4" falsecount="0"/>
-        <line num="29" count="428" type="stmt"/>
-        <line num="32" count="997" type="stmt"/>
-        <line num="40" count="997" type="stmt"/>
+        <line num="13" count="27" type="stmt"/>
+        <line num="22" count="1021" type="cond" truecount="2" falsecount="0"/>
+        <line num="25" count="1021" type="stmt"/>
+        <line num="26" count="1021" type="cond" truecount="5" falsecount="0"/>
+        <line num="27" count="159" type="stmt"/>
+        <line num="28" count="862" type="cond" truecount="4" falsecount="0"/>
+        <line num="29" count="444" type="stmt"/>
+        <line num="32" count="1021" type="stmt"/>
+        <line num="40" count="1021" type="stmt"/>
       </file>
       <file name="ResponsiveContainer.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/components/atoms/ResponsiveContainer.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="7" coveredconditionals="7" methods="1" coveredmethods="1"/>
-        <line num="13" count="9" type="stmt"/>
-        <line num="21" count="55" type="stmt"/>
-        <line num="23" count="55" type="stmt"/>
-        <line num="31" count="55" type="stmt"/>
+        <line num="13" count="10" type="stmt"/>
+        <line num="21" count="57" type="stmt"/>
+        <line num="23" count="57" type="stmt"/>
+        <line num="31" count="57" type="stmt"/>
       </file>
     </package>
-    <package name="components.molecules">
+    <package name="MindoulaDashBoard.src.components.molecules">
       <metrics statements="12" coveredstatements="12" conditionals="18" coveredconditionals="18" methods="2" coveredmethods="2"/>
       <file name="MenuListItem.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/components/molecules/MenuListItem.tsx">
         <metrics statements="12" coveredstatements="12" conditionals="18" coveredconditionals="18" methods="2" coveredmethods="2"/>
@@ -76,7 +90,7 @@
         <line num="59" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="components.organisms">
+    <package name="MindoulaDashBoard.src.components.organisms">
       <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
       <file name="ActionCard.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/components/organisms/ActionCard.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -97,22 +111,22 @@
         <line num="43" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="core.constants">
+    <package name="MindoulaDashBoard.src.core.constants">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="AppConstants.ts" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/core/constants/AppConstants.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="1" count="6" type="stmt"/>
+        <line num="1" count="7" type="stmt"/>
       </file>
       <file name="strings.ts" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/core/constants/strings.ts">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="core.navigation">
+    <package name="MindoulaDashBoard.src.core.navigation">
       <metrics statements="26" coveredstatements="26" conditionals="14" coveredconditionals="14" methods="15" coveredmethods="15"/>
       <file name="CustomDrawerContent.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/core/navigation/CustomDrawerContent.tsx">
         <metrics statements="19" coveredstatements="19" conditionals="10" coveredconditionals="10" methods="13" coveredmethods="13"/>
-        <line num="11" count="1" type="stmt"/>
+        <line num="11" count="2" type="stmt"/>
         <line num="12" count="1" type="stmt"/>
         <line num="13" count="1" type="stmt"/>
         <line num="15" count="1" type="stmt"/>
@@ -128,28 +142,25 @@
         <line num="101" count="1" type="stmt"/>
         <line num="107" count="1" type="stmt"/>
         <line num="113" count="1" type="stmt"/>
-        <line num="130" count="1" type="stmt"/>
+        <line num="130" count="2" type="stmt"/>
         <line num="131" count="10" type="cond" truecount="2" falsecount="0"/>
-        <line num="153" count="1" type="stmt"/>
+        <line num="153" count="2" type="stmt"/>
       </file>
       <file name="MainDrawerNavigator.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/core/navigation/MainDrawerNavigator.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="21" count="2" type="stmt"/>
         <line num="22" count="1" type="stmt"/>
       </file>
       <file name="RootNavigator.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/core/navigation/RootNavigator.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
-        <line num="23" count="1" type="stmt"/>
-        <line num="25" count="1" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
         <line num="26" count="2" type="stmt"/>
         <line num="28" count="2" type="stmt"/>
       </file>
-      <file name="types.ts" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/core/navigation/types.ts">
-        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      </file>
     </package>
-    <package name="core.services">
+    <package name="MindoulaDashBoard.src.core.services">
       <metrics statements="10" coveredstatements="10" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
       <file name="apiService.ts" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/core/services/apiService.ts">
         <metrics statements="10" coveredstatements="10" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
@@ -165,20 +176,45 @@
         <line num="45" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="core.utils">
+    <package name="MindoulaDashBoard.src.core.theme">
+      <metrics statements="10" coveredstatements="10" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+      <file name="breakpoints.ts" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/core/theme/breakpoints.ts">
+        <metrics statements="7" coveredstatements="7" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
+        <line num="1" count="4" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="35" type="cond" truecount="2" falsecount="0"/>
+        <line num="11" count="5" type="stmt"/>
+        <line num="13" count="30" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="28" type="stmt"/>
+        <line num="16" count="2" type="stmt"/>
+      </file>
+      <file name="colors.ts" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/core/theme/colors.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="30" type="stmt"/>
+      </file>
+      <file name="spacing.ts" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/core/theme/spacing.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="26" type="stmt"/>
+      </file>
+      <file name="typography.ts" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/core/theme/typography.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="28" type="stmt"/>
+      </file>
+    </package>
+    <package name="MindoulaDashBoard.src.core.utils">
       <metrics statements="32" coveredstatements="32" conditionals="20" coveredconditionals="20" methods="10" coveredmethods="10"/>
       <file name="haptics.ts" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/core/utils/haptics.ts">
         <metrics statements="12" coveredstatements="12" conditionals="8" coveredconditionals="8" methods="4" coveredmethods="4"/>
-        <line num="4" count="10" type="stmt"/>
+        <line num="4" count="11" type="stmt"/>
         <line num="5" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="6" count="1" type="stmt"/>
-        <line num="10" count="10" type="stmt"/>
-        <line num="11" count="10" type="cond" truecount="2" falsecount="0"/>
-        <line num="12" count="9" type="stmt"/>
-        <line num="16" count="10" type="stmt"/>
+        <line num="10" count="11" type="stmt"/>
+        <line num="11" count="12" type="cond" truecount="2" falsecount="0"/>
+        <line num="12" count="11" type="stmt"/>
+        <line num="16" count="11" type="stmt"/>
         <line num="17" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="18" count="1" type="stmt"/>
-        <line num="22" count="10" type="stmt"/>
+        <line num="22" count="11" type="stmt"/>
         <line num="23" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="24" count="1" type="stmt"/>
       </file>
@@ -190,7 +226,7 @@
       </file>
       <file name="useResponsive.ts" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/core/utils/useResponsive.ts">
         <metrics statements="17" coveredstatements="17" conditionals="10" coveredconditionals="10" methods="5" coveredmethods="5"/>
-        <line num="5" count="2" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
         <line num="6" count="35" type="stmt"/>
         <line num="8" count="35" type="stmt"/>
         <line num="9" count="32" type="stmt"/>
@@ -209,16 +245,7 @@
         <line num="33" count="35" type="stmt"/>
       </file>
     </package>
-    <package name="data.models">
-      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="DashboardModel.ts" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/data/models/DashboardModel.ts">
-        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      </file>
-      <file name="DomainModels.ts" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/data/models/DomainModels.ts">
-        <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      </file>
-    </package>
-    <package name="data.repositories">
+    <package name="MindoulaDashBoard.src.data.repositories">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
       <file name="DashboardRepository.ts" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/data/repositories/DashboardRepository.ts">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
@@ -228,11 +255,11 @@
         <line num="17" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="presentation.components">
+    <package name="MindoulaDashBoard.src.presentation.components">
       <metrics statements="17" coveredstatements="17" conditionals="21" coveredconditionals="21" methods="14" coveredmethods="14"/>
       <file name="MemberPortalLayout.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/presentation/components/MemberPortalLayout.tsx">
         <metrics statements="17" coveredstatements="17" conditionals="21" coveredconditionals="21" methods="14" coveredmethods="14"/>
-        <line num="27" count="2" type="stmt"/>
+        <line num="27" count="3" type="stmt"/>
         <line num="34" count="5" type="stmt"/>
         <line num="35" count="5" type="stmt"/>
         <line num="36" count="5" type="stmt"/>
@@ -245,60 +272,60 @@
         <line num="84" count="1" type="stmt"/>
         <line num="95" count="1" type="stmt"/>
         <line num="99" count="1" type="stmt"/>
-        <line num="138" count="2" type="stmt"/>
+        <line num="138" count="3" type="stmt"/>
         <line num="139" count="33" type="cond" truecount="4" falsecount="0"/>
         <line num="141" count="33" type="stmt"/>
-        <line num="155" count="2" type="stmt"/>
+        <line num="155" count="3" type="stmt"/>
       </file>
     </package>
-    <package name="presentation.components.Account">
+    <package name="MindoulaDashBoard.src.presentation.components.Account">
       <metrics statements="4" coveredstatements="4" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
       <file name="SettingCard.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/presentation/components/Account/SettingCard.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
-        <line num="15" count="3" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
         <line num="16" count="24" type="stmt"/>
         <line num="18" count="24" type="stmt"/>
-        <line num="46" count="3" type="stmt"/>
+        <line num="46" count="4" type="stmt"/>
       </file>
     </package>
-    <package name="presentation.components.Billing">
+    <package name="MindoulaDashBoard.src.presentation.components.Billing">
       <metrics statements="19" coveredstatements="19" conditionals="19" coveredconditionals="19" methods="7" coveredmethods="7"/>
       <file name="BillingCard.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/presentation/components/Billing/BillingCard.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="20" count="3" type="stmt"/>
+        <line num="20" count="4" type="stmt"/>
         <line num="21" count="20" type="stmt"/>
-        <line num="51" count="3" type="stmt"/>
+        <line num="51" count="4" type="stmt"/>
       </file>
       <file name="BillingTabs.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/presentation/components/Billing/BillingTabs.tsx">
         <metrics statements="6" coveredstatements="6" conditionals="7" coveredconditionals="7" methods="3" coveredmethods="3"/>
-        <line num="14" count="4" type="stmt"/>
+        <line num="14" count="5" type="stmt"/>
         <line num="20" count="24" type="stmt"/>
         <line num="28" count="72" type="stmt"/>
         <line num="29" count="72" type="stmt"/>
         <line num="33" count="7" type="stmt"/>
-        <line num="50" count="4" type="stmt"/>
+        <line num="50" count="5" type="stmt"/>
       </file>
       <file name="ChargeCard.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/presentation/components/Billing/ChargeCard.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <line num="15" count="3" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
         <line num="16" count="8" type="stmt"/>
-        <line num="40" count="3" type="stmt"/>
+        <line num="40" count="4" type="stmt"/>
       </file>
       <file name="InvoiceCard.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/presentation/components/Billing/InvoiceCard.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <line num="17" count="3" type="stmt"/>
+        <line num="17" count="4" type="stmt"/>
         <line num="26" count="10" type="stmt"/>
-        <line num="55" count="3" type="stmt"/>
+        <line num="55" count="4" type="stmt"/>
       </file>
       <file name="PaymentMethodCard.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/presentation/components/Billing/PaymentMethodCard.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="10" coveredconditionals="10" methods="1" coveredmethods="1"/>
-        <line num="18" count="3" type="stmt"/>
+        <line num="18" count="4" type="stmt"/>
         <line num="27" count="8" type="stmt"/>
         <line num="29" count="8" type="stmt"/>
-        <line num="75" count="3" type="stmt"/>
+        <line num="75" count="4" type="stmt"/>
       </file>
     </package>
-    <package name="presentation.components.Common">
+    <package name="MindoulaDashBoard.src.presentation.components.Common">
       <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
       <file name="Badge.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/presentation/components/Common/Badge.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
@@ -307,7 +334,7 @@
         <line num="20" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="presentation.components.Icons">
+    <package name="MindoulaDashBoard.src.presentation.components.Icons">
       <metrics statements="5" coveredstatements="5" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
       <file name="MessageIcon.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/presentation/components/Icons/MessageIcon.tsx">
         <metrics statements="5" coveredstatements="5" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
@@ -318,55 +345,55 @@
         <line num="101" count="1" type="stmt"/>
       </file>
     </package>
-    <package name="presentation.components.Messages">
+    <package name="MindoulaDashBoard.src.presentation.components.Messages">
       <metrics statements="11" coveredstatements="11" conditionals="22" coveredconditionals="22" methods="3" coveredmethods="3"/>
       <file name="ChatPanel.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/presentation/components/Messages/ChatPanel.tsx">
         <metrics statements="8" coveredstatements="8" conditionals="14" coveredconditionals="14" methods="2" coveredmethods="2"/>
-        <line num="14" count="3" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
         <line num="15" count="10" type="stmt"/>
         <line num="17" count="10" type="stmt"/>
         <line num="23" count="26" type="cond" truecount="2" falsecount="0"/>
         <line num="24" count="18" type="stmt"/>
         <line num="37" count="8" type="stmt"/>
         <line num="56" count="10" type="stmt"/>
-        <line num="129" count="3" type="stmt"/>
+        <line num="129" count="4" type="stmt"/>
       </file>
       <file name="ThreadItem.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/presentation/components/Messages/ThreadItem.tsx">
         <metrics statements="3" coveredstatements="3" conditionals="8" coveredconditionals="8" methods="1" coveredmethods="1"/>
-        <line num="14" count="3" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
         <line num="15" count="28" type="stmt"/>
-        <line num="43" count="3" type="stmt"/>
+        <line num="43" count="4" type="stmt"/>
       </file>
     </package>
-    <package name="presentation.components.Prescriptions">
+    <package name="MindoulaDashBoard.src.presentation.components.Prescriptions">
       <metrics statements="4" coveredstatements="4" conditionals="10" coveredconditionals="10" methods="1" coveredmethods="1"/>
       <file name="PrescriptionCard.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/presentation/components/Prescriptions/PrescriptionCard.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="10" coveredconditionals="10" methods="1" coveredmethods="1"/>
-        <line num="15" count="3" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
         <line num="16" count="12" type="stmt"/>
         <line num="18" count="12" type="stmt"/>
-        <line num="67" count="3" type="stmt"/>
+        <line num="67" count="4" type="stmt"/>
       </file>
     </package>
-    <package name="presentation.screens">
+    <package name="MindoulaDashBoard.src.presentation.screens">
       <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
       <file name="PlaceholderScreens.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/presentation/screens/PlaceholderScreens.tsx">
         <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="6" coveredmethods="6"/>
-        <line num="11" count="2" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
         <line num="12" count="5" type="stmt"/>
-        <line num="26" count="2" type="stmt"/>
-        <line num="39" count="2" type="stmt"/>
-        <line num="40" count="2" type="stmt"/>
-        <line num="41" count="2" type="stmt"/>
-        <line num="42" count="2" type="stmt"/>
-        <line num="43" count="2" type="stmt"/>
+        <line num="26" count="3" type="stmt"/>
+        <line num="39" count="3" type="stmt"/>
+        <line num="40" count="3" type="stmt"/>
+        <line num="41" count="3" type="stmt"/>
+        <line num="42" count="3" type="stmt"/>
+        <line num="43" count="3" type="stmt"/>
       </file>
     </package>
-    <package name="presentation.screens.Account">
+    <package name="MindoulaDashBoard.src.presentation.screens.Account">
       <metrics statements="10" coveredstatements="10" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
       <file name="AccountScreen.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/presentation/screens/Account/AccountScreen.tsx">
         <metrics statements="10" coveredstatements="10" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
-        <line num="11" count="2" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
         <line num="12" count="7" type="stmt"/>
         <line num="14" count="7" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
@@ -375,14 +402,14 @@
         <line num="43" count="7" type="stmt"/>
         <line num="53" count="2" type="stmt"/>
         <line num="59" count="20" type="stmt"/>
-        <line num="82" count="2" type="stmt"/>
+        <line num="82" count="3" type="stmt"/>
       </file>
     </package>
-    <package name="presentation.screens.Billing">
-      <metrics statements="27" coveredstatements="27" conditionals="16" coveredconditionals="16" methods="16" coveredmethods="15"/>
+    <package name="MindoulaDashBoard.src.presentation.screens.Billing">
+      <metrics statements="27" coveredstatements="27" conditionals="16" coveredconditionals="16" methods="16" coveredmethods="16"/>
       <file name="BillingScreen.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/presentation/screens/Billing/BillingScreen.tsx">
-        <metrics statements="27" coveredstatements="27" conditionals="16" coveredconditionals="16" methods="16" coveredmethods="15"/>
-        <line num="16" count="2" type="stmt"/>
+        <metrics statements="27" coveredstatements="27" conditionals="16" coveredconditionals="16" methods="16" coveredmethods="16"/>
+        <line num="16" count="3" type="stmt"/>
         <line num="17" count="17" type="stmt"/>
         <line num="18" count="17" type="stmt"/>
         <line num="19" count="17" type="stmt"/>
@@ -408,11 +435,11 @@
         <line num="196" count="2" type="stmt"/>
         <line num="236" count="6" type="stmt"/>
         <line num="242" count="17" type="stmt"/>
-        <line num="272" count="2" type="stmt"/>
+        <line num="272" count="3" type="stmt"/>
       </file>
     </package>
-    <package name="presentation.screens.Dashboard">
-      <metrics statements="31" coveredstatements="31" conditionals="10" coveredconditionals="10" methods="14" coveredmethods="12"/>
+    <package name="MindoulaDashBoard.src.presentation.screens.Dashboard">
+      <metrics statements="31" coveredstatements="31" conditionals="10" coveredconditionals="10" methods="14" coveredmethods="14"/>
       <file name="DashboardViewModel.ts" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/presentation/screens/Dashboard/DashboardViewModel.ts">
         <metrics statements="21" coveredstatements="21" conditionals="2" coveredconditionals="2" methods="7" coveredmethods="7"/>
         <line num="5" count="2" type="stmt"/>
@@ -438,24 +465,24 @@
         <line num="45" count="21" type="stmt"/>
       </file>
       <file name="FigmaDashboardView.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/presentation/screens/Dashboard/FigmaDashboardView.tsx">
-        <metrics statements="10" coveredstatements="10" conditionals="8" coveredconditionals="8" methods="7" coveredmethods="5"/>
-        <line num="13" count="2" type="stmt"/>
-        <line num="14" count="6" type="stmt"/>
-        <line num="15" count="6" type="stmt"/>
-        <line num="17" count="6" type="stmt"/>
+        <metrics statements="10" coveredstatements="10" conditionals="8" coveredconditionals="8" methods="7" coveredmethods="7"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="14" count="8" type="stmt"/>
+        <line num="15" count="8" type="stmt"/>
+        <line num="17" count="8" type="stmt"/>
         <line num="88" count="1" type="stmt"/>
         <line num="93" count="1" type="stmt"/>
         <line num="97" count="1" type="stmt"/>
-        <line num="106" count="2" type="stmt"/>
-        <line num="107" count="24" type="stmt"/>
-        <line num="117" count="2" type="stmt"/>
+        <line num="106" count="3" type="stmt"/>
+        <line num="107" count="32" type="stmt"/>
+        <line num="117" count="3" type="stmt"/>
       </file>
     </package>
-    <package name="presentation.screens.Messages">
+    <package name="MindoulaDashBoard.src.presentation.screens.Messages">
       <metrics statements="16" coveredstatements="16" conditionals="16" coveredconditionals="16" methods="6" coveredmethods="6"/>
       <file name="MessagingCenterView.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/presentation/screens/Messages/MessagingCenterView.tsx">
         <metrics statements="16" coveredstatements="16" conditionals="16" coveredconditionals="16" methods="6" coveredmethods="6"/>
-        <line num="19" count="2" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
         <line num="23" count="10" type="stmt"/>
         <line num="24" count="10" type="stmt"/>
         <line num="25" count="10" type="stmt"/>
@@ -470,14 +497,14 @@
         <line num="72" count="3" type="stmt"/>
         <line num="79" count="10" type="stmt"/>
         <line num="94" count="1" type="stmt"/>
-        <line num="110" count="2" type="stmt"/>
+        <line num="110" count="3" type="stmt"/>
       </file>
     </package>
-    <package name="presentation.screens.Prescriptions">
+    <package name="MindoulaDashBoard.src.presentation.screens.Prescriptions">
       <metrics statements="30" coveredstatements="30" conditionals="8" coveredconditionals="8" methods="13" coveredmethods="13"/>
       <file name="PrescriptionScreen.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/presentation/screens/Prescriptions/PrescriptionScreen.tsx">
         <metrics statements="9" coveredstatements="9" conditionals="0" coveredconditionals="0" methods="5" coveredmethods="5"/>
-        <line num="14" count="2" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
         <line num="15" count="4" type="stmt"/>
         <line num="17" count="4" type="stmt"/>
         <line num="46" count="4" type="stmt"/>
@@ -485,11 +512,11 @@
         <line num="64" count="8" type="stmt"/>
         <line num="69" count="1" type="stmt"/>
         <line num="72" count="1" type="stmt"/>
-        <line num="82" count="2" type="stmt"/>
+        <line num="82" count="3" type="stmt"/>
       </file>
       <file name="RefillScreen.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/presentation/screens/Prescriptions/RefillScreen.tsx">
         <metrics statements="10" coveredstatements="10" conditionals="6" coveredconditionals="6" methods="5" coveredmethods="5"/>
-        <line num="12" count="2" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
         <line num="13" count="5" type="stmt"/>
         <line num="14" count="5" type="stmt"/>
         <line num="16" count="5" type="stmt"/>
@@ -498,13 +525,13 @@
         <line num="22" count="5" type="stmt"/>
         <line num="25" count="1" type="stmt"/>
         <line num="63" count="1" type="stmt"/>
-        <line num="79" count="2" type="stmt"/>
+        <line num="79" count="3" type="stmt"/>
       </file>
       <file name="ViewDetailsScreen.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/presentation/screens/Prescriptions/ViewDetailsScreen.tsx">
         <metrics statements="11" coveredstatements="11" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
-        <line num="11" count="2" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
         <line num="12" count="14" type="stmt"/>
-        <line num="22" count="2" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
         <line num="23" count="3" type="stmt"/>
         <line num="24" count="3" type="stmt"/>
         <line num="25" count="3" type="stmt"/>
@@ -512,7 +539,7 @@
         <line num="28" count="3" type="cond" truecount="2" falsecount="0"/>
         <line num="30" count="2" type="stmt"/>
         <line num="33" count="1" type="stmt"/>
-        <line num="68" count="2" type="stmt"/>
+        <line num="68" count="3" type="stmt"/>
       </file>
     </package>
   </project>

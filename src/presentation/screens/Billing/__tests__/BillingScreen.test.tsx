@@ -111,6 +111,10 @@ describe('BillingScreen', () => {
     fireEvent.press(viewDetailsBtns[0]);
 
     expect(getByText('$180.50')).toBeTruthy();
+
+    const payNowBtn = getByText('Pay Now');
+    fireEvent.press(payNowBtn);
+    // Currently onPress is empty, so we just verify it doesn't crash
   });
 
   it('allows clicking Filter by date select', () => {
