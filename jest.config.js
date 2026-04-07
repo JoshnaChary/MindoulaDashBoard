@@ -8,11 +8,15 @@ module.exports = {
   collectCoverage: true,
   collectCoverageFrom: [
     'src/**/*.{ts,tsx}',
+    'App.tsx',
+    'index.ts',
     '!src/**/*.d.ts',
     '!src/**/*.styles.ts',
-    '!src/core/theme/**',
     '!src/data/mock/**',
     '!src/tests/**',
+    '!**/__tests__/**',
+    '!src/data/models/**',
+    '!src/core/navigation/types.ts',
   ],
   coverageThreshold: {
     global: {

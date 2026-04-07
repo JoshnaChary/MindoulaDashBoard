@@ -65,6 +65,23 @@ jest.mock('react-native/Libraries/Utilities/Platform', () => {
   return Platform;
 });
 
+// Mock Expo Haptics
+jest.mock('expo-haptics', () => ({
+  impactAsync: jest.fn(),
+  notificationAsync: jest.fn(),
+  selectionAsync: jest.fn(),
+  ImpactFeedbackStyle: {
+    Light: 'light',
+    Medium: 'medium',
+    Heavy: 'heavy',
+  },
+  NotificationFeedbackType: {
+    Success: 'success',
+    Warning: 'warning',
+    Error: 'error',
+  },
+}));
+
 // Silence the warning: Animated: `useNativeDriver` is not supported because the native animated module is missing
 // We don't direct mock NativeAnimatedHelper here as it moved in newer RN versions
 // jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
