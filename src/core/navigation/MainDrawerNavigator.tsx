@@ -5,9 +5,9 @@ import { AppConstants } from '../constants/AppConstants';
 
 import FigmaDashboardView from '../../presentation/screens/Dashboard/FigmaDashboardView';
 import MessagingCenterView from '../../presentation/screens/Messages/MessagingCenterView';
-import { PrescriptionScreen } from '../../presentation/screens/Prescriptions/PrescriptionScreen';
-import { AccountScreen } from '../../presentation/screens/Account/AccountScreen';
-import { BillingScreen } from '../../presentation/screens/Billing/BillingScreen';
+import PrescriptionScreen from '../../presentation/screens/Prescriptions/PrescriptionScreen';
+import AccountScreen from '../../presentation/screens/Account/AccountScreen';
+import BillingScreen from '../../presentation/screens/Billing/BillingScreen';
 import {
   LabResultsScreen,
   QuestionnairesScreen,

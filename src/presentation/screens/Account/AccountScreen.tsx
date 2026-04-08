@@ -8,7 +8,7 @@ import SettingCard from '../../components/Account/SettingCard';
 import { Colors } from '../../../core/theme/colors';
 import { Spacing } from '../../../core/theme/spacing';
 
-export const AccountScreen: React.FC = () => {
+const AccountScreen: React.FC = () => {
   const [activeTab, setActiveTab] = useState('Settings');
 
   const settings = [

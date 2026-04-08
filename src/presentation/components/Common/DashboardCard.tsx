@@ -17,7 +17,7 @@ interface DashboardCardProps {
   containerStyle?: ViewStyle;
 }
 
-export const DashboardCard: React.FC<DashboardCardProps> = ({
+const DashboardCard: React.FC<DashboardCardProps> = ({
   indicatorColor,
   title,
   amount,

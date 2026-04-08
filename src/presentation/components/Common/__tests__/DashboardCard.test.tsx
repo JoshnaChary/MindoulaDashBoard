@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
-import { DashboardCard } from '../DashboardCard';
+import DashboardCard from '../DashboardCard';
 import { Colors } from '../../../../core/theme/colors';
 
 // Mock AppText if needed, but it's already a real component in the project.

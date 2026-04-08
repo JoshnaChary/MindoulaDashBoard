@@ -5,11 +5,11 @@ import { useResponsive } from '../utils/useResponsive';
 import { MainDrawerNavigator } from './MainDrawerNavigator';
 import FigmaDashboardView from '../../presentation/screens/Dashboard/FigmaDashboardView';
 import MessagingCenterView from '../../presentation/screens/Messages/MessagingCenterView';
-import { PrescriptionScreen } from '../../presentation/screens/Prescriptions/PrescriptionScreen';
-import { ViewDetailsScreen } from '../../presentation/screens/Prescriptions/ViewDetailsScreen';
-import { RefillScreen } from '../../presentation/screens/Prescriptions/RefillScreen';
-import { BillingScreen } from '../../presentation/screens/Billing/BillingScreen';
-import { AccountScreen } from '../../presentation/screens/Account/AccountScreen';
+import PrescriptionScreen from '../../presentation/screens/Prescriptions/PrescriptionScreen';
+import ViewDetailsScreen from '../../presentation/screens/Prescriptions/ViewDetailsScreen';
+import RefillScreen from '../../presentation/screens/Prescriptions/RefillScreen';
+import BillingScreen from '../../presentation/screens/Billing/BillingScreen';
+import AccountScreen from '../../presentation/screens/Account/AccountScreen';
 import {
   LabResultsScreen,
   QuestionnairesScreen,

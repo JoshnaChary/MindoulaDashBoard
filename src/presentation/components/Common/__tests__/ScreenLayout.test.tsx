@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
-import { ScreenLayout } from '../ScreenLayout';
+import ScreenLayout from '../ScreenLayout';
 import { useNavigation } from '@react-navigation/native';
 import { View } from 'react-native';
 import { AppText } from '../../../../components/atoms/AppText';

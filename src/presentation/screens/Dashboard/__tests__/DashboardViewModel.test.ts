@@ -22,11 +22,13 @@ describe('useDashboardViewModel', () => {
     jest.clearAllMocks();
   });
 
-  it('initially has loading state and null data', () => {
+  it('initially has loading state and null data', async () => {
     (DashboardRepository.getDashboardData as jest.Mock).mockReturnValue(new Promise(() => {})); // Never resolves
     const { result } = renderHook(() => useDashboardViewModel());
 
-    expect(result.current.isLoading).toBe(true);
+    await waitFor(() => {
+      expect(result.current.isLoading).toBe(true);
+    });
     expect(result.current.data).toBeNull();
     expect(result.current.error).toBeNull();
   });
