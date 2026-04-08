@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { AppText } from '../../../components/atoms/AppText';
 import { Colors } from '../../../core/theme/colors';
 import { Spacing } from '../../../core/theme/spacing';
