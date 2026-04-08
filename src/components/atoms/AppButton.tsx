@@ -12,6 +12,35 @@ interface AppButtonProps extends TouchableOpacityProps {
   style?: ViewStyle;
 }
 
+const getVariantStyles = (variant: string): ViewStyle => {
+  const styles: Record<string, ViewStyle> = {
+    primary: { backgroundColor: Colors.primary },
+    secondary: { backgroundColor: Colors.secondary },
+    outline: { backgroundColor: 'transparent', borderWidth: 1, borderColor: Colors.primary },
+    ghost: { backgroundColor: 'transparent' },
+  };
+  return styles[variant] || styles.primary;
+};
+
+const getLabelColor = (variant: string): string => {
+  const colors: Record<string, string> = {
+    primary: Colors.white,
+    secondary: Colors.primary,
+    outline: Colors.primary,
+    ghost: Colors.primary,
+  };
+  return colors[variant] || colors.primary;
+};
+
+const getSizeStyles = (size: string): ViewStyle => {
+  const styles: Record<string, ViewStyle> = {
+    small: { paddingVertical: Spacing.xs, paddingHorizontal: Spacing.md, minHeight: 32 },
+    large: { paddingVertical: Spacing.lg, paddingHorizontal: Spacing.xxl, minHeight: 56 },
+    medium: { paddingVertical: Spacing.md, paddingHorizontal: Spacing.xl, minHeight: 44 },
+  };
+  return styles[size] || styles.medium;
+};
+
 export const AppButton: React.FC<AppButtonProps> = ({
   label,
   variant = 'primary',
@@ -22,61 +51,22 @@ export const AppButton: React.FC<AppButtonProps> = ({
   ...rest
 }) => {
   const handlePress = (event: any) => {
-    if (onPress) {
-      if (variant === 'primary' || variant === 'outline') {
-        HapticsUtility.impactMedium();
-      } else {
-        HapticsUtility.impactLight();
-      }
-      onPress(event);
-    }
-  };
+    if (!onPress) return;
 
-  const getVariantStyles = (): ViewStyle => {
-    switch (variant) {
-      case 'primary':
-        return { backgroundColor: Colors.primary };
-      case 'secondary':
-        return { backgroundColor: Colors.secondary };
-      case 'outline':
-        return { backgroundColor: 'transparent', borderWidth: 1, borderColor: Colors.primary };
-      case 'ghost':
-        return { backgroundColor: 'transparent' };
-      default:
-        return { backgroundColor: Colors.primary };
+    if (variant === 'primary' || variant === 'outline') {
+      HapticsUtility.impactMedium();
+    } else {
+      HapticsUtility.impactLight();
     }
-  };
-
-  const getLabelColor = (): string => {
-    switch (variant) {
-      case 'primary':
-        return Colors.white;
-      case 'secondary':
-      case 'outline':
-      case 'ghost':
-        return Colors.primary;
-      default:
-        return Colors.white;
-    }
-  };
-
-  const getSizeStyles = (): ViewStyle => {
-    switch (size) {
-      case 'small':
-        return { paddingVertical: Spacing.xs, paddingHorizontal: Spacing.md, minHeight: 32 };
-      case 'large':
-        return { paddingVertical: Spacing.lg, paddingHorizontal: Spacing.xxl, minHeight: 56 };
-      default:
-        return { paddingVertical: Spacing.md, paddingHorizontal: Spacing.xl, minHeight: 44 }; // 44px min for mobile touch target
-    }
+    onPress(event);
   };
 
   return (
     <TouchableOpacity
       style={[
         styles.button,
-        getVariantStyles(),
-        getSizeStyles(),
+        getVariantStyles(variant),
+        getSizeStyles(size),
         disabled && styles.disabled,
         style,
       ]}
@@ -87,7 +77,11 @@ export const AppButton: React.FC<AppButtonProps> = ({
       testID={rest.testID || 'app-button'}
       {...rest}
     >
-      <AppText variant={size === 'small' ? 'sm' : 'md'} weight="medium" color={getLabelColor()}>
+      <AppText
+        variant={size === 'small' ? 'sm' : 'md'}
+        weight="medium"
+        color={getLabelColor(variant)}
+      >
         {label}
       </AppText>
     </TouchableOpacity>

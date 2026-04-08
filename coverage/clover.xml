@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1775609866496" clover="3.2.0">
-  <project timestamp="1775609866496" name="All files">
-    <metrics statements="345" coveredstatements="345" conditionals="270" coveredconditionals="270" methods="138" coveredmethods="138" elements="753" coveredelements="753" complexity="0" loc="345" ncloc="345" packages="23" files="47" classes="47"/>
+<coverage generated="1775622868630" clover="3.2.0">
+  <project timestamp="1775622868630" name="All files">
+    <metrics statements="337" coveredstatements="337" conditionals="263" coveredconditionals="263" methods="138" coveredmethods="138" elements="738" coveredelements="738" complexity="0" loc="337" ncloc="337" packages="23" files="47" classes="47"/>
     <package name="MindoulaDashBoard">
       <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <file name="App.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/App.tsx">
@@ -17,35 +17,27 @@
       </file>
     </package>
     <package name="MindoulaDashBoard.src.components.atoms">
-      <metrics statements="41" coveredstatements="41" conditionals="53" coveredconditionals="53" methods="8" coveredmethods="8"/>
+      <metrics statements="33" coveredstatements="33" conditionals="46" coveredconditionals="46" methods="8" coveredmethods="8"/>
       <file name="AppButton.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/components/atoms/AppButton.tsx">
-        <metrics statements="26" coveredstatements="26" conditionals="27" coveredconditionals="27" methods="5" coveredmethods="5"/>
+        <metrics statements="18" coveredstatements="18" conditionals="20" coveredconditionals="20" methods="5" coveredmethods="5"/>
         <line num="15" count="11" type="stmt"/>
-        <line num="24" count="94" type="stmt"/>
-        <line num="25" count="13" type="cond" truecount="2" falsecount="0"/>
-        <line num="26" count="12" type="cond" truecount="4" falsecount="0"/>
-        <line num="27" count="11" type="stmt"/>
-        <line num="29" count="1" type="stmt"/>
-        <line num="31" count="12" type="stmt"/>
-        <line num="35" count="94" type="stmt"/>
-        <line num="36" count="94" type="cond" truecount="5" falsecount="0"/>
-        <line num="38" count="54" type="stmt"/>
-        <line num="40" count="2" type="stmt"/>
-        <line num="42" count="36" type="stmt"/>
-        <line num="44" count="1" type="stmt"/>
-        <line num="46" count="1" type="stmt"/>
-        <line num="50" count="94" type="stmt"/>
-        <line num="51" count="94" type="cond" truecount="5" falsecount="0"/>
-        <line num="53" count="54" type="stmt"/>
-        <line num="57" count="39" type="stmt"/>
-        <line num="59" count="1" type="stmt"/>
-        <line num="63" count="94" type="stmt"/>
-        <line num="64" count="94" type="cond" truecount="3" falsecount="0"/>
-        <line num="66" count="64" type="stmt"/>
-        <line num="68" count="1" type="stmt"/>
-        <line num="70" count="29" type="stmt"/>
-        <line num="74" count="94" type="stmt"/>
-        <line num="97" count="11" type="stmt"/>
+        <line num="16" count="96" type="stmt"/>
+        <line num="22" count="96" type="cond" truecount="2" falsecount="0"/>
+        <line num="25" count="11" type="stmt"/>
+        <line num="26" count="96" type="stmt"/>
+        <line num="32" count="96" type="cond" truecount="2" falsecount="0"/>
+        <line num="35" count="11" type="stmt"/>
+        <line num="36" count="96" type="stmt"/>
+        <line num="41" count="96" type="cond" truecount="2" falsecount="0"/>
+        <line num="44" count="11" type="stmt"/>
+        <line num="53" count="96" type="stmt"/>
+        <line num="54" count="14" type="cond" truecount="2" falsecount="0"/>
+        <line num="56" count="13" type="cond" truecount="4" falsecount="0"/>
+        <line num="57" count="11" type="stmt"/>
+        <line num="59" count="2" type="stmt"/>
+        <line num="61" count="13" type="stmt"/>
+        <line num="64" count="96" type="stmt"/>
+        <line num="87" count="11" type="stmt"/>
       </file>
       <file name="AppIcon.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/components/atoms/AppIcon.tsx">
         <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
@@ -55,14 +47,14 @@
       <file name="AppText.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/components/atoms/AppText.tsx">
         <metrics statements="9" coveredstatements="9" conditionals="17" coveredconditionals="17" methods="1" coveredmethods="1"/>
         <line num="13" count="29" type="stmt"/>
-        <line num="22" count="1048" type="cond" truecount="2" falsecount="0"/>
-        <line num="25" count="1048" type="stmt"/>
-        <line num="26" count="1048" type="cond" truecount="5" falsecount="0"/>
+        <line num="22" count="1050" type="cond" truecount="2" falsecount="0"/>
+        <line num="25" count="1050" type="stmt"/>
+        <line num="26" count="1050" type="cond" truecount="5" falsecount="0"/>
         <line num="27" count="156" type="stmt"/>
-        <line num="28" count="892" type="cond" truecount="4" falsecount="0"/>
-        <line num="29" count="471" type="stmt"/>
-        <line num="32" count="1048" type="stmt"/>
-        <line num="40" count="1048" type="stmt"/>
+        <line num="28" count="894" type="cond" truecount="4" falsecount="0"/>
+        <line num="29" count="473" type="stmt"/>
+        <line num="32" count="1050" type="stmt"/>
+        <line num="40" count="1050" type="stmt"/>
       </file>
       <file name="ResponsiveContainer.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/components/atoms/ResponsiveContainer.tsx">
         <metrics statements="4" coveredstatements="4" conditionals="7" coveredconditionals="7" methods="1" coveredmethods="1"/>
