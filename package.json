@@ -57,5 +57,8 @@
       "prettier --write"
     ]
   },
-  "private": true
+  "private": true,
+  "overrides": {
+    "@tootallnate/once": "3.0.1"
+  }
 }

@@ -97,6 +97,21 @@ describe('AppButton', () => {
     expect(HapticsUtility.impactLight).toHaveBeenCalled();
   });
 
+  it('triggers light haptics on ghost press', () => {
+    const { getByTestId } = render(<AppButton {...defaultProps} variant="ghost" />);
+    fireEvent.press(getByTestId('app-button'));
+    expect(HapticsUtility.impactLight).toHaveBeenCalled();
+  });
+
+  it('renders correctly with fallback size for code coverage', () => {
+    // @ts-ignore - testing runtime fallback for invalid size
+    const { getByTestId } = render(<AppButton {...defaultProps} size="invalid" />);
+    const button = getByTestId('app-button');
+    expect(StyleSheet.flatten(button.props.style)).toMatchObject({
+      minHeight: 44,
+    });
+  });
+
   it('does not trigger onPress when disabled', () => {
     const { getByTestId } = render(<AppButton {...defaultProps} disabled />);
     const button = getByTestId('app-button');
