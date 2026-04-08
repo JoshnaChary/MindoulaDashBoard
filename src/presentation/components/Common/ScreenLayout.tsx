@@ -16,7 +16,7 @@ interface ScreenLayoutProps {
   containerStyle?: ViewStyle;
 }
 
-export const ScreenLayout: React.FC<ScreenLayoutProps> = ({
+const ScreenLayout: React.FC<ScreenLayoutProps> = ({
   title,
   headerTitle,
   onBack,

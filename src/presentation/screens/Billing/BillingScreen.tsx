@@ -13,7 +13,7 @@ import { Colors } from '../../../core/theme/colors';
 import { Spacing } from '../../../core/theme/spacing';
 import { useResponsive } from '../../../core/utils/useResponsive';
 
-export const BillingScreen: React.FC = () => {
+const BillingScreen: React.FC = () => {
   const [activeTab, setActiveTab] = useState('Outstanding');
   const [isDetailView, setIsDetailView] = useState(false);
   const { isPhone } = useResponsive();

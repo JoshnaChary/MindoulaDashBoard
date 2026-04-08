@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
-import { PrescriptionScreen } from '../PrescriptionScreen';
+import PrescriptionScreen from '../PrescriptionScreen';
 import * as ResponsiveUtility from '../../../../core/utils/useResponsive';
 import { AppConstants } from '../../../../core/constants/AppConstants';
 import { useNavigation } from '@react-navigation/native';

@@ -17,7 +17,7 @@ const DetailItem = ({ label, value }: { label: string; value: string }) => (
   </View>
 );
 
-export const ViewDetailsScreen: React.FC = () => {
+const ViewDetailsScreen: React.FC = () => {
   const route = useRoute<any>();
   const prescription = route.params?.prescription;
 

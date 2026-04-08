@@ -41,6 +41,12 @@ const getSizeStyles = (size: string): ViewStyle => {
   return styles[size] || styles.medium;
 };
 
+const getHapticFeedback = (variant: string) => {
+  return variant === 'primary' || variant === 'outline'
+    ? HapticsUtility.impactMedium
+    : HapticsUtility.impactLight;
+};
+
 export const AppButton: React.FC<AppButtonProps> = ({
   label,
   variant = 'primary',
@@ -52,24 +58,24 @@ export const AppButton: React.FC<AppButtonProps> = ({
 }) => {
   const handlePress = (event: any) => {
     if (!onPress) return;
-
-    if (variant === 'primary' || variant === 'outline') {
-      HapticsUtility.impactMedium();
-    } else {
-      HapticsUtility.impactLight();
-    }
+    getHapticFeedback(variant)();
     onPress(event);
   };
 
+  const buttonStyle = [
+    styles.button,
+    getVariantStyles(variant),
+    getSizeStyles(size),
+    disabled && styles.disabled,
+    style,
+  ];
+
+  const textVariant = size === 'small' ? 'sm' : 'md';
+  const textColor = getLabelColor(variant);
+
   return (
     <TouchableOpacity
-      style={[
-        styles.button,
-        getVariantStyles(variant),
-        getSizeStyles(size),
-        disabled && styles.disabled,
-        style,
-      ]}
+      style={buttonStyle}
       disabled={disabled}
       onPress={handlePress}
       activeOpacity={0.7}
@@ -77,11 +83,7 @@ export const AppButton: React.FC<AppButtonProps> = ({
       testID={rest.testID || 'app-button'}
       {...rest}
     >
-      <AppText
-        variant={size === 'small' ? 'sm' : 'md'}
-        weight="medium"
-        color={getLabelColor(variant)}
-      >
+      <AppText variant={textVariant} weight="medium" color={textColor}>
         {label}
       </AppText>
     </TouchableOpacity>

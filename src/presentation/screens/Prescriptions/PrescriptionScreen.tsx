@@ -8,7 +8,7 @@ import { StackNavigationProp } from '../../../core/navigation/types';
 import { Prescription } from '../../../data/models/DomainModels';
 import { useNavigation } from '@react-navigation/native';
 
-export const PrescriptionScreen: React.FC = () => {
+const PrescriptionScreen: React.FC = () => {
   const navigation = useNavigation<StackNavigationProp>();
 
   const prescriptions: Prescription[] = [

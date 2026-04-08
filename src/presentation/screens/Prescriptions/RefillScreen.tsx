@@ -8,7 +8,7 @@ import { Spacing } from '../../../core/theme/spacing';
 import { useResponsive } from '../../../core/utils/useResponsive';
 import { useNavigation } from '@react-navigation/native';
 
-export const RefillScreen: React.FC = () => {
+const RefillScreen: React.FC = () => {
   const navigation = useNavigation<any>();
   const { isPhone } = useResponsive();
 
