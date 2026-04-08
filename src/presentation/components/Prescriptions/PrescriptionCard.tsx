@@ -5,6 +5,7 @@ import { AppButton } from '../../../components/atoms/AppButton';
 import { Colors } from '../../../core/theme/colors';
 import { Spacing } from '../../../core/theme/spacing';
 import { useResponsive } from '../../../core/utils/useResponsive';
+import DashboardCard from '../Common/DashboardCard';
 
 interface Props {
   item: any;
@@ -16,13 +17,9 @@ const PrescriptionCard: React.FC<Props> = ({ item, onViewDetails, onRequestRefil
   const { isPhone } = useResponsive();
 
   return (
-    <View style={styles.container}>
+    <DashboardCard title={item.name}>
       <View style={[styles.mainRow, isPhone && styles.column]}>
-        {/* Left Side: Name & Badge */}
         <View style={styles.leftContent}>
-          <AppText variant="md" weight="medium">
-            {item.name}
-          </AppText>
           <View style={styles.badge}>
             <AppText variant="xs" weight="medium" color={Colors.accent}>
               {item.refills} refills remaining
@@ -32,7 +29,6 @@ const PrescriptionCard: React.FC<Props> = ({ item, onViewDetails, onRequestRefil
 
         {!isPhone && <View style={styles.divider} />}
 
-        {/* Center: Dosage/Freq */}
         <View style={styles.centerContent}>
           <AppText variant="xs" color={Colors.text.secondary}>
             Dosage: {item.dosage}
@@ -42,7 +38,6 @@ const PrescriptionCard: React.FC<Props> = ({ item, onViewDetails, onRequestRefil
           </AppText>
         </View>
 
-        {/* Right: Buttons */}
         <View style={[styles.rightContent, isPhone && styles.fullWidthActions]}>
           <AppButton
             label="View Details"
@@ -60,22 +55,16 @@ const PrescriptionCard: React.FC<Props> = ({ item, onViewDetails, onRequestRefil
           />
         </View>
       </View>
-    </View>
+    </DashboardCard>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: Colors.white,
-    borderWidth: 1,
-    borderColor: Colors.border,
-    borderRadius: Spacing.radius.md,
-    padding: Spacing.lg,
-  },
   mainRow: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: Spacing.md,
+    marginTop: Spacing.xs,
   },
   column: {
     flexDirection: 'column',
@@ -103,7 +92,7 @@ const styles = StyleSheet.create({
   },
   divider: {
     width: 1,
-    height: 48,
+    height: 40,
     backgroundColor: Colors.border,
     marginHorizontal: Spacing.sm,
   },
@@ -112,7 +101,6 @@ const styles = StyleSheet.create({
     borderRadius: Spacing.radius.full,
     paddingHorizontal: Spacing.sm,
     paddingVertical: 2,
-    marginTop: Spacing.xs,
     alignSelf: 'flex-start',
   },
 });

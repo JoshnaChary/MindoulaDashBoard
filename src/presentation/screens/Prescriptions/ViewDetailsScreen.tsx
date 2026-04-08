@@ -1,12 +1,10 @@
 import React from 'react';
-import { View, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { AppText } from '../../../components/atoms/AppText';
-import { ResponsiveContainer } from '../../../components/atoms/ResponsiveContainer';
-import { useRoute, useNavigation } from '@react-navigation/native';
-import MemberPortalLayout from '../../components/MemberPortalLayout';
+import { useRoute } from '@react-navigation/native';
+import ScreenLayout from '../../components/Common/ScreenLayout';
 import { Colors } from '../../../core/theme/colors';
 import { Spacing } from '../../../core/theme/spacing';
-import { useResponsive } from '../../../core/utils/useResponsive';
 
 const DetailItem = ({ label, value }: { label: string; value: string }) => (
   <View style={styles.gridItem}>
@@ -21,54 +19,41 @@ const DetailItem = ({ label, value }: { label: string; value: string }) => (
 
 export const ViewDetailsScreen: React.FC = () => {
   const route = useRoute<any>();
-  const navigation = useNavigation<any>();
   const prescription = route.params?.prescription;
-  useResponsive();
 
   if (!prescription) return null;
 
   return (
-    <MemberPortalLayout title="Prescription Details">
-      <ResponsiveContainer>
-        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
-          <AppText variant="md" weight="medium" color={Colors.primary}>
-            &lt; Back to Prescriptions
+    <ScreenLayout
+      title={prescription.name}
+      headerTitle="Prescription Details"
+      backLabel="Back to Prescriptions"
+    >
+      <View style={styles.card}>
+        <View style={styles.instructionBox}>
+          <AppText variant="sm" weight="medium" color={Colors.text.secondary}>
+            Instructions:
           </AppText>
-        </TouchableOpacity>
-
-        <View style={styles.card}>
-          <AppText variant="h2" weight="bold" color={Colors.text.primary}>
-            {prescription.name}
+          <AppText variant="md" style={styles.instructionText}>
+            {prescription.instructions}
           </AppText>
-
-          <View style={styles.instructionBox}>
-            <AppText variant="sm" weight="medium" color={Colors.text.secondary}>
-              Instructions:
-            </AppText>
-            <AppText variant="md" style={styles.instructionText}>
-              {prescription.instructions}
-            </AppText>
-          </View>
-
-          <View style={styles.grid}>
-            <DetailItem label="Dosage:" value={prescription.dosage} />
-            <DetailItem label="Prescribed By:" value={prescription.prescribedBy} />
-            <DetailItem label="Frequency:" value={prescription.frequency} />
-            <DetailItem label="Prescribed On:" value={prescription.prescribedOn} />
-            <DetailItem label="Route:" value={prescription.route} />
-            <DetailItem label="Valid Until:" value={prescription.validUntil} />
-            <DetailItem label="Therapy Type:" value={prescription.therapyType} />
-          </View>
         </View>
-      </ResponsiveContainer>
-    </MemberPortalLayout>
+
+        <View style={styles.grid}>
+          <DetailItem label="Dosage:" value={prescription.dosage} />
+          <DetailItem label="Prescribed By:" value={prescription.prescribedBy} />
+          <DetailItem label="Frequency:" value={prescription.frequency} />
+          <DetailItem label="Prescribed On:" value={prescription.prescribedOn} />
+          <DetailItem label="Route:" value={prescription.route} />
+          <DetailItem label="Valid Until:" value={prescription.validUntil} />
+          <DetailItem label="Therapy Type:" value={prescription.therapyType} />
+        </View>
+      </View>
+    </ScreenLayout>
   );
 };
 
 const styles = StyleSheet.create({
-  backButton: {
-    marginBottom: Spacing.xl,
-  },
   card: {
     backgroundColor: Colors.white,
     padding: Spacing.xl,
@@ -77,7 +62,6 @@ const styles = StyleSheet.create({
     borderColor: Colors.border,
   },
   instructionBox: {
-    marginTop: Spacing.xl,
     marginBottom: Spacing.xxl,
     padding: Spacing.md,
     backgroundColor: Colors.background.default,
