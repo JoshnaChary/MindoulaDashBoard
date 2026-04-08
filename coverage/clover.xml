@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1775660442507" clover="3.2.0">
-  <project timestamp="1775660442507" name="All files">
+<coverage generated="1775661505797" clover="3.2.0">
+  <project timestamp="1775661505797" name="All files">
     <metrics statements="340" coveredstatements="340" conditionals="263" coveredconditionals="263" methods="139" coveredmethods="139" elements="742" coveredelements="742" complexity="0" loc="340" ncloc="340" packages="23" files="47" classes="47"/>
     <package name="MindoulaDashBoard">
       <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
