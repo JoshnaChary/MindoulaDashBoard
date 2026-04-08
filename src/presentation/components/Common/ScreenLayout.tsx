@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, StyleSheet, View, ViewStyle } from 'react-native';
+import { TouchableOpacity, StyleSheet, ViewStyle } from 'react-native';
 import { AppText } from '../../../components/atoms/AppText';
 import { ResponsiveContainer } from '../../../components/atoms/ResponsiveContainer';
 import { useNavigation } from '@react-navigation/native';

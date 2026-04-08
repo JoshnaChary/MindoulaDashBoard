@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1775608731933" clover="3.2.0">
-  <project timestamp="1775608731933" name="All files">
-    <metrics statements="341" coveredstatements="341" conditionals="270" coveredconditionals="270" methods="137" coveredmethods="137" elements="748" coveredelements="748" complexity="0" loc="341" ncloc="341" packages="23" files="47" classes="47"/>
+<coverage generated="1775609866496" clover="3.2.0">
+  <project timestamp="1775609866496" name="All files">
+    <metrics statements="345" coveredstatements="345" conditionals="270" coveredconditionals="270" methods="138" coveredmethods="138" elements="753" coveredelements="753" complexity="0" loc="345" ncloc="345" packages="23" files="47" classes="47"/>
     <package name="MindoulaDashBoard">
       <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
       <file name="App.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/App.tsx">
@@ -256,9 +256,9 @@
       </file>
     </package>
     <package name="MindoulaDashBoard.src.presentation.components">
-      <metrics statements="17" coveredstatements="17" conditionals="21" coveredconditionals="21" methods="14" coveredmethods="14"/>
+      <metrics statements="21" coveredstatements="21" conditionals="21" coveredconditionals="21" methods="15" coveredmethods="15"/>
       <file name="MemberPortalLayout.tsx" path="/Users/joshnaramojipally/ReactNative Projects/MindoulaDashBoard/src/presentation/components/MemberPortalLayout.tsx">
-        <metrics statements="17" coveredstatements="17" conditionals="21" coveredconditionals="21" methods="14" coveredmethods="14"/>
+        <metrics statements="21" coveredstatements="21" conditionals="21" coveredconditionals="21" methods="15" coveredmethods="15"/>
         <line num="27" count="4" type="stmt"/>
         <line num="34" count="9" type="stmt"/>
         <line num="35" count="9" type="stmt"/>
@@ -273,9 +273,13 @@
         <line num="95" count="1" type="stmt"/>
         <line num="99" count="1" type="stmt"/>
         <line num="138" count="4" type="stmt"/>
-        <line num="139" count="33" type="cond" truecount="4" falsecount="0"/>
-        <line num="141" count="33" type="stmt"/>
-        <line num="155" count="4" type="stmt"/>
+        <line num="139" count="33" type="stmt"/>
+        <line num="140" count="33" type="cond" truecount="2" falsecount="0"/>
+        <line num="141" count="30" type="cond" truecount="2" falsecount="0"/>
+        <line num="142" count="27" type="stmt"/>
+        <line num="145" count="33" type="stmt"/>
+        <line num="147" count="33" type="stmt"/>
+        <line num="161" count="4" type="stmt"/>
       </file>
     </package>
     <package name="MindoulaDashBoard.src.presentation.components.Account">

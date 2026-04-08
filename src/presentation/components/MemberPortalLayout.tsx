@@ -136,13 +136,19 @@ const MemberPortalLayout: React.FC<Props> = ({
 };
 
 const NavItem = ({ label, onPress, isActive, hasBadge, isError }: any) => {
-  const textColor = isError ? Colors.error : isActive ? Colors.primary : Colors.text.primary;
+  const getTextColor = () => {
+    if (isError) return Colors.error;
+    if (isActive) return Colors.primary;
+    return Colors.text.primary;
+  };
+
+  const textColor = getTextColor();
 
   return (
     <TouchableOpacity
       onPress={onPress}
       style={styles.navItem}
-      testID={`nav-item-${label.toLowerCase().replace(/\s+/g, '-')}`}
+      testID={`nav-item-${label.toLowerCase().replaceAll(/\s+/g, '-')}`}
     >
       <AppText variant="md" weight={isActive ? 'medium' : 'regular'} color={textColor}>
         {label}
