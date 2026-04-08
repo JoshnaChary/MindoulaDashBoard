@@ -4,6 +4,7 @@ import { AppText } from '../../../components/atoms/AppText';
 import { Colors } from '../../../core/theme/colors';
 import { Spacing } from '../../../core/theme/spacing';
 import { useResponsive } from '../../../core/utils/useResponsive';
+import DashboardCard from '../Common/DashboardCard';
 
 interface PaymentMethodCardProps {
   cardType: string;
@@ -27,73 +28,45 @@ const PaymentMethodCard: React.FC<PaymentMethodCardProps> = ({
   const { isPhone } = useResponsive();
 
   return (
-    <View style={styles.container}>
-      <View style={[styles.mainRow, isPhone && styles.column]}>
-        <View style={styles.cardInfo}>
-          <View style={styles.cardHeader}>
-            <AppText variant="md" weight="bold">
-              {cardType} ending in {cardNumber.slice(-4)}
+    <DashboardCard
+      title={`${cardType} ending in ${cardNumber.slice(-4)}`}
+      subtext={`Expires ${expiryDate} • Added ${addedDate}`}
+    >
+      <View style={[styles.cardHeader, { marginTop: Spacing.xs }]}>
+        {isDefault && (
+          <View style={styles.defaultBadge}>
+            <AppText variant="xs" weight="medium" color={Colors.white}>
+              DEFAULT
             </AppText>
-            {isDefault && (
-              <View style={styles.defaultBadge}>
-                <AppText variant="xs" weight="medium" color={Colors.white}>
-                  DEFAULT
-                </AppText>
-              </View>
-            )}
           </View>
-          <AppText variant="sm" color={Colors.text.secondary}>
-            Expires {expiryDate} • Added {addedDate}
-          </AppText>
-        </View>
+        )}
+      </View>
 
-        <View
-          style={[
-            styles.actions,
-            isPhone && { marginTop: Spacing.md, width: '100%' },
-            { justifyContent: Platform.OS === 'web' ? 'flex-end' : 'space-between' },
-          ]}
-        >
-          {!isDefault && (
-            <TouchableOpacity onPress={onSetDefault} style={styles.actionButton}>
-              <AppText variant="sm" weight="medium" color={Colors.primary}>
-                Set Default
-              </AppText>
-            </TouchableOpacity>
-          )}
-          <TouchableOpacity onPress={onRemove} style={styles.actionButton}>
-            <AppText variant="sm" weight="medium" color={Colors.error}>
-              Remove
+      <View
+        style={[
+          styles.actions,
+          isPhone && { marginTop: Spacing.md, width: '100%' },
+          { justifyContent: Platform.OS === 'web' ? 'flex-end' : 'space-between' },
+        ]}
+      >
+        {!isDefault && (
+          <TouchableOpacity onPress={onSetDefault} style={styles.actionButton}>
+            <AppText variant="sm" weight="medium" color={Colors.primary}>
+              Set Default
             </AppText>
           </TouchableOpacity>
-        </View>
+        )}
+        <TouchableOpacity onPress={onRemove} style={styles.actionButton}>
+          <AppText variant="sm" weight="medium" color={Colors.error}>
+            Remove
+          </AppText>
+        </TouchableOpacity>
       </View>
-    </View>
+    </DashboardCard>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    backgroundColor: Colors.white,
-    borderWidth: 1,
-    borderColor: Colors.border,
-    borderRadius: Spacing.radius.md,
-    padding: Spacing.lg,
-  },
-  mainRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    gap: Spacing.md,
-  },
-  column: {
-    flexDirection: 'column',
-    alignItems: 'flex-start',
-  },
-  cardInfo: {
-    flex: 1,
-    gap: Spacing.xs,
-  },
   cardHeader: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -109,6 +82,7 @@ const styles = StyleSheet.create({
   actions: {
     flexDirection: 'row',
     gap: Spacing.lg,
+    marginTop: Spacing.md,
   },
   actionButton: {
     paddingVertical: Spacing.xs,

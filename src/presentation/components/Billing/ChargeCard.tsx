@@ -3,6 +3,7 @@ import { View, StyleSheet } from 'react-native';
 import { AppText } from '../../../components/atoms/AppText';
 import { Colors } from '../../../core/theme/colors';
 import { Spacing } from '../../../core/theme/spacing';
+import DashboardCard from '../Common/DashboardCard';
 
 interface ChargeCardProps {
   title: string;
@@ -14,46 +15,32 @@ interface ChargeCardProps {
 
 const ChargeCard: React.FC<ChargeCardProps> = ({ title, amount, quantity, serviceDate, note }) => {
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <AppText variant="md" weight="medium" style={{ flex: 1 }}>
-          {title}
+    <DashboardCard
+      title={title}
+      amount={amount}
+      subtext={`Date: ${serviceDate} • Qty: ${quantity}`}
+      containerStyle={styles.cardContainer}
+    >
+      {note && (
+        <AppText variant="xs" color={Colors.text.muted} style={styles.note}>
+          {note}
         </AppText>
-        <AppText variant="md" weight="bold">
-          {amount}
-        </AppText>
-      </View>
-      <View style={styles.details}>
-        <AppText variant="xs" color={Colors.text.secondary}>
-          Date: {serviceDate} • Qty: {quantity}
-        </AppText>
-        {note && (
-          <AppText variant="xs" color={Colors.text.muted} style={styles.note}>
-            {note}
-          </AppText>
-        )}
-      </View>
-    </View>
+      )}
+    </DashboardCard>
   );
 };
 
 const styles = StyleSheet.create({
-  container: {
-    paddingVertical: Spacing.md,
+  cardContainer: {
+    borderWidth: 0,
     borderBottomWidth: 1,
-    borderBottomColor: Colors.border,
-  },
-  header: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    marginBottom: Spacing.xs,
-  },
-  details: {
-    gap: Spacing.xs,
+    borderRadius: 0,
+    minHeight: 0,
+    paddingHorizontal: 0,
   },
   note: {
     fontStyle: 'italic',
+    marginTop: Spacing.xs,
   },
 });
 

@@ -25,7 +25,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/12</span>
+                <span class='fraction'>9/9</span>
             </div>
         
             
@@ -39,14 +39,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>11/11</span>
+                <span class='fraction'>8/8</span>
             </div>
         
             
@@ -149,25 +149,7 @@
 <a name='L84'></a><a href='#L84'>84</a>
 <a name='L85'></a><a href='#L85'>85</a>
 <a name='L86'></a><a href='#L86'>86</a>
-<a name='L87'></a><a href='#L87'>87</a>
-<a name='L88'></a><a href='#L88'>88</a>
-<a name='L89'></a><a href='#L89'>89</a>
-<a name='L90'></a><a href='#L90'>90</a>
-<a name='L91'></a><a href='#L91'>91</a>
-<a name='L92'></a><a href='#L92'>92</a>
-<a name='L93'></a><a href='#L93'>93</a>
-<a name='L94'></a><a href='#L94'>94</a>
-<a name='L95'></a><a href='#L95'>95</a>
-<a name='L96'></a><a href='#L96'>96</a>
-<a name='L97'></a><a href='#L97'>97</a>
-<a name='L98'></a><a href='#L98'>98</a>
-<a name='L99'></a><a href='#L99'>99</a>
-<a name='L100'></a><a href='#L100'>100</a>
-<a name='L101'></a><a href='#L101'>101</a>
-<a name='L102'></a><a href='#L102'>102</a>
-<a name='L103'></a><a href='#L103'>103</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L87'></a><a href='#L87'>87</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -189,22 +171,12 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -233,10 +205,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -268,14 +236,12 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import React from 'react';
-import { View, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, StyleSheet } from 'react-native';
 import { AppText } from '../../../components/atoms/AppText';
-import { ResponsiveContainer } from '../../../components/atoms/ResponsiveContainer';
-import { useRoute, useNavigation } from '@react-navigation/native';
-import MemberPortalLayout from '../../components/MemberPortalLayout';
+import { useRoute } from '@react-navigation/native';
+import ScreenLayout from '../../components/Common/ScreenLayout';
 import { Colors } from '../../../core/theme/colors';
 import { Spacing } from '../../../core/theme/spacing';
-import { useResponsive } from '../../../core/utils/useResponsive';
 &nbsp;
 const DetailItem = ({ label, value }: { label: string; value: string }) =&gt; (
   &lt;View style={styles.gridItem}&gt;
@@ -290,54 +256,41 @@ const DetailItem = ({ label, value }: { label: string; value: string }) =&gt; (
 &nbsp;
 export const ViewDetailsScreen: React.FC = () =&gt; {
   const route = useRoute&lt;any&gt;();
-  const navigation = useNavigation&lt;any&gt;();
   const prescription = route.params?.prescription;
-  useResponsive();
 &nbsp;
   if (!prescription) return null;
 &nbsp;
   return (
-    &lt;MemberPortalLayout title="Prescription Details"&gt;
-      &lt;ResponsiveContainer&gt;
-        &lt;TouchableOpacity onPress={() =&gt; navigation.goBack()} style={styles.backButton}&gt;
-          &lt;AppText variant="md" weight="medium" color={Colors.primary}&gt;
-            &amp;lt; Back to Prescriptions
+    &lt;ScreenLayout
+      title={prescription.name}
+      headerTitle="Prescription Details"
+      backLabel="Back to Prescriptions"
+    &gt;
+      &lt;View style={styles.card}&gt;
+        &lt;View style={styles.instructionBox}&gt;
+          &lt;AppText variant="sm" weight="medium" color={Colors.text.secondary}&gt;
+            Instructions:
           &lt;/AppText&gt;
-        &lt;/TouchableOpacity&gt;
-&nbsp;
-        &lt;View style={styles.card}&gt;
-          &lt;AppText variant="h2" weight="bold" color={Colors.text.primary}&gt;
-            {prescription.name}
+          &lt;AppText variant="md" style={styles.instructionText}&gt;
+            {prescription.instructions}
           &lt;/AppText&gt;
-&nbsp;
-          &lt;View style={styles.instructionBox}&gt;
-            &lt;AppText variant="sm" weight="medium" color={Colors.text.secondary}&gt;
-              Instructions:
-            &lt;/AppText&gt;
-            &lt;AppText variant="md" style={styles.instructionText}&gt;
-              {prescription.instructions}
-            &lt;/AppText&gt;
-          &lt;/View&gt;
-&nbsp;
-          &lt;View style={styles.grid}&gt;
-            &lt;DetailItem label="Dosage:" value={prescription.dosage} /&gt;
-            &lt;DetailItem label="Prescribed By:" value={prescription.prescribedBy} /&gt;
-            &lt;DetailItem label="Frequency:" value={prescription.frequency} /&gt;
-            &lt;DetailItem label="Prescribed On:" value={prescription.prescribedOn} /&gt;
-            &lt;DetailItem label="Route:" value={prescription.route} /&gt;
-            &lt;DetailItem label="Valid Until:" value={prescription.validUntil} /&gt;
-            &lt;DetailItem label="Therapy Type:" value={prescription.therapyType} /&gt;
-          &lt;/View&gt;
         &lt;/View&gt;
-      &lt;/ResponsiveContainer&gt;
-    &lt;/MemberPortalLayout&gt;
+&nbsp;
+        &lt;View style={styles.grid}&gt;
+          &lt;DetailItem label="Dosage:" value={prescription.dosage} /&gt;
+          &lt;DetailItem label="Prescribed By:" value={prescription.prescribedBy} /&gt;
+          &lt;DetailItem label="Frequency:" value={prescription.frequency} /&gt;
+          &lt;DetailItem label="Prescribed On:" value={prescription.prescribedOn} /&gt;
+          &lt;DetailItem label="Route:" value={prescription.route} /&gt;
+          &lt;DetailItem label="Valid Until:" value={prescription.validUntil} /&gt;
+          &lt;DetailItem label="Therapy Type:" value={prescription.therapyType} /&gt;
+        &lt;/View&gt;
+      &lt;/View&gt;
+    &lt;/ScreenLayout&gt;
   );
 };
 &nbsp;
 const styles = StyleSheet.create({
-  backButton: {
-    marginBottom: Spacing.xl,
-  },
   card: {
     backgroundColor: Colors.white,
     padding: Spacing.xl,
@@ -346,7 +299,6 @@ const styles = StyleSheet.create({
     borderColor: Colors.border,
   },
   instructionBox: {
-    marginTop: Spacing.xl,
     marginBottom: Spacing.xxl,
     padding: Spacing.md,
     backgroundColor: Colors.background.default,
@@ -376,7 +328,7 @@ export default ViewDetailsScreen;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-04-08T00:06:03.159Z
+                at 2026-04-08T00:38:51.939Z
             </div>
         <script src="../../../../../prettify.js"></script>
         <script>
