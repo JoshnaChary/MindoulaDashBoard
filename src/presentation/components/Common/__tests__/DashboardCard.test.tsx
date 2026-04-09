@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
 import DashboardCard from '../DashboardCard';
-import { Colors } from '../../../../core/theme/colors';
+// import { Colors } from '../../../../core/theme/colors';
 
 // Mock AppText if needed, but it's already a real component in the project.
 import { AppText } from '../../../../components/atoms/AppText';
@@ -15,7 +15,7 @@ describe('DashboardCard', () => {
   });
 
   it('renders indicator when color is provided', () => {
-    const { getByTestId } = render(
+    render(
       <View testID="indicator-container">
         <DashboardCard title="Test" indicatorColor="red" />
       </View>,
