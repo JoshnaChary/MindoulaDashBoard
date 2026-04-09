@@ -2,7 +2,7 @@ import React from 'react';
 import { render, fireEvent } from '@testing-library/react-native';
 import MemberPortalLayout from '../MemberPortalLayout';
 import * as ResponsiveUtility from '../../../core/utils/useResponsive';
-import { DrawerActions } from '@react-navigation/native';
+// import { DrawerActions } from '@react-navigation/native';
 import { AppConstants } from '../../../core/constants/AppConstants';
 
 // Mocks
@@ -121,7 +121,7 @@ describe('MemberPortalLayout', () => {
       isTablet: false,
     });
     const onRefresh = jest.fn();
-    const { getByRole } = render(
+    render(
       <MemberPortalLayout onRefresh={onRefresh} refreshing={false}>
         <></>
       </MemberPortalLayout>,

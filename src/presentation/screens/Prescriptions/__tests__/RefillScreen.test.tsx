@@ -30,7 +30,7 @@ describe('RefillScreen', () => {
   });
 
   it('renders correctly', () => {
-    const { getByText, getAllByText, getByPlaceholderText } = render(<RefillScreen />);
+    const { getAllByText, getByPlaceholderText } = render(<RefillScreen />);
 
     expect(getAllByText('Request Refill').length).toBeGreaterThan(0);
     expect(

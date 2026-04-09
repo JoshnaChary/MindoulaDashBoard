@@ -4,14 +4,7 @@
     "title": "Hello, Jane",
     "subtitle": "How can we help you today?"
   },
-  "menu": [
-    "Home",
-    "Messages",
-    "Appointments",
-    "Prescriptions",
-    "Lab results",
-    "Documents"
-  ],
+  "menu": ["Home", "Messages", "Appointments", "Prescriptions", "Lab results", "Documents"],
   "cards": [
     {
       "type": "appointment",
